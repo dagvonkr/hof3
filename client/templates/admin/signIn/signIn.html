@@ -3,10 +3,10 @@
 
   <form name="signInForm">
     <label> Email </label>
-    <input type="text" aria-label="email"/>
+    <input type="text" name="email" placeholder="email" aria-label="email"/>
 
     <label> Password </label>
-    <input type="password" aria-label="password"/>
+    <input type="password" name="password" placeholder="password" aria-label="password"/>
 
     <a href="/reset-password">Forgot password?</a>
 
@@ -14,7 +14,7 @@
     <br>
 
     <div>
-      <button aria-label="login">Sign In</button>
+      <button class="btn signInButton" aria-label="sign in">Sign In</button>
     </div>
   </form>
   {{ #if signInFeedback }}
