@@ -1,8 +1,19 @@
 {
-	"folders":
-	[
-		{
-			"path": "."
-		}
-	]
+  "folders": [
+    {
+      "path": ".",
+      "file_exclude_patterns": [
+        "*.ico",
+        "*.jpg",
+        "*.log",
+        "*.png",
+        "Gemfile.lock",
+        "*.sublime-*"
+        ],
+      "folder_exclude_patterns": [
+        ".meteor/local",
+        "node_modules",
+      ],
+    }
+  ]
 }
