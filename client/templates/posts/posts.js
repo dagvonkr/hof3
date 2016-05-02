@@ -1,0 +1,1 @@
+let tpl = Template.posts;

@@ -1,8 +1,10 @@
 {
   "public": {
     "perPage": 3,
-    "ga": {
-      "account" : "UA-74818861-2"
-  	}
+    "analyticsSettings": {
+      "Google Analytics" : {"trackingId": "UA-74818861-2"}
+    }
   }
 }
+
+

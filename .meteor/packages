@@ -27,3 +27,6 @@ peppelg:bootstrap-3-modal
 linto:jquery-ui
 mrt:graphicsmagick
 edgee:slingshot
+meteorhacks:fast-render
+okgrow:analytics
+kadira:blaze-layout
