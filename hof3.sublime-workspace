@@ -1,0 +1,1303 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"a",
+				"aTag"
+			],
+			[
+				"Au",
+				"AuthSignupForm_Address"
+			],
+			[
+				"plat",
+				"platforms"
+			],
+			[
+				"wizard",
+				"wizardNext"
+			],
+			[
+				"h",
+				"height"
+			],
+			[
+				"const",
+				"constants"
+			],
+			[
+				"on",
+				"onImageProcessed"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"temp",
+				"tempDir"
+			],
+			[
+				"so",
+				"scope"
+			],
+			[
+				"main",
+				"mainOne"
+			],
+			[
+				"new",
+				"newPartyImages"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"wri",
+				"writeEncoding"
+			],
+			[
+				"form",
+				"formData"
+			],
+			[
+				"deb",
+				"debugger"
+			],
+			[
+				"po",
+				"portraitFile"
+			],
+			[
+				"fi",
+				"fileItem"
+			],
+			[
+				"sq",
+				"squareUpload"
+			],
+			[
+				"file",
+				"filename"
+			],
+			[
+				"fil",
+				"fileName"
+			],
+			[
+				"pro",
+				"processedPath"
+			],
+			[
+				"m",
+				"mimeType"
+			],
+			[
+				"ima",
+				"imageRecord"
+			],
+			[
+				"tem",
+				"tempDir"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"met",
+				"meteor"
+			],
+			[
+				"par",
+				"party"
+			],
+			[
+				"he",
+				"header"
+			],
+			[
+				"mete",
+				"meteorSubscribe"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"get",
+				"getRankingSize"
+			],
+			[
+				"modal",
+				"modalInstance"
+			],
+			[
+				"moal",
+				"modalInstance"
+			],
+			[
+				"err",
+				"errorResponse"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"ac",
+				"activeVariantId"
+			],
+			[
+				"ex",
+				"experimentKey"
+			],
+			[
+				"pre",
+				"preventNavigationFrom"
+			],
+			[
+				"sub",
+				"submitAandContinue"
+			],
+			[
+				"ge",
+				"generatorId"
+			],
+			[
+				"s",
+				"scope"
+			],
+			[
+				"connect",
+				"connect-popup"
+			],
+			[
+				"conncet",
+				"connect-popup"
+			],
+			[
+				"pu",
+				"publicPath"
+			],
+			[
+				"compress",
+				"compressImage"
+			],
+			[
+				"call",
+				"calleesIds"
+			],
+			[
+				"onCall",
+				"onCallError"
+			],
+			[
+				"fiel",
+				"fieldMap"
+			],
+			[
+				"inp",
+				"inputText"
+			],
+			[
+				"seq",
+				"sequence"
+			],
+			[
+				"conflicting",
+				"conflictingTerritories"
+			],
+			[
+				"has",
+				"hasConflicts"
+			],
+			[
+				"wi",
+				"withRepExceptThisOne"
+			],
+			[
+				"assigned",
+				"assignedTo"
+			],
+			[
+				"territo",
+				"territories"
+			],
+			[
+				"primar",
+				"primaryRegion"
+			],
+			[
+				"terri",
+				"territories"
+			],
+			[
+				"territories",
+				"territoriesWithRep"
+			],
+			[
+				"the",
+				"theForm"
+			],
+			[
+				"gro",
+				"groupName"
+			],
+			[
+				"chec",
+				"checked"
+			],
+			[
+				"check",
+				"checkbox"
+			],
+			[
+				"che",
+				"checkbox"
+			],
+			[
+				"addE",
+				"addEditCreditApplication"
+			],
+			[
+				"colo",
+				"background-color"
+			],
+			[
+				"update",
+				"updateRegionsOn"
+			],
+			[
+				"upda",
+				"updateRegions"
+			],
+			[
+				"c",
+				"challenge"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"ini",
+				"initializeSwiper"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"challen",
+				"challengeId"
+			],
+			[
+				"d",
+				"div	Tag"
+			],
+			[
+				"work",
+				"workbook"
+			],
+			[
+				"p",
+				"project"
+			],
+			[
+				"cust",
+				"customerInfo"
+			],
+			[
+				"ans",
+				"answer"
+			],
+			[
+				"custo",
+				"customerId"
+			],
+			[
+				"resolver",
+				"resolverId"
+			],
+			[
+				"resolve",
+				"resolverInfo"
+			],
+			[
+				"job",
+				"jobInfo"
+			],
+			[
+				"Me",
+				"Meteor"
+			],
+			[
+				"media",
+				"mediaUrl"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"init",
+				"initializeFileSystem"
+			],
+			[
+				"tw",
+				"twitter"
+			],
+			[
+				"onA",
+				"onAfterTweeted"
+			],
+			[
+				"camera",
+				"cameraService"
+			],
+			[
+				"_dele",
+				"_deleteCameraTapped"
+			],
+			[
+				"_list",
+				"_listResponded"
+			],
+			[
+				"came",
+				"camera_label"
+			],
+			[
+				"index",
+				"indexesToThrowOut"
+			],
+			[
+				"aS",
+				"aShare"
+			],
+			[
+				"initializ",
+				"initializeTwitter"
+			],
+			[
+				"app",
+				"app-globals"
+			],
+			[
+				"aC",
+				"aChallengeDoc"
+			],
+			[
+				"user",
+				"userId"
+			],
+			[
+				"joinedP",
+				"hasJoinedPublicChannel"
+			],
+			[
+				"aT",
+				"aTeamId"
+			],
+			[
+				"de",
+				"defaultTeam"
+			],
+			[
+				"def",
+				"defaultTeamName"
+			],
+			[
+				"find",
+				"findId"
+			],
+			[
+				"chos",
+				"chosenPublicChannel"
+			],
+			[
+				"is",
+				"isEmpty"
+			],
+			[
+				"Pu",
+				"PublicChannels"
+			],
+			[
+				"filter",
+				"filterOrNull"
+			],
+			[
+				"lo",
+				"locationObject"
+			],
+			[
+				"map",
+				"mapbox"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"oth",
+				"otherValue"
+			],
+			[
+				"lat",
+				"latitude"
+			],
+			[
+				"bas",
+				"basicStopWithFade"
+			],
+			[
+				"refer",
+				"referrerUser"
+			],
+			[
+				"refe",
+				"referrerUser"
+			],
+			[
+				"jobI",
+				"jobInfo"
+			],
+			[
+				"cus",
+				"customerInfo"
+			],
+			[
+				"referr",
+				"referralCode"
+			],
+			[
+				"sha",
+				"shareText"
+			],
+			[
+				"an",
+				"anUserId"
+			],
+			[
+				"su",
+				"subscribe"
+			],
+			[
+				"reo",
+				"resolverUser"
+			],
+			[
+				"iss",
+				"issueDetails"
+			],
+			[
+				"customer",
+				"customerUser"
+			],
+			[
+				"custe",
+				"customer"
+			],
+			[
+				"t",
+				"tbody	Tag"
+			],
+			[
+				"inli",
+				"inline-block"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": ".meteor/packages",
+			"settings":
+			{
+				"buffer_size": 968,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "model/images.js",
+			"settings":
+			{
+				"buffer_size": 2500,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "model/posts.js",
+			"settings":
+			{
+				"buffer_size": 324,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server/publish/posts.js",
+			"settings":
+			{
+				"buffer_size": 1167,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server/publish/images.js",
+			"settings":
+			{
+				"buffer_size": 737,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server/publish/users.js",
+			"settings":
+			{
+				"buffer_size": 368,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server/startup/startup.js",
+			"settings":
+			{
+				"buffer_size": 3264,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"Package Control: Install Package"
+			],
+			[
+				"react",
+				"Package Control: Create Package File"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": true,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": true,
+		"status_bar_visible": true
+	},
+	"expanded_folders":
+	[
+		"/Users/sebastian/git/hof3",
+		"/Users/sebastian/git/hof3/.meteor",
+		"/Users/sebastian/git/hof3/client",
+		"/Users/sebastian/git/hof3/model",
+		"/Users/sebastian/git/hof3/server",
+		"/Users/sebastian/git/hof3/server/publish",
+		"/Users/sebastian/git/hof3/server/startup"
+	],
+	"file_history":
+	[
+		"/Users/sebastian/git/apito/.gitignore",
+		"/Users/sebastian/git/Vandebron/vandebron.sublime-project",
+		"/Users/sebastian/git/Vandebron/client/karma.conf.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/searchboard/connect/connect-ctrl.js",
+		"/Users/sebastian/git/Vandebron/.git/MERGE_MSG",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/searchboard/connect/connect-ctrl.spec.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/common/datepicker-directive.html",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/searchboard/connect/connect.html",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/google-analytics/google-analytics.spec.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/searchboard/generator-details/call-to-action.html",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/google-analytics/module.js",
+		"/Users/sebastian/git/Vandebron/client/source/index.html",
+		"/Users/sebastian/git/Vandebron/client/source/js/mobile-main.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/price-calculator/price-calculator-service-spec.js",
+		"/Users/sebastian/git/Vandebron/client/source/400.html",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/searchboard/connect/address-directive.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/searchboard/connect/address-basic-directive.html",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/auth/signin/signin.html",
+		"/Users/sebastian/git/Vandebron/deployment/boxes/web-staging.yml",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/searchboard/connect/module.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/config.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/common/datepicker-directive.js",
+		"/Users/sebastian/git/.gitignore.json",
+		"/usr/local/etc/nginx/sites-available/25m.dev",
+		"/usr/local/etc/nginx/sites-available/local.houseoffam.com",
+		"/usr/local/etc/nginx/sites-available/local.42teams.io",
+		"/usr/local/etc/nginx/sites-available/apito.dev",
+		"/usr/local/etc/nginx/nginx.conf",
+		"/Users/sebastian/git/42teams-website/assets/css/style.css",
+		"/Users/sebastian/git/42teams-website/assets/css/media-queries.css",
+		"/private/etc/hosts",
+		"/Users/sebastian/git/apito/.meteor/versions",
+		"/Users/sebastian/git/apito/server/methods/facebook.js",
+		"/Users/sebastian/git/apito/run.sh",
+		"/Users/sebastian/git/apito/.meteor/cordova-plugins",
+		"/Users/sebastian/git/apito/.meteor/release",
+		"/Users/sebastian/git/apito/server/startup.js",
+		"/Users/sebastian/git/apito/lib/AccountsTemplates.js",
+		"/Users/sebastian/git/apito/dev.sh",
+		"/Users/sebastian/git/apito/packages.json",
+		"/Users/sebastian/git/apito/.meteor/packages",
+		"/Users/sebastian/git/apito/package.json",
+		"/Users/sebastian/git/apito/server/methods/twitter.js",
+		"/Users/sebastian/git/hof2/.meteor/packages",
+		"/Users/sebastian/git/hof2/client/parties/controllers/adminPartyDetailsCtrl.ng.js",
+		"/Users/sebastian/git/hof2/client/parties/views/admin-parties-list.ng.html",
+		"/Users/sebastian/git/hof2/client/parties/controllers/adminPartyCtrl.ng.js",
+		"/Users/sebastian/git/hof2/client/parties/views/admin-party-details.ng.html",
+		"/Users/sebastian/git/hof2/client/parties/views/parties-list.ng.html",
+		"/Users/sebastian/git/hof2/server/startup/startup.js",
+		"/Users/sebastian/git/hof2/client/parties/controllers/partyDetails.ng.js",
+		"/Users/sebastian/git/hof2/client/routes.ng.js",
+		"/Users/sebastian/git/hof2/server/publish/parties.js",
+		"/Users/sebastian/git/hof2/client/parties/controllers/partiesList.ng.js",
+		"/Users/sebastian/git/hof2/client/parties/views/party-details.ng.html",
+		"/Users/sebastian/git/hof2/.gitignore",
+		"/Users/sebastian/git/hof2/server/startup/uploadServer.js",
+		"/Users/sebastian/git/hof2/server/publish/images.js",
+		"/Users/sebastian/git/hof2/client/parties/controllers/addPhoto.ng.js",
+		"/Users/sebastian/git/hof2/server/startup/staticServer.js",
+		"/Users/sebastian/git/hof2/packages/meteor-tomi-upload-server/upload_server.js",
+		"/Users/sebastian/git/hof2/server/startup/serveStaticContent.js",
+		"/Users/sebastian/git/hof2/server/startup/ensureTempDir.js",
+		"/Users/sebastian/git/hof2/.meteor/local/build/programs/server/.temp/processed/9qgsTnD6PXshbTX3M",
+		"/Users/sebastian/git/hof2/packages/meteor-tomi-upload-jquery/uploader.js",
+		"/Users/sebastian/git/hof2/client/blazeUploader/blazeUploader.js",
+		"/Users/sebastian/git/hof2/server/methods/upload.js",
+		"/Users/sebastian/git/hof2/packages/meteor-tomi-upload-server/package.js",
+		"/Users/sebastian/git/hof2/.meteor/local/build/programs/server/packages/tomi_upload-server.js",
+		"/Users/sebastian/git/hof2/.meteor/local/build/programs/server/temp/uploads/_DSC5555_FAM_WEB.jpg",
+		"/Users/sebastian/git/hof2/client/portraitUploader/portraitUploader.js",
+		"/Users/sebastian/git/hof2/client/lib/app.ng.js",
+		"/Users/sebastian/git/hof2/client/blazeUploader/blazeUploader.html",
+		"/Users/sebastian/git/hof2/client/portraitUploader/portraitUploader.html",
+		"/Users/sebastian/git/hof2/client/blazeUploader/portraitUploader.html",
+		"/Users/sebastian/git/hof2/server/publish/users.js",
+		"/Users/sebastian/git/hof2/model/images.js",
+		"/Users/sebastian/git/hof2/node_modules/multer/package.json",
+		"/Users/sebastian/git/hof2/packages.json",
+		"/Users/sebastian/git/hof2/.meteor/versions",
+		"/Users/sebastian/git/hof2/.meteor/local/build/programs/server/temp/processed/kjGi3TTFhfR4ZdKmh",
+		"/Users/sebastian/git/hof2/package.json",
+		"/Users/sebastian/git/hof2/client/styles/main.css",
+		"/Users/sebastian/git/hof2/server/kadira.js",
+		"/Users/sebastian/git/hof2/client/parties/views/admin.ng.html",
+		"/Users/sebastian/git/hof2/client/parties/views/admin-party-modal.ng.html",
+		"/Users/sebastian/git/hof2/settings.json",
+		"/Users/sebastian/git/hof2/run.sh",
+		"/Users/sebastian/git/apito/client/views/currentChallenge/currentChallenge.js",
+		"/Users/sebastian/git/apito/client/views/currentChallenge/currentChallenge.html",
+		"/Users/sebastian/git/apito/client/views/currentChallenge/style.css",
+		"/Users/sebastian/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/sebastian/git/hof2/wercker.yml",
+		"/Users/sebastian/git/Vandebron/client/tests-main.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/renewal-quotes/renewal-quotes-ctrl.spec.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/config.spec.coffee",
+		"/Users/sebastian/git/Vandebron/client/source/js/main.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/home/module.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/app.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/home/home-ctrl.js",
+		"/Users/sebastian/git/Vandebron/client/test/globalsMockup.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/dashboard/consumer/consumer-edit-form-messages.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/alert/module.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/searchboard/connect/connect-email-conversion/connect-email-conversion-ctrl.js",
+		"/Users/sebastian/git/Vandebron/server/src/main/resources/application.conf",
+		"/Users/sebastian/git/Vandebron/server/target/scala-2.11/classes/application.conf",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/common/modals/generic/modal-service.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/auth/signin/signin-ctrl.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/searchboard/connect/connect-email-conversion/connect-email-conversion-modal-service.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/auth/change-password/changepwd-ctrl.spec.js",
+		"/Users/sebastian/git/Vandebron/client/source/sass/main/cosmetic/_modal-prompt.scss",
+		"/Users/sebastian/git/Vandebron/client/source/sass/main/cosmetic/_modal-inform-error.scss",
+		"/Users/sebastian/git/Vandebron/client/source/sass/main/_cosmetic.scss",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/common/modals/generic/modal-inform.html",
+		"/Users/sebastian/git/Vandebron/client/source/sass/main/cosmetic/_modal-confirm.scss",
+		"/Users/sebastian/git/Vandebron/client/source/sass/main/cosmetic/_modal-inform.scss",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/common/modals/generic/modal-inform-error.html",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/common/modals/generic/modal-confirm.html",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/common/modals/generic/modal-prompt.html",
+		"/Users/sebastian/git/Vandebron/client/source/sass/main/cosmetic/_modal-connect-email-conversion.scss",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/searchboard/connect/connect-email-conversion/connect-email-conversion.html",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/searchboard/module.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/searchboard/thankyou/thankyou-ctrl.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/common/consumption-fields/consumption-fields-directive.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/dashboard/administrator/meter-readings-ctrl.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/searchboard/generator-details/generator-details-ctrl.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/searchboard/connect/connect-email-conversion/index.js",
+		"/Users/sebastian/git/Vandebron/client/source/js/modules/searchboard/connect/connect-email-conversion/module.js"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"",
+			"-.meteor/local,-client/build,-client/node_modules",
+			"-.meteor/local,-client/build",
+			"-.meteor/local",
+			"-.meteor/build",
+			"",
+			"/Users/sebastian/git/hof2/.meteor/local/build/programs/server/temp",
+			"-.meteor/local,-.legacy,-client/build/,-client/node_modules,-*.map,-*.min*",
+			"-.meteor/local,-.legacy,-client/build/,-client/node_modules,-*.map,-*.min.",
+			"-.meteor/local,-.legacy,-client/build/,-client/node_modules,-*.map",
+			"-.meteor/local,-.legacy,-client/build/,-client/node_modules",
+			"-.meteor/local,-.legacy,-client/build/,-client/node_modules,-server/",
+			"-.meteor/local,-.legacy,-client/build/,-client/node_modules",
+			"-.meteor/local,-.legacy,-client/build/",
+			"-.meteor/local,-.legacy",
+			"",
+			"-.meteor/,-.semantic-ui/",
+			"-.semantic-ui/",
+			"-.meteor/,-.semantic-ui/",
+			"-.meteor/,-.semantic-ui/,-packages/",
+			"-.semantic-ui/,-packages/",
+			"-.meteor/,-.semantic-ui/,-packages/",
+			"",
+			"-.meteor/,-.semantic-ui/",
+			"-.meteor/,-.semantic-ui/,-packages/",
+			"-.meteor/,-.semantic-ui/",
+			"-.meteor/,-.semantic-ui",
+			"-.meteor/",
+			"-.meteor",
+			"-server/p-env,-client/build,-client/.sass-cache,-client/node_modules,-client/source/vendor,-client/source/assets/",
+			"-server/p-env,-client/build/*,-client/.sass-cache,-client/node_modules,-client/source/vendor",
+			"-server/p-env,-client/build/,-client/.sass-cache,-client/node_modules,-client/source/vendor",
+			"-server/p-env,-client/build,-client/.sass-cache,-client/node_modules,-client/source/vendor",
+			"-server/p-env,-client/build,-client/.sass-cache,-client/node_modules",
+			"-server/p-env",
+			"-.meteor/",
+			"-.meteor",
+			"-/.meteor",
+			"-.meteor",
+			"-client/build/*,-client/source/assets/*,-server/*,-client/node_modules,-client/.sass-cache",
+			"",
+			"/static/service/*",
+			"/static/site/*",
+			"/static/site*",
+			"/static/*",
+			"/static",
+			"static",
+			"-client/build/*,-client/source/assets/*,-server/*,-client/node_modules,-client/.sass-cache",
+			"-client/build/*,-client/source/assets/*,-server/*,-client/node_modules",
+			"client/sass",
+			"-client/build/*,-client/assets/*,-server/*,-client/node_modules",
+			"client/ui/",
+			"-client/build/*,-client/source/assets/*,-server/*,-client/node_modules",
+			"-client/build/*,-client/assets/*,-server/*,-client/node_modules",
+			"-backend/*,-frontend/bower_components/*,-frontend/node_modules/*,-frontend/custom/*",
+			"-backend/*,-frontend/bower_components/*,-frontend/node_modules/*,frontend/custom/*",
+			"-backend/*",
+			"-backend",
+			"-client/build/*,-client/assets/*,-server/*,-client/node_modules",
+			"-client/build/*,-client/assets/*,-server/*",
+			"-client/build/*,-client/assets/*"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Parties",
+			"shareOnTwitter",
+			"Problem when sharing",
+			"getAsapStartDate",
+			"startDate",
+			"firstAllowedSwitchDate",
+			"should send start date to BackEnd",
+			"hould build a meter reading request excluding",
+			"buildMeterReadingRequest should build",
+			"segmentio",
+			"doSign",
+			"segmentio",
+			"Intercom",
+			"saveIn",
+			"Call segmentio API",
+			"saveIntercomLeadWithTag",
+			"saveLead",
+			"Intercom",
+			"scope",
+			"console.log",
+			"currentPage",
+			"prepareSignupRequest",
+			"signUpRequest",
+			"button",
+			"currentPage",
+			"currentPage.page",
+			"Naar samenvatting",
+			"google-an",
+			"ga",
+			"segment",
+			"Verder",
+			"verder",
+			"segmentCommandMap",
+			"currentPage.page",
+			"verder",
+			";;",
+			"_trackEvent",
+			"ga",
+			"ga=",
+			"link",
+			"_trackPageview",
+			"pageView",
+			"track",
+			"ga=",
+			"ga(",
+			"ga",
+			"getElec",
+			"Intercom",
+			"getGeneratorDetailsPageUrl",
+			"priceParameters",
+			"generatorDetailsPageUrl",
+			"run",
+			"electricityDurationProp",
+			"$scope.generator",
+			"connectEmailModal",
+			"Intercom",
+			"form",
+			"Verder",
+			"send",
+			"information-advanced",
+			"initW",
+			"init",
+			"getTemplate",
+			"background-size",
+			"logo",
+			"server",
+			"apito",
+			"save quote",
+			"Intercom",
+			".o",
+			"twi",
+			"Twit",
+			"mkdirp",
+			"sync",
+			"deleteFile",
+			"unlink",
+			"writeFileSync",
+			"fs.",
+			"loginWithFacebook",
+			"orderBy:",
+			"processedAt",
+			"fibers",
+			"Fiber",
+			"blaze-template",
+			"template",
+			"blaze",
+			"debugger",
+			"saveYoutube",
+			"$scope.party",
+			"he url of the main",
+			"path.resolve",
+			"path.resolve ",
+			"tempDir",
+			"uploads",
+			"getImageUrlOf",
+			"getMainImageUrlOf",
+			"getMainImage",
+			"Created directory",
+			"newPartyImages",
+			"push",
+			"articleDescription",
+			"getImageUrlOf",
+			"imageUrlFor",
+			"temp",
+			"blazeUploader",
+			"Image:",
+			"process",
+			"debugger",
+			"squaredFile",
+			"Random",
+			"getBinaryBlobFromBase64",
+			"encoding",
+			"file",
+			"onPart",
+			"finish",
+			"formidable",
+			"writeEn",
+			"IncomingForm",
+			"write",
+			"encode",
+			"write",
+			"fs.createW",
+			"fs.",
+			"write",
+			"Blob",
+			"The fileupload widget listens",
+			"File",
+			"saveTallRectangleImage"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"chart-rendered",
+			"app.ui.modalService",
+			"app.common"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": ".meteor/packages",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 968,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								968,
+								968
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "model/images.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2500,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								33,
+								33
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 574.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "model/posts.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 324,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "server/publish/posts.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1167,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								353,
+								353
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "server/publish/images.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 737,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								445,
+								445
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "server/publish/users.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 368,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								360,
+								360
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "server/startup/startup.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3264,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								475,
+								475
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "",
+	"project": "hof3.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"vandebron.sublime-project"
+			],
+			[
+				"karma",
+				"client/karma.conf.js"
+			],
+			[
+				"segment",
+				"client/source/js/modules/common/segmentio-service.js"
+			],
+			[
+				"connect-c",
+				"client/source/js/modules/searchboard/connect/connect-ctrl.js"
+			],
+			[
+				"net",
+				"portal/templates/network_overview.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 777.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 354.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

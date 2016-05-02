@@ -5,6 +5,12 @@
     "start": "meteor run"
   },
   "dependencies": {
-    "meteor-node-stubs": "~0.2.0"
-  }
+    "meteor-node-stubs": "~0.2.0",
+    "mkdirp": "^0.5.1"
+  },
+  "description": "### Useful snippets",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }

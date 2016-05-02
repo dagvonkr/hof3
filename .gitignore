@@ -1,1 +1,19 @@
-node_modules/
+**/*.sw[op]
+
+run.sh
+
+# Logs
+logs
+*.log
+
+# Coverage directory used by tools like istanbul
+coverage
+
+
+# Directories:
+backups
+mup.json
+
+node_modules
+
+assets
