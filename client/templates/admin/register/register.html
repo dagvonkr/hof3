@@ -1,0 +1,20 @@
+<template name="register">
+  <h3> Register </h3>
+
+  <form name="registerForm">
+
+    <label> Email </label>
+    <input type="text" name="email" placeholder="email" aria-label="email"/>
+
+    <label> Password </label>
+    <input type="password" name="password" paceholder="password" aria-label="password"/>
+
+    <button class="btn signUpButton" aria-label="login"> Register </button>
+
+  </form>
+  {{ #if signUpFeedback }}
+    <div>
+      <p> {{ signUpFeedback }} </p>
+    </div>
+  {{ /if }}
+</template>

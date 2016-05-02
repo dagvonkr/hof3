@@ -1,0 +1,25 @@
+<template name="signIn">
+  <h3> Sign in </h3>
+
+  <form name="signInForm">
+    <label> Email </label>
+    <input type="text" aria-label="email"/>
+
+    <label> Password </label>
+    <input type="password" aria-label="password"/>
+
+    <a href="/reset-password">Forgot password?</a>
+
+    <br>
+    <br>
+
+    <div>
+      <button aria-label="login">Sign In</button>
+    </div>
+  </form>
+  {{ #if signInFeedback }}
+    <div>
+      <p> {{ signInFeedback }} </p>
+    </div>
+  {{ /if }}
+</template>

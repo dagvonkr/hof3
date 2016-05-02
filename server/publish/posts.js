@@ -1,6 +1,6 @@
 Meteor.publish('post', function (postId) {
   // Publishes only the party corresponding to partyId if any. Null otherwise.
-  return Posts.find({_id: partyId});
+  return Posts.find({_id: postId});
 });
 
 Meteor.publish('allPosts', function (options, aSearchString) {
