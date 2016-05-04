@@ -1,25 +1,37 @@
 <template name="signIn">
-  <h3> Sign in </h3>
-
-  <form name="signInForm">
-    <label> Email </label>
-    <input type="text" name="email" placeholder="email" aria-label="email"/>
-
-    <label> Password </label>
-    <input type="password" name="password" placeholder="password" aria-label="password"/>
-
-    <a href="/reset-password">Forgot password?</a>
-
-    <br>
-    <br>
-
-    <div>
-      <button class="btn signInButton" aria-label="sign in">Sign In</button>
+  <div class="panel">
+    <div class="panel-heading">
+      <h3> Sign in </h3>
     </div>
-  </form>
-  {{ #if signInFeedback }}
-    <div>
-      <p> {{ signInFeedback }} </p>
+    <div class="panel-body">
+
+      <form name="signInForm">
+
+        <div class="form-group">
+          <label> Email </label>
+          <input type="text" name="email" placeholder="email" aria-label="email" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+          <label> Password </label>
+          <input type="password" name="password" placeholder="password" aria-label="password" class="form-control"/>
+        </div>
+
+        <a href="/reset-password">Forgot password?</a>
+
+        <br>
+        <br>
+
+        <div>
+          <button class="btn btn-primary signInButton" aria-label="sign in">Sign In</button>
+        </div>
+      </form>
+      {{ #if signInFeedback }}
+        <div>
+          <p> {{ signInFeedback }} </p>
+        </div>
+      {{ /if }}
+
     </div>
-  {{ /if }}
+  </div>
 </template>
