@@ -520,31 +520,16 @@
 	"buffers":
 	[
 		{
-			"file": ".meteor/packages",
+			"file": "lib/routes.js",
 			"settings":
 			{
-				"buffer_size": 968,
-				"line_ending": "Unix"
+				"buffer_size": 1283,
+				"line_ending": "Unix",
+				"name": "FlowRouter.route('/blog/:postId', {"
 			}
 		},
 		{
-			"file": "model/images.js",
-			"settings":
-			{
-				"buffer_size": 2500,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "model/posts.js",
-			"settings":
-			{
-				"buffer_size": 324,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "server/publish/posts.js",
+			"file": "client/templates/admin/signIn/signIn.js",
 			"settings":
 			{
 				"buffer_size": 1167,
@@ -552,27 +537,62 @@
 			}
 		},
 		{
-			"file": "server/publish/images.js",
+			"file": "client/templates/admin/signIn/signIn.html",
 			"settings":
 			{
-				"buffer_size": 737,
+				"buffer_size": 586,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "server/publish/users.js",
+			"file": "client/templates/admin/posts/posts.html",
 			"settings":
 			{
-				"buffer_size": 368,
+				"buffer_size": 63,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "server/startup/startup.js",
+			"file": "client/templates/admin/posts/posts.js",
 			"settings":
 			{
-				"buffer_size": 3264,
+				"buffer_size": 30,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/templates/admin/register/register.js",
+			"settings":
+			{
+				"buffer_size": 1285,
+				"line_ending": "Unix",
+				"name": "let tpl = Template.register;"
+			}
+		},
+		{
+			"file": "client/templates/post/post.js",
+			"settings":
+			{
+				"buffer_size": 416,
+				"line_ending": "Unix",
+				"name": "let tpl = Template.post;"
+			}
+		},
+		{
+			"file": "client/templates/posts/posts.js",
+			"settings":
+			{
+				"buffer_size": 25,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/layouts/blogLayout.html",
+			"settings":
+			{
+				"buffer_size": 935,
+				"line_ending": "Unix",
+				"name": "<template name=\"mainLayout\">"
 			}
 		}
 	],
@@ -635,13 +655,38 @@
 		"/Users/sebastian/git/hof3",
 		"/Users/sebastian/git/hof3/.meteor",
 		"/Users/sebastian/git/hof3/client",
+		"/Users/sebastian/git/hof3/client/layouts",
+		"/Users/sebastian/git/hof3/client/templates",
+		"/Users/sebastian/git/hof3/client/templates/admin",
+		"/Users/sebastian/git/hof3/client/templates/admin/posts",
+		"/Users/sebastian/git/hof3/client/templates/admin/register",
+		"/Users/sebastian/git/hof3/client/templates/admin/signIn",
+		"/Users/sebastian/git/hof3/client/templates/notFound",
+		"/Users/sebastian/git/hof3/client/templates/post",
+		"/Users/sebastian/git/hof3/client/templates/posts",
 		"/Users/sebastian/git/hof3/model",
 		"/Users/sebastian/git/hof3/server",
-		"/Users/sebastian/git/hof3/server/publish",
-		"/Users/sebastian/git/hof3/server/startup"
+		"/Users/sebastian/git/hof3/server/publish"
 	],
 	"file_history":
 	[
+		"/Users/sebastian/git/hof3/server/publish/posts.js",
+		"/Users/sebastian/git/hof3/client/templates/admin/signIn/signIn.js",
+		"/Users/sebastian/git/hof3/client/templates/admin/register/register.html",
+		"/Users/sebastian/git/hof3/server/publish/users.js",
+		"/Users/sebastian/git/hof3/client/templates/admin/login/signIn.html",
+		"/Users/sebastian/git/hof3/model/images.js",
+		"/Users/sebastian/git/hof3/settings.json",
+		"/Users/sebastian/git/hof3/client/templates/posts/posts.html",
+		"/Users/sebastian/git/hof3/client/templates/post/post.html",
+		"/Users/sebastian/git/hof3/client/main.html",
+		"/Users/sebastian/git/hof3/server/startup/startup.js",
+		"/Users/sebastian/git/hof3/server/publish/images.js",
+		"/Users/sebastian/git/hof3/model/posts.js",
+		"/Users/sebastian/git/hof3/client/templates/notFound/notFound.html",
+		"/Users/sebastian/git/hof3/README.md",
+		"/Users/sebastian/git/hof3/.meteor/packages",
+		"/Users/sebastian/git/hof3/hof3.sublime-project",
 		"/Users/sebastian/git/apito/.gitignore",
 		"/Users/sebastian/git/Vandebron/vandebron.sublime-project",
 		"/Users/sebastian/git/Vandebron/client/karma.conf.js",
@@ -752,24 +797,7 @@
 		"/Users/sebastian/git/Vandebron/client/source/js/modules/auth/signin/signin-ctrl.js",
 		"/Users/sebastian/git/Vandebron/client/source/js/modules/searchboard/connect/connect-email-conversion/connect-email-conversion-modal-service.js",
 		"/Users/sebastian/git/Vandebron/client/source/js/modules/auth/change-password/changepwd-ctrl.spec.js",
-		"/Users/sebastian/git/Vandebron/client/source/sass/main/cosmetic/_modal-prompt.scss",
-		"/Users/sebastian/git/Vandebron/client/source/sass/main/cosmetic/_modal-inform-error.scss",
-		"/Users/sebastian/git/Vandebron/client/source/sass/main/_cosmetic.scss",
-		"/Users/sebastian/git/Vandebron/client/source/js/modules/common/modals/generic/modal-inform.html",
-		"/Users/sebastian/git/Vandebron/client/source/sass/main/cosmetic/_modal-confirm.scss",
-		"/Users/sebastian/git/Vandebron/client/source/sass/main/cosmetic/_modal-inform.scss",
-		"/Users/sebastian/git/Vandebron/client/source/js/modules/common/modals/generic/modal-inform-error.html",
-		"/Users/sebastian/git/Vandebron/client/source/js/modules/common/modals/generic/modal-confirm.html",
-		"/Users/sebastian/git/Vandebron/client/source/js/modules/common/modals/generic/modal-prompt.html",
-		"/Users/sebastian/git/Vandebron/client/source/sass/main/cosmetic/_modal-connect-email-conversion.scss",
-		"/Users/sebastian/git/Vandebron/client/source/js/modules/searchboard/connect/connect-email-conversion/connect-email-conversion.html",
-		"/Users/sebastian/git/Vandebron/client/source/js/modules/searchboard/module.js",
-		"/Users/sebastian/git/Vandebron/client/source/js/modules/searchboard/thankyou/thankyou-ctrl.js",
-		"/Users/sebastian/git/Vandebron/client/source/js/modules/common/consumption-fields/consumption-fields-directive.js",
-		"/Users/sebastian/git/Vandebron/client/source/js/modules/dashboard/administrator/meter-readings-ctrl.js",
-		"/Users/sebastian/git/Vandebron/client/source/js/modules/searchboard/generator-details/generator-details-ctrl.js",
-		"/Users/sebastian/git/Vandebron/client/source/js/modules/searchboard/connect/connect-email-conversion/index.js",
-		"/Users/sebastian/git/Vandebron/client/source/js/modules/searchboard/connect/connect-email-conversion/module.js"
+		"/Users/sebastian/git/Vandebron/client/source/sass/main/cosmetic/_modal-prompt.scss"
 	],
 	"find":
 	{
@@ -996,96 +1024,41 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": ".meteor/packages",
+					"file": "lib/routes.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 968,
+						"buffer_size": 1283,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								968,
-								968
+								519,
+								519
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "model/images.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2500,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								33,
-								33
-							]
-						],
-						"settings":
-						{
+							"auto_name": "FlowRouter.route('/blog/:postId', {",
 							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 574.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "model/posts.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 324,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "server/publish/posts.js",
+					"buffer": 1,
+					"file": "client/templates/admin/signIn/signIn.js",
 					"semi_transient": false,
 					"settings":
 					{
@@ -1096,8 +1069,8 @@
 						"selection":
 						[
 							[
-								353,
-								353
+								1063,
+								1063
 							]
 						],
 						"settings":
@@ -1112,25 +1085,25 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "server/publish/images.js",
+					"buffer": 2,
+					"file": "client/templates/admin/signIn/signIn.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 737,
+						"buffer_size": 586,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								445,
-								445
+								502,
+								502
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1140,20 +1113,48 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "server/publish/users.js",
+					"buffer": 3,
+					"file": "client/templates/admin/posts/posts.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 368,
+						"buffer_size": 63,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								360,
-								360
+								41,
+								41
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "client/templates/admin/posts/posts.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 30,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								25,
+								25
 							]
 						],
 						"settings":
@@ -1162,6 +1163,35 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "client/templates/admin/register/register.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1285,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								72,
+								219
+							]
+						],
+						"settings":
+						{
+							"auto_name": "let tpl = Template.register;",
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 15.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -1169,19 +1199,48 @@
 				},
 				{
 					"buffer": 6,
-					"file": "server/startup/startup.js",
+					"file": "client/templates/post/post.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3264,
+						"buffer_size": 416,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								475,
-								475
+								155,
+								155
+							]
+						],
+						"settings":
+						{
+							"auto_name": "let tpl = Template.post;",
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "client/templates/posts/posts.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 25,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								24,
+								24
 							]
 						],
 						"settings":
@@ -1192,7 +1251,36 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "client/layouts/blogLayout.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 935,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								890,
+								890
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<template name=\"mainLayout\">",
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
 					"type": "text"
 				}
 			]

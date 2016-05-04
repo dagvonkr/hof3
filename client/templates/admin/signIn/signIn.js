@@ -38,6 +38,3 @@ tpl.events({
     });
   }
 });
-
-
-Meteor.loginWithPassword(vm.credentials.email, vm.credentials.password)
