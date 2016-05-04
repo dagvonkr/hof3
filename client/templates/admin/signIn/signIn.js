@@ -34,7 +34,9 @@ tpl.events({
       if(error) {
         return template.signInFeedback.set('Sorry, we cannot validate those credentials');
       }
-      FlowRouter.go('/admin/posts');
+      if(!Session.get('redirectAfterLogin')) {
+        FlowRouter.go('adminPosts');
+      }
     });
   }
 });
