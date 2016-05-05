@@ -1,7 +1,9 @@
 <template name="postEditor">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h2>New post</h2>
+      <h2 class="pull-left">New post</h2>
+      <button class="btn btn-primary pull-right saveNewPost">Save new post</button>
+      <div class="clearfix"></div>
     </div>
     <div class="panel-body">
 
@@ -29,9 +31,17 @@
       </div>
 
     </div>
-    <div class="panel-heading">
-      <button class="btn btn-primary pull-right saveNewPost">Save new post</button>
-      <div class="clearfix"></div>
+    <div class="panel-footer">
+      <div>
+        {{ > imagesUploader }}
+      </div>
+
+      <div>
+        {{ > postImages }}
+      </div>
+
     </div>
+
+
   </div>
 </template>
