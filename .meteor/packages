@@ -32,4 +32,6 @@ kadira:blaze-layout
 accounts-password
 meteorhacks:subs-manager
 session
-jonblum:jquery-cropper
+less
+tomi:upload-server
+tomi:upload-jquery

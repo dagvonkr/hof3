@@ -1,3 +1,41 @@
 <template name="imagesUploader">
   <h4>imagesUploader</h4>
+
+  <div class="cropping-image-wrapper">
+    <img src="{{ imageUrl }}">
+  </div>
+
+  <!-- Dropzones -->
+
+  {{> upload_bootstrap }}
+
+<!--   {{> dropzone
+    contentType='images'
+    fileTypes='.jpg'
+    multiple=true
+    callbacks=portraitCallbacks }} -->
+
+<!--   <div id="portrait" class="portrait-dropzone drop-box">
+  </div>
+
+  <div id="landscape" class="landscape-dropzone drop-box">
+  </div>
+
+  <div id="square" class="square-dropzone drop-box">
+  </div>
+ -->
+<!--   {{ #if isCroppingPortrait }}
+    <div class="portrait-preview-wrapper">
+      <img src="{{ imageUrl }}">
+    </div>
+  {{ else if isCroppingLandscape }}
+    <div class="landscape-preview-wrapper">
+      <img src="{{ imageUrl }}">
+    </div>
+  {{ else if isCroppingSquare }}
+    <div class="square-preview-wrapper">
+      <img src="{{ imageUrl }}">
+    </div>
+  {{ /if }} -->
+
 </template>
