@@ -21,6 +21,6 @@ tpl.helpers({
     return Template.instance().ready.get();
   },
   posts() {
-    return Posts.find();
+    return Posts.find({}, {sort: {createdOn: -1}} );
   }
 });
