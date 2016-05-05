@@ -14,6 +14,6 @@ Meteor.methods({
       subtitle: this.subtitle,
     }
 
-    return Posts.insert(doc);
+    return Posts.insert(newPost);
   }
 })

@@ -11,3 +11,5 @@ Posts.allow({
     return userId && doc.owner === userId;
   }
 });
+
+export default Posts;

@@ -6,8 +6,10 @@ Meteor.publish('post', function (postId) {
 Meteor.publish('allPosts', function (options, aSearchString) {
   // Publishes all the posts.
   var searchString = aSearchString || '';
-  const query = { owner: this.userId };
-  return Posts.find({ owner: this.userId }, {sort: { createdAt: -1 }});
+  const query = { createdBy: this.userId };
+  const answer = Posts.find(query, {sort: { createdOn: -1 }});
+  console.log(`allPosts publishing ${answer.count()} posts for owner ${this.userId}`);
+  return answer;
 });
 
 Meteor.publish('AllPostsInfinite', function (limit, query) {
@@ -32,7 +34,7 @@ Meteor.publish('AllPostsInfinite', function (limit, query) {
 Meteor.publish('posts', function (options, aSearchString) {
   // Publishes only the posts that are set as public and uses the sent options or searchString if any.
   var searchString = aSearchString || '';
-  const someOptions = options || { sort: {createdAt: -1}};
+  const someOptions = options || { sort: {createdOn: -1}};
   const query = {
     $or: [
       { public: true }

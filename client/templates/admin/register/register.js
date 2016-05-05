@@ -29,7 +29,7 @@ tpl.onRendered( function () {
 });
 
 tpl.helpers({
-  signUpFeedback: function () {
+  signUpFeedback() {
     return Template.instance().signUpFeedback.get();
   }
 });

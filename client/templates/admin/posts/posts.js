@@ -1,3 +1,6 @@
+import subs from '../../../modules/subscriptionsManager';
+import Posts from '../../../../model/posts';
+
 let tpl = Template.adminPosts;
 
 tpl.onCreated(function () {
@@ -6,17 +9,18 @@ tpl.onCreated(function () {
 });
 
 function initializeOn (aTemplate) {
-
-  // aTemplate.ready = new ReactiveVar();
-  // aTemplate.autorun(function () {
-  //   var handle = PostSubs.subscribe('allPosts');
-  //   aTemplate.ready.set(handle.ready());
-  // });
-
+  aTemplate.ready = new ReactiveVar();
+  aTemplate.autorun(function () {
+    var handle = subs.subscribe('allPosts');
+    aTemplate.ready.set(handle.ready());
+  });
 }
 
 tpl.helpers({
-  posts: function () {
+  isReady() {
+    return Template.instance().ready.get();
+  },
+  posts() {
     return Posts.find();
   }
 });
