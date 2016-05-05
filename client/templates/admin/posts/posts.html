@@ -1,3 +1,12 @@
 <template name="adminPosts">
-  <h1>admin POSTS</h1>
+
+  {{ > postEditor }}
+
+  <ul class="list-group">
+    {{ #each posts }}
+      <li class="list-group-item">
+        <p>{{ title }}</p>
+      </li>
+    {{ /each }}
+  </ul>
 </template>

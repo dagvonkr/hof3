@@ -10,6 +10,25 @@ Meteor.publish('allPosts', function (options, aSearchString) {
   return Posts.find({ owner: this.userId }, {sort: { createdAt: -1 }});
 });
 
+Meteor.publish('AllPostsInfinite', function (limit, query) {
+  console.log('limit JSON.stringify(query)', limit, JSON.stringify(query));
+  // Don't use the query object directly in your cursor for security!
+  var selector = {};
+  check(limit, Number);
+  check(query.name, String);
+  // Assign safe values to a new object after they have been validated
+  selector.name = query.name;
+
+  return Posts.find(selector, {
+    limit: limit,
+    // Using sort here is necessary to continue to use the Oplog Observe Driver!
+    // https://github.com/meteor/meteor/wiki/Oplog-Observe-Driver
+    sort: {
+      createdOn: 1
+    }
+  });
+});
+
 Meteor.publish('posts', function (options, aSearchString) {
   // Publishes only the posts that are set as public and uses the sent options or searchString if any.
   var searchString = aSearchString || '';
