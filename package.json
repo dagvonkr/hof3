@@ -5,7 +5,7 @@
     "start": "meteor run"
   },
   "dependencies": {
-    "cropper": "^2.3.0",
+    "cropperjs": "^0.7.0",
     "meteor-node-stubs": "~0.2.0",
     "mkdirp": "^0.5.1"
   },

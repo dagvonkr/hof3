@@ -1,13 +1,10 @@
 <template name="imagesUploader">
-  <h4>imagesUploader</h4>
-
-  <div class="cropping-image-wrapper">
-    <img src="{{ imageUrl }}">
-  </div>
-
-  <!-- Dropzones -->
 
   {{> upload_bootstrap }}
+
+  <div class="cropping-image-wrapper">
+    <img id="imageToCrop">
+  </div>
 
 <!--   {{> dropzone
     contentType='images'

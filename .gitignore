@@ -17,3 +17,5 @@ mup.json
 node_modules
 
 assets
+
+.uploads

@@ -1,51 +1,42 @@
+import 'cropperjs/dist/cropper.min.css';
+import Cropper from 'cropperjs';
+
 let tpl = Template.imagesUploader;
+
+tpl.onCreated(function () {
+  // this.imageToCrop = new ReactiveVar;
+});
 
 tpl.onRendered(function () {
   let self = this;
-  // self.find('.uploaded-image-wrapper > img').cropper();
   $('.uploadPanel input').on('change', function (event) {
-    console.log(`file selected! ${event.originalEvent.target.files}`);
+    startCropOn(event.originalEvent.target.files[0], self);
   });
 });
 
-
 tpl.helpers({
-  imageUrl() {
-    return null;
-  },
-  portraitCallbacks() {
-    return {
-      formData() {
-        return {
-          boo: 'lol',
-          aah: 123
-        };
-      },
-      finished(index, fileInfo, context) {
-        console.log(`index, fileInfo, context ${index}, ${fileInfo}, ${context}`);
-      }
-    }
-  },
-  specificFormData() {
-    return {
-      id: 'this._id',
-      other: 'this.other',
-      hard: 'Lolcats'
-    }
-  }
 });
 
 tpl.events({
-  'dropped #portrait': function(e, t) {
-    e.preventDefault();
-    console.log('portrait', e.originalEvent.dataTransfer.files[0]);
-  },
-  'dropped #landscape': function(e, t) {
-    e.preventDefault();
-    console.log('landscape', e.originalEvent.dataTransfer.files[0]);
-  },
-  // 'dropped #square': function(e, t) {
-  //   e.preventDefault();
-  //   console.log('square', e.originalEvent.dataTransfer.files[0]);
-  // }
+
 });
+
+function newCropOn (image, template, aspectRatio) {
+  let answer = new Cropper(image, {
+    aspectRatio: aspectRatio || 16/9,
+    crop: function (e) {
+      console.log('cropping',e);
+    }
+  });
+  return answer;
+}
+
+function startCropOn (file, template) {
+  let reader = new FileReader();
+
+  reader.onload = function (e) {
+    $('#imageToCrop').attr('src', e.target.result);
+    let cropper = newCropOn($('#imageToCrop')[0], template);
+  };
+  reader.readAsDataURL(file);
+}
