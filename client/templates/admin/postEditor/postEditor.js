@@ -28,19 +28,21 @@ tpl.helpers({
 
 tpl.events({
   'click .savePost': function (event, template) {
+    event.preventDefault();
+    template.shouldRenewModel = true;
     saveModelOn(template);
   },
 });
 
 function initializeOn (template) {
   template.ready = new ReactiveVar();
-  const postId = FlowRouter.current().params.postId;
+  template.data.postId = new ReactiveVar(FlowRouter.current().params.postId);
 
   template.autorun(function () {
-    var handle = subs.subscribe('post',postId);
+    var handle = subs.subscribe('post',template.data.postId.get());
     template.ready.set(handle.ready());
     if(handle.ready()) {
-      let found = Posts.findOne(FlowRouter.current().params.postId);
+      let found = Posts.findOne(template.data.postId.get());
       if(found){
         template.model = found;
       } else {
@@ -65,9 +67,13 @@ function saveModelOn (template) {
       console.error('report issue and negative feedback');
     } else {
       if(selector === 'saveNewPost') {
-        // reset and prepare itself with a new model only if we just saved a new post
-        resetOn(template);
-        setNewModelOn(template);
+        template.data.postId.set(result);
+        if(template.shouldRenewModel) {
+          // reset and prepare itself with a new model only if we just saved a new post
+          template.shouldRenewModel = false;
+          resetOn(template);
+          setNewModelOn(template);
+        }
       }
       // console.info('reset inputs and positive feedback');
     }
