@@ -34,8 +34,11 @@ tpl.events({
       if(error) {
         console.error('report issue and negative feedback');
       } else {
-        resetOn(template);
-        setNewModelOn(template);
+        if(selector === 'saveNewPost') {
+          // reset and prepare itself with a new model only if we just saved a new post
+          resetOn(template);
+          setNewModelOn(template);
+        }
         // console.info('reset inputs and positive feedback');
       }
     });
@@ -68,7 +71,7 @@ function updateModelOn (template) {
   let model = template.model;
   model.title = $(template.find('input[name="title"]')).val();
   model.subtitle = $(template.find('input[name="subtitle"]')).val();
-  model.content = $(template.find('input[name="content"]')).val();
+  model.content = $(template.find('textarea[name="content"]')).val();
 }
 
 function isNew (aModel) {
