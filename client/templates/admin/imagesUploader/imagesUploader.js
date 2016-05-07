@@ -11,10 +11,11 @@ tpl.onCreated(function () {
 
 tpl.onRendered(function () {
   let self = this;
-  $('.uploadPanel input').on('change', function (event) {
-    resetOn(self);
+  function onDropzoneOrUploadClicked (event) {
     startCropOn(event.originalEvent.target.files[0], self);
-  });
+  }
+
+  $('.uploadPanel input').on('change', onDropzoneOrUploadClicked);
 });
 
 tpl.helpers({
@@ -26,22 +27,25 @@ tpl.helpers({
 tpl.events({
   'click #discardImage': function (event, template) {
     event.preventDefault();
-    resetInputsOn(template);
+    resetOn(template);
   },
   'click #addImage': function (event, template) {
     resetInputsOn(template);
   },
   'click #portrait': function (event, template) {
+    resetOn(template);
     template.shape.set('portrait');
     template.aspectRatio.set(1.75);
     $('.uploadPanel input').click();
   },
   'click #landscape': function (event, template) {
+    resetOn(template);
     template.shape.set('landscape');
     template.aspectRatio.set(0.85);
     $('.uploadPanel input').click();
   },
   'click #square': function (event, template) {
+    resetOn(template);
     template.shape.set('square');
     template.aspectRatio.set(1);
     $('.uploadPanel input').click();
@@ -71,7 +75,7 @@ function newCropOn (image, template, aspectRatio) {
     dragCrop: true,
     zoomable: false,
     mouseWheelZoom: false,
-    aspectRatio: template.aspectRatio.get() || 16/9,
+    aspectRatio: template.aspectRatio.get(),
     preview: '.preview',
     crop: function (data) {
       console.log('cropping', data);
