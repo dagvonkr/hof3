@@ -1,6 +1,19 @@
-// import { Meteor } from 'meteor/meteor';
+import { Meteor } from 'meteor/meteor';
 
-// Images = new Meteor.Collection('Images');
+Images = new Meteor.Collection('Images');
+
+Images.allow({
+  insert: function (userId) {
+    return userId;
+  },
+  remove: function (userId) {
+    return userId;
+  },
+  update: function (userId) {
+    return userId;
+  }
+});
+
 
 // if (Meteor.isServer) {
 
@@ -49,20 +62,6 @@
 //   //   }
 //   // });
 
-
-
-//   Images.allow({
-//     insert: function (userId) {
-//       return userId;
-//     },
-//     remove: function (userId) {
-//       return userId;
-//     },
-//     update: function (userId) {
-//       return userId;
-//     }
-//   });
-// }
 
 // // if (Meteor.isClient) {
 // //   // const clientImageStore = new FS.Store.S3('original');

@@ -1,48 +1,46 @@
 <template name="imagesUploader">
-
-  {{> upload_bootstrap }}
-
-  <div class="grid">
-    <div class="row">
-      <div class="col-md-8">
-          <div class="cropping-image-wrapper">
-            <img id="imageToCrop">
-          </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="previewContainer">
-          <div class="preview"></div>
-        </div>
-
-        {{ #if isCropping }}
-        <div class="btn btn-default" id="addImage">Add image</div>
-        <a class="btn" id="discardImage">Discard</a>
-        {{ /if }}
-      </div>
-    </div>
-  </div>
-
-  {{ #unless isCropping }}
-    <!-- Dropzones -->
+  <div id="imagesUploader">
+    {{> upload_bootstrap }}
 
     <div class="grid">
       <div class="row">
-        <div class="col-xs-6 col-md-4">
-          <div id="portrait" class="portrait-dropzone drop-box"></div>
+        <div class="col-md-8">
+            <div class="cropping-image-wrapper">
+              <img id="imageToCrop">
+            </div>
         </div>
 
-        <div class="col-xs-6 col-md-4">
-          <div id="landscape" class="landscape-dropzone drop-box"></div>
-        </div>
+        <div class="col-md-4">
+          <div class="previewContainer">
+            <div class="preview"></div>
+          </div>
 
-        <div class="col-xs-6 col-md-4">
-          <div id="square" class="square-dropzone drop-box"></div>
+          {{ #if isCropping }}
+          <div class="btn btn-default" id="addImage">Add image</div>
+          <a class="btn" id="discardImage">Discard</a>
+          {{ /if }}
         </div>
       </div>
     </div>
-  {{ /unless }}
 
+    {{ #unless isCropping }}
+      <!-- Dropzones -->
 
+      <div class="grid">
+        <div class="row">
+          <div class="col-xs-6 col-md-4">
+            <div id="portrait" class="portrait-dropzone drop-box"></div>
+          </div>
 
+          <div class="col-xs-6 col-md-4">
+            <div id="landscape" class="landscape-dropzone drop-box"></div>
+          </div>
+
+          <div class="col-xs-6 col-md-4">
+            <div id="square" class="square-dropzone drop-box"></div>
+          </div>
+        </div>
+      </div>
+    {{ /unless }}
+  </div>
 </template>

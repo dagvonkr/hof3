@@ -6,8 +6,8 @@ let tpl = Template.imagesUploader;
 tpl.onCreated(function () {
   window.o=this;
   this.aspectRatio = new ReactiveVar;
-  this.shape = new ReactiveVar;
   this.metaData = new ReactiveVar;
+  this.shape = new ReactiveVar;
 });
 
 tpl.onRendered(function () {
@@ -32,8 +32,8 @@ tpl.events({
   },
   'click #addImage': function (event, template) {
     event.preventDefault();
-    resetOn(template);
     addImageFrom(template);
+    resetOn(template);
   },
   'click #portrait': function (event, template) {
     resetOn(template);
@@ -55,12 +55,64 @@ tpl.events({
   }
 });
 
-function addImageFrom (template) {
-  const imageData = $('#imageToCrop').attr('src');
+function uploadCroppedImageFor (imageDoc, template, onUploaded) {
+  // Uploads the cropped image.
 
+  template.cropper.getCroppedCanvas().toBlob(function (blob) {
+    let uploader = $('input[type=file].jqUploadclass');
+    const onDone = function (e, answer) {
+      if(!e){
+        onUploaded.call(this, answer);
+      }
+      uploader.unbind('fileuploaddone', onDone);
+    };
+
+    uploader.bind('fileuploaddone', onDone);
+
+    uploader.fileupload({formData: imageDoc});
+    uploader.fileupload('send', {files: [blob]});
+  });
+};
+
+function getBinaryBlobFromBase64 (base64String) {
+  // Answers a new block fibinary data corresponding to based64String
+
+  // convert base64/URLEncoded data component to raw binary data held in a string
+  var byteString;
+  if (base64String.split(',')[0].indexOf('base64') >= 0)
+    byteString = atob(base64String.split(',')[1]);
+  else
+    byteString = unescape(base64String.split(',')[1]);
+
+  // separate out the mime component
+  var mimeString = base64String.split(',')[0].split(':')[1].split(';')[0];
+
+  // write the bytes of the string to a typed array
+  var ia = new Uint8Array(byteString.length);
+  for (var i = 0; i < byteString.length; i++) {
+      ia[i] = byteString.charCodeAt(i);
+  }
+
+  return new Blob([ia], { type: mimeString });
+};
+
+function addImageFrom (template) {
+  // Uploads and adds the cropped image to the model.
+  const onUploaded = function (data) {
+    debugger
+    const imageId = Images.insert(imageDoc);
+
+    let event = jQuery.Event( 'imageUploaded' );
+    event.imageId = imageId;
+    $('#imagesUploader').trigger(event);
+
+  };
+  const imageDoc = template.metaData.get();
+  uploadCroppedImageFor(imageDoc, template, onUploaded);
 }
 
 function resetOn (template) {
+  // Resets the inputs and other controller's state
   resetInputsOn(template);
   try {
     template.cropper.destroy();
@@ -71,6 +123,7 @@ function resetOn (template) {
 }
 
 function resetInputsOn (template) {
+  // Resets all the inputs.
   $(template.find('uploadPanel input')).val(null);
   template.aspectRatio.set(null);
   template.metaData.set(null);
@@ -78,6 +131,7 @@ function resetInputsOn (template) {
 }
 
 function newCropOn (image, aspectRatio, template) {
+  // Answers a new instance of the cropper widget.
   let answer = new Cropper(image, {
     modal: true,
     guides: true,
@@ -98,6 +152,7 @@ function newCropOn (image, aspectRatio, template) {
 }
 
 function getMetadataOn (file) {
+  // Answers the file's metadata.
   return {
     _id: Random.id()
     , filename: file.name
@@ -109,6 +164,7 @@ function getMetadataOn (file) {
 };
 
 function startCropOn (file, template) {
+  // Starts a crop process on (the selected) file.
   let reader = new FileReader();
   let metaData = getMetadataOn(file);
   metaData.aspectRatio = template.aspectRatio.get();

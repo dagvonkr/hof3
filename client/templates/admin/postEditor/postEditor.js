@@ -61,6 +61,10 @@ function initializeOn (template) {
       }
     }
   });
+
+  $('#imagesUploader').on('imageUploaded', function (event, params) {
+    console.log('postEditor >> imageUploaded', event, params);
+  });
 }
 
 function setNewModelOn (template) {
