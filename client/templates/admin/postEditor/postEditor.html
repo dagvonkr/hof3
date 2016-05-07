@@ -1,46 +1,57 @@
 <template name="postEditor">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h2 class="pull-left">New post</h2>
-      <button class="btn btn-primary pull-right saveNewPost">Save new post</button>
+      {{ #if isEditing }}
+        <h2 class="pull-left">Edit post</h2>
+        <button class="btn btn-primary pull-right savePost">Save post</button>
+      {{ else }}
+        <h2 class="pull-left">New post</h2>
+        <button class="btn btn-primary pull-right savePost">Save new post</button>
+      {{ /if }}
       <div class="clearfix"></div>
     </div>
-    <div class="panel-body">
 
-      <div class="form-group form-group-lg">
-        <input
-          class="form-control"
-          type="text"
-          name="title"
-          placeholder="Enter post title">
+    {{ #if isReady }}
+      <div class="panel-body">
+
+        <div class="form-group form-group-lg">
+          <input
+            class="form-control"
+            type="text"
+            name="title"
+            placeholder="Enter post title"
+            value="{{ model.title }}">
+        </div>
+
+        <div class="form-group form-group">
+          <input
+            class="form-control"
+            type="text"
+            name="subtitle"
+            placeholder="Enter post subtitle"
+            value="{{ model.subtitle }}">
+        </div>
+
+        <div class="form-group form-group">
+          <textarea
+            class="form-control"
+            name="content"
+            placeholder="Enter post body content"
+            value="{{ model.content }}"></textarea>
+        </div>
+
       </div>
+      <div class="panel-footer">
+        <div>
+          {{ > imagesUploader post=model }}
+        </div>
 
-      <div class="form-group form-group">
-        <input
-          class="form-control"
-          type="text"
-          name="subtitle"
-          placeholder="Enter post subtitle">
+        <div>
+          {{ > postImages post=model }}
+        </div>
+
       </div>
-
-      <div class="form-group form-group">
-        <textarea
-          class="form-control"
-          name="content"
-          placeholder="Enter post body content"></textarea>
-      </div>
-
-    </div>
-    <div class="panel-footer">
-      <div>
-        {{ > imagesUploader }}
-      </div>
-
-      <div>
-        {{ > postImages }}
-      </div>
-
-    </div>
+    {{ /if }}
 
 
   </div>

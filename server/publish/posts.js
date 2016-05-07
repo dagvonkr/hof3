@@ -1,6 +1,8 @@
 Meteor.publish('post', function (postId) {
   // Publishes only the party corresponding to partyId if any. Null otherwise.
-  return Posts.find({_id: postId});
+  const answer = Posts.find({_id: postId});
+  console.log(`post publishing ${answer.count()} post for postId ${postId}`);
+  return answer;
 });
 
 Meteor.publish('allPosts', function (options, aSearchString) {
