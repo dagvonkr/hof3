@@ -2,16 +2,17 @@
   "name": "hof3",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor --settings=settings.json"
   },
-  "dependencies": {
-    "cropperjs": "^0.7.0",
-    "meteor-node-stubs": "~0.2.0",
-    "mkdirp": "^0.5.1"
-  },
-  "description": "### Useful snippets",
-  "version": "1.0.0",
+  "description": "Customizable minimalist blog",
+  "version": "0.0.1",
   "main": "index.js",
   "author": "",
-  "license": "ISC"
+  "license": "private",
+  "dependencies": {
+    "cropperjs": "^0.7.0",
+    "dotenv": "^2.0.0",
+    "meteor-node-stubs": "~0.2.0",
+    "mkdirp": "^0.5.1"
+  }
 }

@@ -1,5 +1,6 @@
 **/*.sw[op]
 
+.env
 run.sh
 
 # Logs

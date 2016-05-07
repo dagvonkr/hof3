@@ -2,37 +2,47 @@
 
   {{> upload_bootstrap }}
 
-  <div class="cropping-image-wrapper">
-    <img id="imageToCrop">
-  </div>
+  <div class="grid">
+    <div class="row">
+      <div class="col-md-8">
+          <div class="cropping-image-wrapper">
+            <img id="imageToCrop">
+          </div>
+      </div>
 
-<!--   {{> dropzone
-    contentType='images'
-    fileTypes='.jpg'
-    multiple=true
-    callbacks=portraitCallbacks }} -->
+      <div class="col-md-4">
+        <div class="previewContainer">
+          <div class="preview"></div>
+        </div>
 
-<!--   <div id="portrait" class="portrait-dropzone drop-box">
-  </div>
-
-  <div id="landscape" class="landscape-dropzone drop-box">
-  </div>
-
-  <div id="square" class="square-dropzone drop-box">
-  </div>
- -->
-<!--   {{ #if isCroppingPortrait }}
-    <div class="portrait-preview-wrapper">
-      <img src="{{ imageUrl }}">
+        {{ #if isCropping }}
+        <div class="btn btn-default" id="addImage">Add image</div>
+        <a class="btn" id="discardImage">Discard</a>
+        {{ /if }}
+      </div>
     </div>
-  {{ else if isCroppingLandscape }}
-    <div class="landscape-preview-wrapper">
-      <img src="{{ imageUrl }}">
+  </div>
+
+  {{ #unless isCropping }}
+    <!-- Dropzones -->
+
+    <div class="grid">
+      <div class="row">
+        <div class="col-xs-6 col-md-4">
+          <div id="portrait" class="portrait-dropzone drop-box"></div>
+        </div>
+
+        <div class="col-xs-6 col-md-4">
+          <div id="landscape" class="landscape-dropzone drop-box"></div>
+        </div>
+
+        <div class="col-xs-6 col-md-4">
+          <div id="square" class="square-dropzone drop-box"></div>
+        </div>
+      </div>
     </div>
-  {{ else if isCroppingSquare }}
-    <div class="square-preview-wrapper">
-      <img src="{{ imageUrl }}">
-    </div>
-  {{ /if }} -->
+  {{ /unless }}
+
+
 
 </template>
