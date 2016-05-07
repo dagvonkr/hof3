@@ -7,6 +7,7 @@ tpl.onCreated(function () {
   window.o=this;
   this.aspectRatio = new ReactiveVar;
   this.shape = new ReactiveVar;
+  this.metaData = new ReactiveVar;
 });
 
 tpl.onRendered(function () {
@@ -30,7 +31,9 @@ tpl.events({
     resetOn(template);
   },
   'click #addImage': function (event, template) {
-    resetInputsOn(template);
+    event.preventDefault();
+    resetOn(template);
+    addImageFrom(template);
   },
   'click #portrait': function (event, template) {
     resetOn(template);
@@ -52,6 +55,11 @@ tpl.events({
   }
 });
 
+function addImageFrom (template) {
+  const imageData = $('#imageToCrop').attr('src');
+
+}
+
 function resetOn (template) {
   resetInputsOn(template);
   try {
@@ -65,20 +73,23 @@ function resetOn (template) {
 function resetInputsOn (template) {
   $(template.find('uploadPanel input')).val(null);
   template.aspectRatio.set(null);
+  template.metaData.set(null);
   template.shape.set(null);
 }
 
-function newCropOn (image, template, aspectRatio) {
+function newCropOn (image, aspectRatio, template) {
   let answer = new Cropper(image, {
     modal: true,
     guides: true,
     dragCrop: true,
     zoomable: false,
     mouseWheelZoom: false,
-    aspectRatio: template.aspectRatio.get(),
+    aspectRatio: aspectRatio,
     preview: '.preview',
-    crop: function (data) {
-      console.log('cropping', data);
+    crop: function (event) {
+      const metaData = template.metaData.get();
+      metaData.cropDetails = event.detail;
+      template.metaData.set(metaData);
     }
   });
 
@@ -86,12 +97,25 @@ function newCropOn (image, template, aspectRatio) {
   return answer;
 }
 
+function getMetadataOn (file) {
+  return {
+    _id: Random.id()
+    , filename: file.name
+    , originalSize: file.size
+    , mimeType: file.type
+    , uploadedAt: new Date
+    , uploadedBy: Meteor.userId()
+  };
+};
+
 function startCropOn (file, template) {
   let reader = new FileReader();
-
+  let metaData = getMetadataOn(file);
+  metaData.aspectRatio = template.aspectRatio.get();
+  template.metaData.set(metaData);
   reader.onload = function (e) {
     $('#imageToCrop').attr('src', e.target.result);
-    template.cropper = newCropOn($('#imageToCrop')[0], template);
+    template.cropper = newCropOn($('#imageToCrop')[0], metaData.aspectRatio, template);
   };
   reader.readAsDataURL(file);
 }
