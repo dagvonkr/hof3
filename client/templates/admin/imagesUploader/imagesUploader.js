@@ -61,9 +61,7 @@ function uploadCroppedImageFor (imageDoc, template, onUploaded) {
   template.cropper.getCroppedCanvas().toBlob(function (blob) {
     let uploader = $('input[type=file].jqUploadclass');
     const onDone = function (e, answer) {
-      if(!e){
-        onUploaded.call(this, answer);
-      }
+      onUploaded.call(this, answer);
       uploader.unbind('fileuploaddone', onDone);
     };
 
@@ -99,15 +97,11 @@ function getBinaryBlobFromBase64 (base64String) {
 function addImageFrom (template) {
   // Uploads and adds the cropped image to the model.
   const onUploaded = function (data) {
-    debugger
-    const imageId = Images.insert(imageDoc);
-
     let event = jQuery.Event( 'imageUploaded' );
-    event.imageId = imageId;
-    $('#imagesUploader').trigger(event);
-
+    $('#imagesUploader').trigger(event, {imageId: imageDoc._id});
   };
   const imageDoc = template.metaData.get();
+  Images.insert(imageDoc);
   uploadCroppedImageFor(imageDoc, template, onUploaded);
 }
 

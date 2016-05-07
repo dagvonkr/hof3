@@ -14,8 +14,8 @@ Meteor.methods({
       content: doc.content,
       images: doc.images
     }
-
-    return Posts.update({_id: doc._id },{ $set:toSave });
+    console.log(`toSave: ${JSON.stringify(toSave)}`);
+    return Posts.update({_id: doc._id },{ $set: toSave });
   },
   saveNewPost: function (doc) {
     // Make sure the user is logged in before inserting

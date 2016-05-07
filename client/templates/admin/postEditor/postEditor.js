@@ -6,6 +6,14 @@ tpl.onCreated(function () {
   initializeOn(this);
 });
 
+tpl.onRendered(function () {
+  let self = this;
+  Meteor.setTimeout(function () {
+    $('#imagesUploader').on('imageUploaded', function (event, data) {
+    onImageAdded(self,data);
+  });}, 500);
+});
+
 tpl.helpers({
   isReady() {
     return Template.instance().ready.get();
@@ -20,28 +28,7 @@ tpl.helpers({
 
 tpl.events({
   'click .savePost': function (event, template) {
-    let selector;
-
-    if(isNew(template.model)) {
-      selector = 'saveNewPost';
-    } else {
-      selector = 'savePost';
-    }
-
-    updateModelOn(template);
-
-    Meteor.call(selector,template.model, function (error, result) {
-      if(error) {
-        console.error('report issue and negative feedback');
-      } else {
-        if(selector === 'saveNewPost') {
-          // reset and prepare itself with a new model only if we just saved a new post
-          resetOn(template);
-          setNewModelOn(template);
-        }
-        // console.info('reset inputs and positive feedback');
-      }
-    });
+    saveModelOn(template);
   },
 });
 
@@ -61,10 +48,44 @@ function initializeOn (template) {
       }
     }
   });
+}
 
-  $('#imagesUploader').on('imageUploaded', function (event, params) {
-    console.log('postEditor >> imageUploaded', event, params);
+function saveModelOn (template) {
+  let selector;
+  if(isNew(template.model)) {
+      selector = 'saveNewPost';
+    } else {
+      selector = 'savePost';
+    }
+
+  updateModelOn(template);
+
+  Meteor.call(selector,template.model, function (error, result) {
+    if(error) {
+      console.error('report issue and negative feedback');
+    } else {
+      if(selector === 'saveNewPost') {
+        // reset and prepare itself with a new model only if we just saved a new post
+        resetOn(template);
+        setNewModelOn(template);
+      }
+      // console.info('reset inputs and positive feedback');
+    }
   });
+}
+
+function onImageAdded (template, data) {
+  // Adds the added image to the post.
+  // Saves it to be sure it stay.
+  saveModelOn(template);
+
+  if(!!data && data.imageId) {
+    if(!template.model.images) {
+      template.model.images = [];
+    }
+    template.model.images.push(data.imageId);
+    saveModelOn(template);
+  }
 }
 
 function setNewModelOn (template) {
