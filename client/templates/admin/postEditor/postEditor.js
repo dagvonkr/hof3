@@ -3,7 +3,6 @@ import subs from '../../../modules/subscriptionsManager';
 let tpl = Template.postEditor;
 
 tpl.onCreated(function () {
-  window.o=this;
   initializeOn(this);
 });
 
