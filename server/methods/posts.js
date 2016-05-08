@@ -32,7 +32,7 @@ Meteor.methods({
       subtitle: doc.subtitle,
       images: doc.images
     }
-
+    console.log(`newPost: ${JSON.stringify(newPost)}`);
     return Posts.insert(newPost);
   }
 })

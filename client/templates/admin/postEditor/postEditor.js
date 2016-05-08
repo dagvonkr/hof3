@@ -3,15 +3,12 @@ import subs from '../../../modules/subscriptionsManager';
 let tpl = Template.postEditor;
 
 tpl.onCreated(function () {
+  window.o=this;
   initializeOn(this);
 });
 
 tpl.onRendered(function () {
   let self = this;
-  Meteor.setTimeout(function () {
-    $('#imagesUploader').on('imageUploaded', function (event, data) {
-    onImageAdded(self,data);
-  });}, 500);
 });
 
 tpl.helpers({
@@ -32,6 +29,9 @@ tpl.events({
     template.shouldRenewModel = true;
     saveModelOn(template);
   },
+  'imageUploaded #imagesUploader': function (event, template, data) {
+    onImageAdded(template,data);
+  }
 });
 
 function initializeOn (template) {
@@ -50,6 +50,13 @@ function initializeOn (template) {
       }
     }
   });
+}
+
+function refreshModelOn (template) {
+  let found = Posts.findOne(template.data.postId.get());
+  if(found){
+    template.model = found;
+  }
 }
 
 function saveModelOn (template) {
@@ -74,8 +81,9 @@ function saveModelOn (template) {
           resetOn(template);
           setNewModelOn(template);
         }
+
+       refreshModelOn(template);
       }
-      // console.info('reset inputs and positive feedback');
     }
   });
 }
@@ -83,15 +91,15 @@ function saveModelOn (template) {
 function onImageAdded (template, data) {
   // Adds the added image to the post.
   // Saves it to be sure it stay.
-  saveModelOn(template);
 
   if(!!data && data.imageId) {
     if(!template.model.images) {
       template.model.images = [];
     }
     template.model.images.push(data.imageId);
-    saveModelOn(template);
   }
+
+  saveModelOn(template);
 }
 
 function setNewModelOn (template) {

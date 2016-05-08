@@ -8,7 +8,7 @@ Meteor.publish('images', function (postId) {
     } else {
       return Images.find({
         _id: {
-          $in: _(post.images).map(function (each) { return each._id })
+          $in: post.images
         }}
         , { sort: { uploadedAt: -1 } });
       }

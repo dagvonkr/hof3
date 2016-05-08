@@ -12,30 +12,39 @@ tpl.helpers({
     return Meteor.absoluteUrl()+'images/'+anId;
   },
   postImages() {
-    if(!Template.instance().model) {
-      return [];
-    }
-
-    const answer = _(Template.instance().model.images).map(function (each) {
-      return { imageId: each };
-    });
-
-    return answer;
+    Template.instance().imagesId.get();
   }
 });
 
 function initializeOn (template) {
   template.ready = new ReactiveVar();
+  template.imagesId = new ReactiveVar();
 
   template.autorun(function () {
-    var handle = subs.subscribe('post', template.data.postId.get());
-    template.ready.set(handle.ready());
-    if(handle.ready()) {
+    let postHandle = subs.subscribe('post', template.data.postId.get());
+    template.ready.set(postHandle.ready());
+    if(postHandle.ready()) {
       let found = Posts.findOne(template.data.postId.get());
-
+      console.log('autorun Posts.findOne(template.data.postId.get())', found);
       if(found){
         template.model = found;
       }
     }
+
+    let imagesHandle = subs.subscribe('images', template.data.postId.get());
+
   });
+}
+
+function updateImagesId (template) {
+  const model = Posts.findOne(template.postId.get());
+  if(!model) {
+    return [];
+  }
+
+  const answer = _(model.images).map(function (each) {
+    return { imageId: each };
+  });
+
+  template.imagesId.set(answer);
 }

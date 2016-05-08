@@ -4,7 +4,6 @@ import Cropper from 'cropperjs';
 let tpl = Template.imagesUploader;
 
 tpl.onCreated(function () {
-  window.o=this;
   this.aspectRatio = new ReactiveVar;
   this.metaData = new ReactiveVar;
   this.shape = new ReactiveVar;
