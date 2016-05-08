@@ -111,7 +111,7 @@ function resetOn (template) {
     template.cropper.destroy();
     $(template.find('#imageToCrop')).attr('src', null);
   } catch (e) {
-    // console.warn('No cropper to destroy', e);
+    console.warn('No cropper to destroy', e);
   };
 }
 
@@ -151,7 +151,6 @@ function getMetadataOn (file) {
     , filename: file.name
     , originalSize: file.size
     , mimeType: file.type
-    , uploadedAt: new Date
     , uploadedBy: Meteor.userId()
   };
 };

@@ -1,3 +1,20 @@
+Meteor.publish('postImages', function (postId) {
+  if (!postId) {
+    return [];
+  } else {
+    const post = Posts.findOne(postId);
+    if (!post) {
+      return [];
+    } else {
+      return Images.find({
+        _id: {
+          $in: post.images
+        }}
+        , { sort: { uploadedAt: -1 } });
+      }
+    }
+});
+
 Meteor.publish('images', function (postId) {
   if (!postId) {
     return Images.find({});

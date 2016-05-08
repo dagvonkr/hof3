@@ -1,6 +1,7 @@
 {
   "public": {
     "perPage": 3,
+    "imageFormat": "jpg",
     "analyticsSettings": {
       "Google Analytics" : {"trackingId": "UA-74818861-2"}
     }

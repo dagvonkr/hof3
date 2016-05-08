@@ -14,7 +14,7 @@ Meteor.methods({
       content: doc.content,
       images: doc.images
     }
-    console.log(`toSave: ${JSON.stringify(toSave)}`);
+    // console.log(`toSave: ${JSON.stringify(toSave)}`);
     return Posts.update({_id: doc._id },{ $set: toSave });
   },
   saveNewPost: function (doc) {
@@ -32,7 +32,7 @@ Meteor.methods({
       subtitle: doc.subtitle,
       images: doc.images
     }
-    console.log(`newPost: ${JSON.stringify(newPost)}`);
+    // console.log(`newPost: ${JSON.stringify(newPost)}`);
     return Posts.insert(newPost);
   }
 })

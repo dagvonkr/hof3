@@ -74,7 +74,7 @@ Meteor.startup(function () {
     gm(sourcePath+'/'+aFilename)
       .interlace('Line')
       .quality(100)
-      .setFormat('jpg')
+      .setFormat(`${Meteor.settings.public.imageFormat}`)
       .write(path.resolve(processedPath+'/'+aFilename), function (error) {
         if(!error) {
           onImageProcessed(aFilename);
@@ -97,11 +97,17 @@ Meteor.startup(function () {
       return '';
     },
     getFileName: function(fileInfo, formData) {
-      return formData._id;
+      return `${formData._id}.${Meteor.settings.public.imageFormat}`;
     },
     finished: function(fileInfo, formData) {
-      // console.log('a finished upload with formData:', formData);
-      Images.update(fileInfo.name, { $set: { size: fileInfo.size } });
+      const theId = fileInfo.name.split('.')[0];
+      console.log(`finished upload with formData ${Meteor.settings.public.imageFormat}`);
+      console.log(`updating ${theId}`);
+      Images.update(theId, { $set: {
+        size: fileInfo.size,
+        uploadedAt: new Date
+        }
+      });
       processImage(fileInfo.name);
     }
   });

@@ -9,42 +9,27 @@ tpl.onCreated(function () {
 
 tpl.helpers({
   getUrlFor (anId) {
-    return Meteor.absoluteUrl()+'images/'+anId;
+    if(!anId) {
+      return null;
+    } else {
+      // return Meteor.absoluteUrl()+'images/'+anId+'.'+Meteor.settings.public.imageFormat;
+      return '/images/'+anId+'.'+Meteor.settings.public.imageFormat;
+    }
   },
   postImages() {
-    Template.instance().imagesId.get();
+    return Images.find();
   }
 });
 
 function initializeOn (template) {
-  template.ready = new ReactiveVar();
-  template.imagesId = new ReactiveVar();
+  template.ready = new ReactiveVar(false);
 
   template.autorun(function () {
-    let postHandle = subs.subscribe('post', template.data.postId.get());
+    // console.log('postImages autorun');
+    let postHandle = subs.subscribe('postImages', template.data.postId.get());
     template.ready.set(postHandle.ready());
     if(postHandle.ready()) {
-      let found = Posts.findOne(template.data.postId.get());
-      console.log('autorun Posts.findOne(template.data.postId.get())', found);
-      if(found){
-        template.model = found;
-      }
+      template.ready.set(true);
     }
-
-    let imagesHandle = subs.subscribe('images', template.data.postId.get());
-
   });
-}
-
-function updateImagesId (template) {
-  const model = Posts.findOne(template.postId.get());
-  if(!model) {
-    return [];
-  }
-
-  const answer = _(model.images).map(function (each) {
-    return { imageId: each };
-  });
-
-  template.imagesId.set(answer);
 }
