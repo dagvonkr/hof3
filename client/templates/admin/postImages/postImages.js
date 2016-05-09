@@ -1,4 +1,4 @@
-import subs from '../../../modules/subscriptionsManager';
+// import subs from '../../../modules/subscriptionsManager';
 
 let tpl = Template.postImages;
 
@@ -23,13 +23,16 @@ tpl.helpers({
 
 function initializeOn (template) {
   template.ready = new ReactiveVar(false);
-
   template.autorun(function () {
-    // console.log('postImages autorun');
-    let postHandle = subs.subscribe('postImages', template.data.postId.get());
-    template.ready.set(postHandle.ready());
-    if(postHandle.ready()) {
-      template.ready.set(true);
+    const post = Posts.findOne(template.data.postId.get());
+    if(post) {
+      const imageIds = post.images;
+      let postHandle = template.subscribe('someImages', imageIds);
+      template.ready.set(postHandle.ready());
+      if(postHandle.ready()) {
+        template.ready.set(true);
+        console.log(`postImages autorun is READY ${Images.find().count()} images found`);
+      }
     }
   });
 }

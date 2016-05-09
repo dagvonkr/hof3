@@ -1,18 +1,15 @@
-Meteor.publish('postImages', function (postId) {
-  if (!postId) {
+Meteor.publish('someImages', function (someIds) {
+  if (!someIds || _(someIds).isEmpty()) {
     return [];
   } else {
-    const post = Posts.findOne(postId);
-    if (!post) {
-      return [];
-    } else {
-      return Images.find({
-        _id: {
-          $in: post.images
-        }}
-        , { sort: { uploadedAt: -1 } });
-      }
-    }
+    const answer = Images.find({
+      _id: {
+        $in: someIds
+      }}
+      , { sort: { uploadedAt: -1 } });
+    console.log(`someImages is publishing ${answer.count()} images `);
+    return answer
+  }
 });
 
 Meteor.publish('images', function (postId) {
