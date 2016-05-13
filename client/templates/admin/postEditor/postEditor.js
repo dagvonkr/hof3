@@ -11,6 +11,12 @@ tpl.onRendered(function () {
 });
 
 tpl.helpers({
+  youtubeLinkValue() {
+    return Template.instance().model.youtubeLink || Template.instance().enteredYoutubeLink.get();
+  },
+  hasVideo() {
+    return Template.instance().enteredYoutubeLink.get();
+  },
   isEditing() {
     return !isNew(Template.instance().model);
   },
@@ -26,6 +32,42 @@ tpl.helpers({
 });
 
 tpl.events({
+  'click #removeYoutubeLink': function (event, template) {
+    template.model.youtubeLink = '';
+    template.enteredYoutubeLink.set('');
+    $(template.find('#youtube-link')).val('');
+    const isSaveFromUser = false;
+    basicSaveModelOn(template, isSaveFromUser);
+  },
+  'change #youtube-link': function (event, template) {
+    // Saves the proper youtube link for an embed assuming it comes from a raw copy paste from the browser's URL.
+    const youtubeLinkValue = $(template.find('#youtube-link')).val();
+    template.enteredYoutubeLink.set(youtubeLinkValue);
+    if(template.enteredYoutubeLink.get().match('/embed/')) {
+      const isSaveFromUser = false;
+      return basicSaveModelOn(template, isSaveFromUser);
+    }
+
+    if(_(template.enteredYoutubeLink.get()).isEmpty()) {
+      return
+    }
+
+    if(template.enteredYoutubeLink.get().match('/watch')) {
+      try {
+        var parts = template.enteredYoutubeLink.get().split('/');
+        var watchPart = _(parts).find( function (each) {
+          return each.match('watch');
+        });
+        var videoId = _(watchPart.split('v=')).last();
+        template.model.youtubeLink = 'https://www.youtube.com/embed/'+videoId;
+        const isSaveFromUser = false;
+        return basicSaveModelOn(template, isSaveFromUser);
+      } catch (e) {
+        return;
+      }
+    }
+
+  },
   'click .savePost': function (event, template) {
     event.preventDefault();
     saveModelOn(template);
@@ -36,7 +78,8 @@ tpl.events({
 });
 
 function initializeOn (template) {
-  template.ready = new ReactiveVar();
+  template.ready = new ReactiveVar;
+  template.enteredYoutubeLink = new ReactiveVar;
   template.data.postId = new ReactiveVar(FlowRouter.current().params.postId);
   template.autorun(function () {
     var handle = subs.subscribe('post',template.data.postId.get());
@@ -45,6 +88,7 @@ function initializeOn (template) {
       let found = Posts.findOne(template.data.postId.get());
       if(found){
         template.model = found;
+        template.enteredYoutubeLink.set(template.model.youtubeLink);
       } else {
         setNewModelOn(template);
       }
