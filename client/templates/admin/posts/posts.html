@@ -1,6 +1,6 @@
 <template name="adminPosts">
 
-  {{ > postEditor }}
+  {{ > postEditor shouldRenewModelOnUserSave=true }}
 
   <ul class="list-group">
     {{ #each posts }}

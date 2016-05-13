@@ -25,7 +25,6 @@ tpl.helpers({
 tpl.events({
   'click .savePost': function (event, template) {
     event.preventDefault();
-    template.shouldRenewModel = true;
     saveModelOn(template);
   },
   'imageUploaded #imagesUploader': function (event, template, data) {
@@ -58,7 +57,7 @@ function refreshModelOn (template) {
   }
 }
 
-function saveModelOn (template) {
+function basicSaveModelOn (template, isSaveFromUser) {
   let selector;
   if(isNew(template.model)) {
       selector = 'saveNewPost';
@@ -68,23 +67,30 @@ function saveModelOn (template) {
 
   updateModelOn(template);
 
-  Meteor.call(selector,template.model, function (error, result) {
+  Meteor.call(selector, template.model, function (error, result) {
     if(error) {
       console.error('report issue and negative feedback');
     } else {
       if(selector === 'saveNewPost') {
         template.data.postId.set(result);
-        if(template.shouldRenewModel) {
-          // reset and prepare itself with a new model only if we just saved a new post
-          template.shouldRenewModel = false;
-          resetOn(template);
-          setNewModelOn(template);
-        }
-
-       refreshModelOn(template);
       }
+
+      if(isSaveFromUser && template.data.shouldRenewModelOnUserSave) {
+        // reset and prepare itself with a new model only if we just saved a new post
+        resetOn(template);
+        setNewModelOn(template);
+        template.data.postId.set(null);
+      }
+
+      refreshModelOn(template);
+
     }
   });
+}
+
+function saveModelOn (template) {
+  const isSaveFromUser = true;
+  basicSaveModelOn(template, isSaveFromUser);
 }
 
 function onImageAdded (template, data) {
@@ -98,7 +104,8 @@ function onImageAdded (template, data) {
     template.model.images.push(data.imageId);
   }
 
-  saveModelOn(template);
+  const isSaveFromUser = false;
+  basicSaveModelOn(template, isSaveFromUser);
 }
 
 function setNewModelOn (template) {
@@ -132,6 +139,7 @@ function newPost () {
 
 function resetOn (template) {
   resetInputsOn(template);
+  // reset uploader?
 }
 
 function resetInputsOn (template) {
