@@ -17,7 +17,6 @@ function updateFeedback (template) {
   }
 }
 
-
 tpl.helpers({
 });
 
@@ -34,7 +33,10 @@ tpl.events({
       if(error) {
         return template.signInFeedback.set('Sorry, we cannot validate those credentials');
       }
-      if(!Session.get('redirectAfterLogin')) {
+
+      const desiredDestination = Session.get('redirectAfterLogin');
+
+      if(!desiredDestination || desiredDestination == '/admin/sign-in') {
         FlowRouter.go('adminPosts');
       }
     });

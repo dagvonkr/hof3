@@ -12,6 +12,7 @@ Meteor.methods({
       title: doc.title,
       subtitle: doc.subtitle,
       content: doc.content,
+      updatedOn: new Date,
       images: doc.images
     }
     // console.log(`toSave: ${JSON.stringify(toSave)}`);
@@ -26,7 +27,7 @@ Meteor.methods({
     check(doc, Object);
 
     const newPost = {
-      createdOn: doc.createdOn,
+      createdOn: new Date,
       createdBy: this.userId,
       title: doc.title,
       subtitle: doc.subtitle,

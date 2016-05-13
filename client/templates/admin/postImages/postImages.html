@@ -2,7 +2,6 @@
     <div>
     {{ #each postImages }}
       <div class="postImage">
-        <h4>{{ this._id }}</h4>
         <img src="{{ getUrlFor(this._id) }}">
       </div>
     {{ /each }}
