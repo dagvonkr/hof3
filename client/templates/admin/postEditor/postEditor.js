@@ -6,14 +6,25 @@ tpl.onCreated(function () {
   initializeOn(this);
 });
 
+tpl.onDestroyed(function () {
+  tinymce.remove();
+});
+
 tpl.onRendered(function () {
   let self = this;
-  Meteor.setTimeout(function () {
-    initializeTinymce();
-  }, Meteor.settings.public.editorInitializeDelay);
+
+  if(hasContentEditor()) {
+    Meteor.setTimeout(function () {
+      initializeTinymce();
+    }, Meteor.settings.public.editorInitializeDelay);
+  }
+
 });
 
 tpl.helpers({
+  hasContentEditor() {
+    return hasContentEditor();
+  },
   youtubeLinkValue() {
     return Template.instance().model.youtubeLink || Template.instance().enteredYoutubeLink.get();
   },
@@ -97,6 +108,11 @@ function initializeOn (template) {
       }
     }
   });
+}
+
+function hasContentEditor () {
+  // Answers true if this post editor should show the content rich editor (and subtitle and youtube).
+  return FlowRouter.current().route.name == 'postEditor';
 }
 
 function initializeTinymce () {

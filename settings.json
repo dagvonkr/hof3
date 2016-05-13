@@ -2,7 +2,7 @@
   "public": {
     "perPage": 3,
     "imageFormat": "jpg",
-    "editorInitializeDelay": 400,
+    "editorInitializeDelay": 200,
     "analyticsSettings": {
       "Google Analytics" : {"trackingId": "UA-74818861-2"}
     }
