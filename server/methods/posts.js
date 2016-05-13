@@ -12,6 +12,7 @@ Meteor.methods({
       title: doc.title,
       subtitle: doc.subtitle,
       content: doc.content,
+      youtubeLink: doc.youtubeLink,
       updatedOn: new Date,
       images: doc.images
     }
@@ -31,6 +32,7 @@ Meteor.methods({
       createdBy: this.userId,
       title: doc.title,
       subtitle: doc.subtitle,
+      youtubeLink: doc.youtubeLink,
       images: doc.images
     }
     // console.log(`newPost: ${JSON.stringify(newPost)}`);

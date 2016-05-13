@@ -40,6 +40,28 @@
             placeholder="Enter post body content">{{ model.content }}</textarea>
         </div>
 
+        <div class="post-youtube-wrapper">
+          <p> Legg inn Youtube link her:</p>
+          <div class="form-group form-group">
+            <input
+              id="youtube-link"
+              class="form-control"
+              type="text"
+              placeholder="YouTube link">
+          </div>
+
+          {{ #if hasVideo }}
+            <div class="update-post-button">
+              <button id="removeYoutubeLink">Fern youtube link</button>
+            </div>
+            <p><strong>Youtube film som er lagt til: </strong> {{model.youtubeLink}}</p>
+            <div id="postVideo" class="image-detail-view">
+              <iframe width="560" height="315" src="{{ youtubeLinkValue }}" frameborder="0" allowfullscreen></iframe>
+            </div>
+          {{ /if }}
+
+        </div>
+
       </div>
       <div class="panel-footer">
         <div>
