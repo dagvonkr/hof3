@@ -1,6 +1,6 @@
 <template name="postEditor">
-  <div class="panel panel-default">
-    <div class="panel-heading">
+  <div class="form">
+    <div>
       {{ #if isEditing }}
         <h2 class="pull-left">Edit post</h2>
         <button class="btn btn-primary pull-right savePost">Save post</button>
@@ -12,18 +12,16 @@
     </div>
 
     {{ #if isReady }}
-      <div class="panel-body">
-
-        <div class="form-group form-group-lg">
+        <div>
           <input
-            class="form-control"
+            class="post-header-pre"
             type="text"
             name="title"
             placeholder="Enter post title"
             value="{{ model.title }}">
         </div>
 
-        <div class="form-group form-group">
+<!--         <div class="form-group form-group">
           <input
             class="form-control"
             type="text"
@@ -37,10 +35,8 @@
             class="form-control"
             name="content"
             placeholder="Enter post body content">{{ model.content }}</textarea>
-        </div>
+        </div> -->
 
-      </div>
-      <div class="panel-footer">
         <div>
           {{ > imagesUploader post=model }}
         </div>
@@ -49,7 +45,6 @@
           {{ > postImages postId=postId }}
         </div>
 
-      </div>
     {{ /if }}
 
 

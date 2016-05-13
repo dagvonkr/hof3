@@ -1,4 +1,742 @@
+body, html {
+    font-family: 'gotham-medium';
+    width: 100%;
+  background-color: #fbfdfd;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'gotham-medium';
+}
+
+div {
+    font-family: 'gotham-medium';
+}
+
+p {
+    font-family: 'gotham-light';
+}
+
+a {
+    text-decoration: none;
+    color: #2d2c2c;
+}
+
+a:visited{
+    text-decoration: none;
+}
+
+
+a:hover {
+    position: relative;
+    color: #333333;
+}
+
+::-moz-selection {
+  background-color: #333333;
+  color: #fff;
+}
+
 /* Limit image width to avoid overflow the container */
 img {
   max-width: 100%; /* This rule is very important, please do not ignore this! */
 }
+
+.image-upload{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 6%;
+}
+
+.drop-box {
+    background: #F8F8F8;
+    border: 5px dashed #DDD;
+
+    text-align: center;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+a.editable-empty {
+    color: #999999;
+}
+
+.landscape{
+    width: 170px;
+    height: 100px;
+}
+
+.portrait{
+    width: 100px;
+    height: 125px;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+}
+
+.drop-box.dragover {
+    border: 5px dashed blue;
+}
+
+.drop-box.dragover-err {
+    border: 5px dashed red;
+}
+
+.main-image-preview img {
+    width: 20%;
+    margin-left: 8%;
+    margin-top: 20px;
+}
+
+
+/* finnes dette noe sted?? */
+.uploaded-image {
+    max-height: 500px;
+    width: auto;
+}
+
+.progressInner {
+
+    margin-bottom: 20px !important;
+    background-color: #fff !important;
+}
+
+.progress-bar-success {
+    background-color: #FBFDFD !important;
+}
+
+
+.btn-primary {
+    display: none !important;
+}
+
+.btn-info {
+    display: none !important;
+}
+
+.glyphicon  {
+    display: none !important;
+}
+.glyphicon-ok {
+    display: none !important;
+}
+
+.btn-default {
+    border: none !important;
+    background-color: #FBFDFD;
+}
+/*.done {
+    display: none !important
+}*/
+
+
+
+.ng-crop-container-tall-rectangle {
+    width: 450px;
+    height: 375px;
+}
+
+.ng-crop-container-rectangle {
+    margin-top: 50px; /*Legger denne til ellers så vil save knappen havne under den øvre containeren. Super quick-fix*/
+    width: 750px;
+    height: 300px;
+}
+
+.ng-crop-container-square {
+    width: 375px;
+    height: 375px;
+}
+
+.cropArea {
+  background: #E4E4E4;
+  overflow: hidden;
+  width:100%;
+  height:100%;
+}
+
+
+/*Modal*/
+#modal{
+    z-index: 2000;
+    border:4px solid #CCC;
+    background-color: red;
+    width:1000px;
+    height:500px;
+    display:none;
+    position:absolute;
+    font-size: 100px;
+    left:50%;
+    top:50%;
+    margin:-25px 0 0 -50px;
+    border-radius:5px;
+}
+
+.click {
+    z-index: 1000;
+}
+
+/*Post headers and content*/
+
+textarea {
+    resize: initial;
+    height: auto;
+    border: none;
+}
+
+.form-control {
+    border: none;
+    background-color: #fbfdfd;
+
+}
+
+.post-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-shrink: 1;
+
+}
+
+
+.post{
+    margin-top: 25px;
+    margin-bottom: 50px;
+
+}
+
+.post-frontpage{
+    margin-top: 25px;
+    margin-bottom: 50px;
+    max-width: 665px;
+    margin-left: 25px;
+    margin-right: 25px;
+
+}
+
+.main-image{
+    max-width: 100%;
+    max-height: 508px;
+
+}
+
+
+.post-header-pre {
+    z-index: 500;
+    position: relative;
+    font-size: 50px;
+    font-family: 'gotham-bold';
+    top: 50px;
+    text-transform: uppercase;
+    text-align: left; /*Lag knapper for alle typene*/
+    text-decoration: none;
+    color: #333333;
+    background: #f8f8f8;
+    outline: 0px !important;   /*bootsrap default*/
+    -webkit-appearance: none;  /*bootsrap default*/
+    border: none;
+    height: 105px;
+    margin-left: 8%;
+    margin-bottom: 50px;
+}
+
+.description-pre {
+    font-family: 'gotham-light';
+    font-size: 12px;
+    width: 600px;
+    background: #f8f8f8;
+    outline: 0px !important;   /*bootsrap default*/
+    -webkit-appearance: none;  /*bootsrap default*/
+    border: none;
+    padding: 10px 10px 10px 10px;
+    margin-left: 8%;
+}
+
+.add-btn {
+    margin-left: 22.5%;
+    margin-top: 50px;
+    width: 135px;
+    height: 35px;
+    font-size: 16px;
+    border: none;
+    background-color: #ededed;
+}
+
+.settings-modal {
+    background-color: #fff;
+    width: 100%;
+    height: 160px;
+    padding: 0px 20px 0px 20px;
+
+}
+
+.is-public input {
+    display: none;
+}
+
+.is-public span{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    display: block;
+    background: url("/red.png");
+    margin-left: -55px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.is-public input:checked + span {
+    position: absolute;
+    background: url("/green.png");
+    margin-left: -55px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+.cms {
+    float: right;
+    margin: 10px 10px 10px 10px;
+}
+
+.color-button{
+    padding-left: 200px;
+}
+
+.modal{
+    owerflow: hidden;
+}
+
+
+.modal-backdrop {
+    display: none;
+}
+
+.menu {
+    position: relative;
+    font-family: 'gotham-bold';
+    padding: 0px 20px 0px 20px;
+    margin-top: 50px;
+    width: 100%;
+    margin-left: 10%;
+    margin-top: 100px;
+}
+
+.menu-sub-view {
+    font-family: 'gotham-bold';
+}
+
+.menu-nav{
+    position: relative;
+    font-size: 14px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+.menu-nav-sub {
+    margin-left: 20%;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.nettbutikk {
+    position: absolute;
+    margin-top: -10px;
+    margin-left: -76px;
+}
+.kontakt{
+    position: absolute;
+    margin-top: 20px;
+    margin-left: -16px;
+}
+.om {
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 14px;
+}
+
+
+.houseoffam-line {
+    position: relative;
+    background: #2d2c2c;
+    width: 150px;
+    height: 2.5px;
+    margin-bottom: 8px;
+    -ms-transform: rotate(66deg); /* IE 9 */
+    -webkit-transform: rotate(66deg); /* Chrome, Safari, Opera */
+    transform: rotate(66deg);
+
+}
+
+.menu-nav-hover:hover:after {
+    text-decoration: none;
+    content: url(/arrow.png);
+    transform: scale(.1);
+    display: block;
+    position: absolute;
+    left: -202px;
+    top: -41px;
+}
+
+
+
+.houseoffam-logo {
+    text-align: right;
+    font-size: 30px;
+    letter-spacing: 2px;
+    width: 120px;
+    display: inline-block;
+    margin-left: 88px;
+    margin-top: -80px;
+}
+
+.houseoffam-logo-mobile {
+    visibility: hidden;
+}
+
+.houseoffam-logo-sub {
+    font-family: 'gotham-bold';
+    font-size: 25px;
+    margin-right: 20%;
+    float: right;
+    margin-top: -50px;
+}
+
+.post-header {
+    z-index: 500;
+    position: relative;
+    font-size: 50px;
+    width: 400px;
+    top: 50px;
+    font-family: 'gotham-bold';
+    text-transform: uppercase;
+    text-align: left; /*Lag knapper for alle typene*/
+    text-decoration: none;
+    margin-left: 8px;
+    line-height: 110%;
+}
+
+
+
+
+
+
+.description {
+    font-family: 'gotham-light';
+    font-size: 18px;
+    width: 375px;
+    text-align: right;
+    letter-spacing: 0.4px;
+    outline: 0px !important;   /*bootsrap default*/
+    -webkit-appearance: none;  /*bootsrap default*/
+    border: none;
+    padding: 10px 10px 10px 10px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.article-text {
+    width: 650px;
+    display: block;
+    background-color: #fbfdfd;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'gotham-medium';
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid #efefef;
+}
+
+.header-detail-view {
+    font-family: 'gotham-bold';
+    font-size: 75px;
+    background-color: #fbfdfd;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    width: 800px;
+    max-width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-edit {
+    border: 1px solid #efefef;
+}
+
+.image-detail-view{
+    margin-top: 20px;
+}
+
+.image-detail-view-2{
+
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.image-detail {
+    width: 50%;
+    max-width: 90%;
+
+}
+
+.description-details {
+    font-family: 'gotham-medium';
+    font-size: 20px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 675px;
+    letter-spacing: 0.4px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.article-description{
+    position: relative;
+    text-align: left;
+    display: block;
+    background-color: #fbfdfd;
+    font-family: 'gotham-light';
+    font-size: 16px;
+    line-height: 22px;
+    width: 650px;
+    border: none;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.is-public-details-view {
+    margin-top: 50px;
+    text-align: center;
+    color: #23527C;
+}
+.update-post-button{
+    text-align: center;
+}
+
+.post-youtube-wrapper {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 650px;
+    margin-bottom: 50px;
+}
+.youtube-link {
+    margin-top: 5px;
+    width: 650px;
+    margin-bottom: 20px;
+}
+
+.kontaktmanager {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 100px;
+}
+
+@media screen and (max-width : 720px) {
+
+.menu {
+    position: relative;
+    width: 100%;
+    margin: 20px 0px 0px 0px;
+}
+
+
+/*.menu-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}*/
+
+.menu-sub-view {
+    margin-top: 20px;
+}
+
+.houseoffam-menu {
+    text-align: center;
+}
+
+.nettbutikk{
+    position: relative;
+    display: inline-block;
+    background-color: #f4f4f4;
+    padding: 7px 10px 7px 10px;
+    font-size: 8px;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+.kontakt{
+    position: relative;
+    display: inline-block;
+    background-color: #f4f4f4;
+    padding: 7px 15px 7px 15px;
+    font-size: 8px;
+    margin-top: 0px;
+    margin-left: 10px;
+}
+.om{
+    position: relative;
+    display: inline-block;
+    background-color: #f4f4f4;
+    padding: 7px 20px 7px 20px;
+    font-size: 8px;
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
+/*Må skirve alt om igjrn her for mobile view til details view */
+
+.menu-nav-sub-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.nettbutikk-sub{
+    position: relative;
+    display: inline-block;
+    background-color: #f4f4f4;
+    padding: 7px 10px 7px 10px;
+    font-size: 10px;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+.kontakt-sub{
+    position: relative;
+    display: inline-block;
+    background-color: #f4f4f4;
+    padding: 7px 15px 7px 15px;
+    font-size: 10px;
+    margin-top: 0px;
+    margin-left: 20px;
+}
+.om-sub{
+    position: relative;
+    display: inline-block;
+    background-color: #f4f4f4;
+    padding: 7px 20px 7px 20px;
+    font-size: 10px;
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
+.houseoffam-line {
+    display: none;
+}
+
+.menu-nav-hover:hover:after {
+    text-decoration: none;
+
+}
+
+.houseoffam-logo {
+    display: none;
+}
+
+.houseoffam-logo-sub {
+    display: none;
+}
+
+.houseoffam-logo-mobile {
+    visibility: visible;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    font-size: 25px;
+    letter-spacing: 2px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.menu-nav-hover:hover:after {
+    text-decoration: none;
+    content: none;
+    background: #d4d4d4;
+}
+
+.post-frontpage{
+    margin-left: 0%;
+    margin-right: 0%;
+
+}
+
+.main-image {
+    margin: 0px 0px 0px 0px;
+}
+
+.post-header{
+    font-size: 60px !important;
+    /*top: 20px !important;*/
+    left: 0px !important;
+    text-align: center !important;
+    width: 90% !important;
+
+}
+
+.description{
+    font-size: 12px;
+    text-align: center;
+}
+
+.image-detail {
+    max-width: 100%;
+    width: 100%;
+}
+
+.header-detail-view{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 40px;
+}
+
+
+.description-details {
+    font-size: 16px;
+    width: 90%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.article-description{
+    width: 90%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+}
+
+@media screen and (max-width : 520px) {
+
+.post-header{
+    word-wrap:break-word;
+    }
+}
+
+@media screen and (max-width : 420px) {
+
+  .post-header{
+      font-size: 47px !important;
+      padding-left: 8% !important;
+      padding-right: 8% !important;
+  }
+}
+
+.my-drop-zone { border: dotted 3px lightgray; }
+.nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
+.another-file-over-class { border: dotted 3px green; }
+
+
+

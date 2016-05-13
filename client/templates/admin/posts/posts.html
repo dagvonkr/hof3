@@ -2,14 +2,12 @@
 
   {{ > postEditor shouldRenewModelOnUserSave=true }}
 
-  <ul class="list-group">
+  <div class="post-wrapper">
     {{ #each posts }}
-      <li class="list-group-item">
-        <a class="btn btn-default pull-right editPost">Edit</a>
-        <h3>{{ title }}</h3>
-        <h4>{{ subtitle }}</h4>
-        <p>{{ content }}</p>
-      </li>
+
+      <a id="settings-button">Settings</a>
+      <div class="post-header">{{ title }}</div>
+      <p class="description">{{ subtitle }}</p>
     {{ /each }}
-  </ul>
+  </div>
 </template>
