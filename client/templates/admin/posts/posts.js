@@ -24,3 +24,9 @@ tpl.helpers({
     return Posts.find({}, {sort: {createdOn: -1}} );
   }
 });
+
+tpl.events({
+  'click .editPost': function (event, template) {
+    debugger
+  }
+})
