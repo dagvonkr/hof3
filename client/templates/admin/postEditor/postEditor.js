@@ -8,6 +8,9 @@ tpl.onCreated(function () {
 
 tpl.onRendered(function () {
   let self = this;
+  Meteor.setTimeout(function () {
+    initializeTinymce();
+  }, Meteor.settings.public.editorInitializeDelay);
 });
 
 tpl.helpers({
@@ -93,6 +96,13 @@ function initializeOn (template) {
         setNewModelOn(template);
       }
     }
+  });
+}
+
+function initializeTinymce () {
+  tinymce.init({
+    selector: 'textarea',
+    skin_url: '/packages/teamon_tinymce/skins/lightgray'
   });
 }
 
@@ -185,7 +195,6 @@ function newPost () {
 
 function resetOn (template) {
   resetInputsOn(template);
-  // reset uploader?
 }
 
 function resetInputsOn (template) {

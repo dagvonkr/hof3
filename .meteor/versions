@@ -85,6 +85,7 @@ spacebars-compiler@1.0.11
 srp@1.0.8
 standard-minifier-css@1.0.6
 standard-minifier-js@1.0.6
+teamon:tinymce@4.3.3_3
 templating@1.1.9
 templating-tools@1.0.4
 tomi:upload-jquery@2.4.0
