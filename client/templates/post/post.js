@@ -5,7 +5,7 @@ tpl.onCreated(function() {
   self.ready = new ReactiveVar();
   self.autorun(function () {
     var postId = FlowRouter.getQueryParam('postId');
-    var handle = PostSubs.subscribe('post', postId);
+    var handle = subs.subscribe('post', postId);
     self.ready.set(handle.ready());
   });
 });

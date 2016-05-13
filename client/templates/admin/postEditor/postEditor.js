@@ -11,6 +11,9 @@ tpl.onRendered(function () {
 });
 
 tpl.helpers({
+  isEditing() {
+    return !isNew(Template.instance().model);
+  },
   isReady() {
     return Template.instance().ready.get();
   },
@@ -35,7 +38,6 @@ tpl.events({
 function initializeOn (template) {
   template.ready = new ReactiveVar();
   template.data.postId = new ReactiveVar(FlowRouter.current().params.postId);
-
   template.autorun(function () {
     var handle = subs.subscribe('post',template.data.postId.get());
     template.ready.set(handle.ready());
