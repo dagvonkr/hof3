@@ -27,6 +27,6 @@ tpl.helpers({
 
 tpl.events({
   'click .editPost': function (event, template) {
-    debugger
+    FlowRouter.go('posts/edit', {postId: this._id});
   }
 })

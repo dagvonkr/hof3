@@ -1,9 +1,13 @@
 <template name="postImages">
+  {{ #if isReady }}
     <div>
-    {{ #each postImages }}
-      <div class="postImage">
-        <img src="{{ getUrlFor(this._id) }}">
-      </div>
-    {{ /each }}
-  </div>
+      {{ #each postImages }}
+        <div class="postImage">
+          <img src="{{ getUrlFor(this._id) }}">
+        </div>
+      {{ /each }}
+    </div>
+  {{ else }}
+    {{ > spinner }}
+  {{ /if }}
 </template>

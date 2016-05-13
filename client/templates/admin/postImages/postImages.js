@@ -8,6 +8,9 @@ tpl.onCreated(function () {
 });
 
 tpl.helpers({
+  isReady() {
+    return Template.instance().ready.get();
+  },
   getUrlFor (anId) {
     if(!anId) {
       return null;
@@ -30,9 +33,10 @@ function initializeOn (template) {
       let postHandle = template.subscribe('someImages', imageIds);
       template.ready.set(postHandle.ready());
       if(postHandle.ready()) {
-        template.ready.set(true);
         console.log(`postImages autorun is READY ${Images.find().count()} images found`);
       }
+    } else {
+      template.ready.set(true);
     }
   });
 }
