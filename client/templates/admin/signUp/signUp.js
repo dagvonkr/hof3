@@ -1,4 +1,4 @@
-let tpl = Template.register;
+let tpl = Template.signUp;
 
 function createUser (template, onError) {
   const credentials = {
@@ -41,8 +41,8 @@ tpl.events({
     if (isValid(template)) {
       createUser(template, function (error) {
         template.signUpFeedback.set('Sorry, there was a problem creating the user, please contact your system administrator.');
+        FlowRouter.go('adminPosts');
       });
-      FlowRouter.go('admin');
     }
   }
 });
