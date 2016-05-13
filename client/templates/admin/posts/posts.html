@@ -1,13 +1,16 @@
 <template name="adminPosts">
 
-  {{ > postEditor shouldRenewModelOnUserSave=true }}
+  {{ > postEditor shouldRenewModelOnUserSave=true hasContentEditing=false }}
 
   <div class="post-wrapper">
-    {{ #each posts }}
-
-      <a id="settings-button">Settings</a>
-      <div class="post-header">{{ title }}</div>
-      <p class="description">{{ subtitle }}</p>
-    {{ /each }}
+    <div class="post-frontpage"> <!-- this one is not working proporly because it was modified to use with infinite scroll -->
+      {{ #each posts }}
+        <button><strong>SLETT</strong></button>
+        <button>Settings</button>
+        <div class="post-header">{{ title }}</div>
+        <p class="description">{{ subtitle }}</p>
+        <div> {{ content }} </div>
+      {{ /each }}
+    </div>
   </div>
 </template>
