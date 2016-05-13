@@ -26,6 +26,9 @@ tpl.helpers({
 });
 
 tpl.events({
+  'click .postSettings': function (event, template) {
+    console.log(`postSettings would use ${this._id}`);
+  },
   'click .editPost': function (event, template) {
     FlowRouter.go('postEditor', {postId: this._id});
 
