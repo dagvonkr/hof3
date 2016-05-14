@@ -28,9 +28,15 @@ tpl.helpers({
 tpl.events({
   'click .postSettings': function (event, template) {
     console.log(`postSettings would use ${this._id}`);
+    showModalOn(this._id);
   },
   'click .editPost': function (event, template) {
     FlowRouter.go('postEditor', {postId: this._id});
 
   }
-})
+});
+
+function showModalOn (anId) {
+  let post = Posts.findOne(anId);
+  Modal.show('postSettings', post, {});
+}
