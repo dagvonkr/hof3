@@ -22,7 +22,6 @@ check
 twbs:bootstrap
 chrismbeckett:toastr
 underscore
-peppelg:bootstrap-3-modal
 linto:jquery-ui
 mrt:graphicsmagick
 edgee:slingshot
@@ -39,3 +38,4 @@ random
 williamledoux:static-server
 sacha:spin
 teamon:tinymce
+peppelg:bootstrap-3-modal

@@ -1,4 +1,5 @@
 import subs from '../../../modules/subscriptionsManager';
+import subs from '../../../modules/subscriptionsManager';
 import Posts from '../../../../model/posts';
 
 let tpl = Template.adminPosts;
@@ -38,5 +39,6 @@ tpl.events({
 
 function showModalOn (anId) {
   let post = Posts.findOne(anId);
+  debugger
   Modal.show('postSettings', post, {});
 }
