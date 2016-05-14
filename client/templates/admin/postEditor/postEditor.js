@@ -102,7 +102,11 @@ function initializeOn (template) {
 function initializeTinymce () {
   tinymce.init({
     selector: 'textarea',
-    skin_url: '/packages/teamon_tinymce/skins/lightgray'
+    skin_url: '/packages/teamon_tinymce/skins/lightgray',
+    menu: {},
+    plugins: "link",
+    toolbar: "bold italic | link",
+    statusbar: false
   });
 }
 
