@@ -39,6 +39,23 @@ Meteor.methods({
     // console.log(`newPost: ${JSON.stringify(newPost)}`);
     return Posts.insert(newPost);
   },
+
+  updateHeaderTextAlign (postId, textAlign) {
+    // Make sure the user is logged in before persisting
+    if (! this.userId) {
+      throw new Meteor.Error('not-authorized');
+    }
+
+    check(postId, String);
+    check(textAlign, String);
+
+    const toSave = {
+      'style.header.textAlign': textAlign
+    }
+    // console.log(`toSave: ${JSON.stringify(toSave)}`);
+    return Posts.update({_id: postId },{ $set: toSave });
+  },
+
   updateHeaderTextShadow (postId, textShadow) {
     // Make sure the user is logged in before persisting
     if (! this.userId) {
