@@ -22,6 +22,20 @@ if(Meteor.isClient) { // client side common methods
     $(title).css(customStyle);
   };
 
+  Posts.hasImageOn = function (aPost) {
+    // Answers true if there are images in aPost.
+    return !!aPost.images && !!aPost.images[0];
+  };
+
+  Posts.getMainImageUrlFor = function (aPost) {
+    // Answers the url of the main image of aPost.
+    try {
+        return  `${Meteor.absoluteUrl()}images/${aPost.images[0]}.${Meteor.settings.public.imageFormat}`;
+      } catch (error) {
+        return null;
+      }
+  };
+
   function getPostStyle (aPost) {
     // Answers the custom style of this post.
     const customStyle = {
