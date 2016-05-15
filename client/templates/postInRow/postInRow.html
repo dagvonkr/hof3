@@ -6,12 +6,16 @@
 
     <div class="post-content">{{ content }}</div>
 
+    <div class="image-of-post-in-row">
+      <img src="{{ mainImageUrl }}">
+    </div>
+
+<!--     <div class="images-in-post-view">
+      {{ > postImages postId=postId }}
+    </div> -->
+
   {{ else }}
     {{ > spinner }}
   {{ /if }}
-
-  <div class="images-in-post-view">
-    {{ > postImages postId=postId }}
-  </div>
 
 </template>

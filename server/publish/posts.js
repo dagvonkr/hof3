@@ -23,7 +23,7 @@ Meteor.publish('allPostsInfinite', function (limit, query) {
   // Assign safe values to a new object after they have been validated
   selector.name = query.name;
 
-  return Posts.find(selector, {
+  const answer = Posts.find(selector, {
     limit: limit,
     // Using sort here is necessary to continue to use the Oplog Observe Driver!
     // https://github.com/meteor/meteor/wiki/Oplog-Observe-Driver
@@ -31,6 +31,9 @@ Meteor.publish('allPostsInfinite', function (limit, query) {
       createdOn: 1
     }
   });
+
+  console.log(`allPostsInfinite publishing ${answer.count()} posts for owner ${this.userId}`);
+  return answer;
 });
 
 Meteor.publish('publishedPosts', function (options, aSearchString) {
@@ -39,7 +42,7 @@ Meteor.publish('publishedPosts', function (options, aSearchString) {
   const someOptions = options || { sort: {createdOn: -1}};
   const query = {
     $or: [
-      { public: true }
+      { isPublished: true }
       , { $and: [
           { name: {
                   $regex: /.*${searchString || ''}.*/
@@ -56,6 +59,7 @@ Meteor.publish('publishedPosts', function (options, aSearchString) {
 
   // console.log('About to publish parties with query:', query, options);
 
-  const posts = Posts.find(query, someOptions);
-  return posts;
+  const answer = Posts.find(query, someOptions);
+  console.log(`publishedPosts publishing ${answer.count()} posts using query ${JSON.stringify(query)}`);
+  return answer;
 });

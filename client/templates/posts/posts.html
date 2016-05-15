@@ -3,8 +3,9 @@
   {{ #if isReady }}
     <div class="blog-posts">
       {{ #each posts }}
-
+        {{ title }}
         {{ > postInRow }}
+
 
       {{ /each }}
     </div>
