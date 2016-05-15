@@ -8,8 +8,7 @@ tpl.onCreated(function() {
 
   self.ready = new ReactiveVar();
   self.autorun(function () {
-
-    var postId = FlowRouter.getQueryParam('postId');
+    var postId = self.data._id;
     var handle = subs.subscribe('post', postId);
     self.ready.set(handle.ready());
   });
