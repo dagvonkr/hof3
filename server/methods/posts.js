@@ -40,50 +40,19 @@ Meteor.methods({
     return Posts.insert(newPost);
   },
 
-  updateHeaderTextAlign (postId, textAlign) {
+  updateHeaderStyle (postId, attribute, value) {
     // Make sure the user is logged in before persisting
     if (! this.userId) {
       throw new Meteor.Error('not-authorized');
     }
 
     check(postId, String);
-    check(textAlign, String);
+    check(attribute, String);
+    check(value, String);
 
-    const toSave = {
-      'style.header.textAlign': textAlign
-    }
-    // console.log(`toSave: ${JSON.stringify(toSave)}`);
-    return Posts.update({_id: postId },{ $set: toSave });
-  },
+    const toSave = {};
+    toSave[attribute] = value;
 
-  updateHeaderTextShadow (postId, textShadow) {
-    // Make sure the user is logged in before persisting
-    if (! this.userId) {
-      throw new Meteor.Error('not-authorized');
-    }
-
-    check(postId, String);
-    check(textShadow, String);
-
-    const toSave = {
-      'style.header.textShadow': textShadow
-    }
-    // console.log(`toSave: ${JSON.stringify(toSave)}`);
-    return Posts.update({_id: postId },{ $set: toSave });
-  },
-
-  updateHeaderColor (postId, color) {
-    // Make sure the user is logged in before persisting
-    if (! this.userId) {
-      throw new Meteor.Error('not-authorized');
-    }
-
-    check(postId, String);
-    check(color, String);
-
-    const toSave = {
-      'style.header.color': color
-    }
     // console.log(`toSave: ${JSON.stringify(toSave)}`);
     return Posts.update({_id: postId },{ $set: toSave });
   }
