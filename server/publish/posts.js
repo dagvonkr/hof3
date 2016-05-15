@@ -1,6 +1,6 @@
 Meteor.publish('post', function (postId) {
   // Publishes only the party corresponding to partyId if any. Null otherwise.
-  const answer = Posts.find({_id: postId});
+  const answer = Posts.find({_id: postId, isPublished: true});
   console.log(`post publishing ${answer.count()} post for postId ${postId}`);
   return answer;
 });
@@ -14,7 +14,7 @@ Meteor.publish('allPosts', function (options, aSearchString) {
   return answer;
 });
 
-Meteor.publish('AllPostsInfinite', function (limit, query) {
+Meteor.publish('allPostsInfinite', function (limit, query) {
   console.log('limit JSON.stringify(query)', limit, JSON.stringify(query));
   // Don't use the query object directly in your cursor for security!
   var selector = {};
@@ -45,7 +45,7 @@ Meteor.publish('posts', function (options, aSearchString) {
                   $regex: /.*${searchString || ''}.*/
                   , $options: 'i'
                 } }
-        , { public: true }
+        , { isPublished: true }
       ] }
     ]
   };

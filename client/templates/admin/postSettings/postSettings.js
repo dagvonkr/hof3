@@ -9,12 +9,43 @@ tpl.helpers({
 });
 
 tpl.events({
+  'change #postIsPublished': function (event, template) {
+    const whichPost = this._id;
+    Meteor.call('publishPost',
+      whichPost,
+      $(template.find('#postIsPublished')).prop('checked'));
+  },
+
+  'change #postHeaderTop': function (event, template) {
+    const whichPost = this._id;
+    Meteor.call('updateHeaderStyle',
+      whichPost,
+      'top',
+      $(template.find('#postHeaderTop')).val());
+  },
+
+  'change #postHeaderLeft': function (event, template) {
+    const whichPost = this._id;
+    Meteor.call('updateHeaderStyle',
+      whichPost,
+      'left',
+      $(template.find('#postHeaderLeft')).val());
+  },
+
+  'change #postHeaderWidth': function (event, template) {
+    const whichPost = this._id;
+    Meteor.call('updateHeaderStyle',
+      whichPost,
+      'width',
+      $(template.find('#postHeaderWidth')).val());
+  },
+
   'change #postHeaderFontSize': function (event, template) {
     const whichPost = this._id;
     Meteor.call('updateHeaderStyle',
       whichPost,
       'fontSize',
-      $(template.find('#postHeaderTextAlign')).val());
+      $(template.find('#postHeaderFontSize')).val());
   },
 
   'change #postHeaderTextAlign': function (event, template) {

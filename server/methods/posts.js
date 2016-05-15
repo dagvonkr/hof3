@@ -40,6 +40,23 @@ Meteor.methods({
     return Posts.insert(newPost);
   },
 
+  publishPost (postId, isPublished) {
+    // Make sure the user is logged in before persisting
+    if (! this.userId) {
+      throw new Meteor.Error('not-authorized');
+    }
+
+    check(postId, String);
+    check(isPublished, Boolean);
+
+    const toSave = {
+      isPublished: isPublished
+    };
+
+    // console.log(`toSave: ${JSON.stringify(toSave)}`);
+    return Posts.update({_id: postId },{ $set: toSave });
+  },
+
   updateHeaderStyle (postId, attribute, value) {
     // Make sure the user is logged in before persisting
     if (! this.userId) {
