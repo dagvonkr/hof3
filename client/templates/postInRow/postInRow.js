@@ -7,16 +7,7 @@ tpl.onCreated(function() {
   let self = this;
 
   self.ready = new ReactiveVar();
-  self.autorun(() => {
-    const postId = self.data._id;
-    const handle = subs.subscribe('post', postId);
-    self.ready.set(handle.ready());
-    if(self.ready.get()) {
-      Meteor.setTimeout(function () {
-        updatePostStyleOn(self);
-      }, Meteor.settings.public.postInRowOnReadyDelay);
-    }
-  });
+  initializeOn(self);
 });
 
 tpl.onRendered(function () {
@@ -34,10 +25,34 @@ tpl.helpers({
   }
 });
 
+function initializeOn (aTemplate) {
+
+  aTemplate.autorun(() => {
+    const postId = aTemplate.data._id;
+    const handle = subs.subscribe('post', postId);
+    aTemplate.ready.set(handle.ready());
+    if(aTemplate.ready.get()) {
+      Meteor.setTimeout(function () {
+        updatePostStyleOn(aTemplate);
+      }, Meteor.settings.public.postInRowOnReadyDelay);
+    }
+  });
+
+  Posts.find().observe({
+    changed: function (newDoc, oldDoc, atIndex) {
+      if(aTemplate.data._id === newDoc._id) {
+        updatePostStyleOn(aTemplate);
+      }
+    }
+  });
+}
+
+
 function updatePostStyleOn (aTemplate) {
   // Updates the style of the post on aTemplate.
   let title = aTemplate.find('[name="title"]');
-  const customStyle = getPostStyle(aTemplate.data);
+  const freshPost = Posts.findOne(aTemplate.data._id);
+  const customStyle = getPostStyle(freshPost);
   $(title).css(customStyle);
 }
 
