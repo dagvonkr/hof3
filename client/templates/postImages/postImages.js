@@ -27,16 +27,18 @@ tpl.helpers({
 function initializeOn (template) {
   template.ready = new ReactiveVar(false);
   template.autorun(function () {
-    const post = Posts.findOne(template.data.postId.get());
-    if(post) {
-      const imageIds = post.images;
-      let postHandle = template.subscribe('someImages', imageIds);
-      template.ready.set(postHandle.ready());
-      if(postHandle.ready()) {
-        console.log(`postImages autorun is READY ${Images.find().count()} images found`);
+    if(template.data.postId) {
+      const post = Posts.findOne(template.data.postId.get());
+      if(post) {
+        const imageIds = post.images;
+        let postHandle = template.subscribe('someImages', imageIds);
+        template.ready.set(postHandle.ready());
+        if(postHandle.ready()) {
+          console.log(`postImages autorun is READY ${Images.find().count()} images found`);
+        }
+      } else {
+        template.ready.set(true);
       }
-    } else {
-      template.ready.set(true);
     }
   });
 }

@@ -14,17 +14,17 @@ Posts.allow({
 
 if(Meteor.isClient) { // client side common methods
 
-  Posts.updatePostStyleOn = function (aTemplate) {
+  Posts.updatePostStyleOn = function (aTemplate, postId) {
     // Updates the style of the post on aTemplate.
     let title = aTemplate.find('[name="title"]');
-    const freshPost = Posts.findOne(aTemplate.data._id);
+    const freshPost = Posts.findOne(postId);
     const customStyle = getPostStyle(freshPost);
     $(title).css(customStyle);
   };
 
   Posts.hasImageOn = function (aPost) {
     // Answers true if there are images in aPost.
-    return !!aPost.images && !!aPost.images[0];
+    return !!aPost && !!aPost.images && !!aPost.images[0];
   };
 
   Posts.getMainImageUrlFor = function (aPost) {

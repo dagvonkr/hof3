@@ -1,6 +1,7 @@
 let tpl = Template.post;
 
 tpl.onCreated(function() {
+  debugger
   var self = this;
   self.data.postId = new ReactiveVar(FlowRouter.current().params.postId);
   self.ready = new ReactiveVar();
