@@ -1,15 +1,12 @@
 <template name="postInRow">
-  <p>oooh</p>
   {{ #if isReady }}
     <h3 class="post-title">{{ title }}</h3>
-    <p class="post-subtitle">{{ subtitle }}</p>
-
-    <div class="post-content">{{ content }}</div>
 
     <div class="image-of-post-in-row">
       <img src="{{ mainImageUrl }}">
     </div>
 
+    <p class="post-subtitle">{{ subtitle }}</p>
 <!--     <div class="images-in-post-view">
       {{ > postImages postId=postId }}
     </div> -->

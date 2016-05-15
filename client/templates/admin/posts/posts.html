@@ -8,8 +8,10 @@
         <li class="list-group-item">
           <a class="btn btn-default pull-right postSettings">Settings</a>
           <a class="editPost"><h3>{{ title }}</h3></a>
-          <h4>{{ subtitle }}</h4>
-          <p>{{ content }}</p>
+          <div class="image-of-post-in-row">
+            <img src="{{ getMainImageUrlFor(this) }}">
+          </div>
+          <p>{{ subtitle }}</p>
         </li>
       {{ /each }}
     </ul>
