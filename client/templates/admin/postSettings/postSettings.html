@@ -1,0 +1,91 @@
+<template name="postSettings">
+
+  <div class="modal fade settings-modal" data-backdrop="false">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <br>
+        <label>PUBLIC</label>
+        <label class="is-public">
+          <input type="checkbox" id="postIsPublished">
+          <span> </span>
+        </label>
+        <div class="cms">
+          Top: <input id="postHeaderTop" type="number" placeholder="50">
+        </div>
+        <div class="cms">
+          Left: <input id="postHeaderLeft" type="number" placeholder="0">
+        </div>
+        <div class="cms">
+          Width: <input id="postHeaderWidth" type="number" placeholder="400">
+        </div>
+        <div class="cms">
+          Font-size: <input id="postHeaderFontSize" type="number" placeholder="50">
+        </div>
+
+        <div class="cms color-button">
+          Color: <select id="postHeaderColor" type="text">
+            <option value="#d7548">Orange</option>
+            <option selected="selected" value="#2d2c2c">Black</option>
+            <option value="#5b5b5b">Grey</option>
+            <option value="#529493">Green</option>
+            <option value="#fbfdfd">White</option>
+          </select>
+        </div>
+
+
+        <div class="cms color-button">
+          Font-shadow: <select id="postHeaderTextShadow" type="text">
+            <option value="none">None</option>
+            <option value="3px 3px #2e312e">Black</option>
+          </select>
+        </div>
+
+        <div class="cms">
+          Text-align: <select id="postHeaderTextAlign" type="text">
+            <option value="left"> Left </option>
+            <option value="center" selected="selected"> Center </option>
+            <option value="right"> Right </option>
+          </select>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <!-- checkbox
+
+  input left number
+  input top number
+
+  font-size
+
+  width
+
+  select text-align
+
+  select color -->
+<!--   <div class="modal fade">
+      <div class="modal-dialog">
+          <div class="modal-content">
+
+              <div class="modal-header">
+                  <h4 class="modal-title">Modal example</h4>
+              </div>
+
+              <div class="modal-body">
+                  <p>A modal example.</p>
+              </div>
+
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+
+          </div>
+      </div>
+  </div> -->
+
+</template>
