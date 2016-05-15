@@ -194,7 +194,7 @@ function updateModelOn (template) {
   let model = template.model;
   model.title = $(template.find('input[name="title"]')).val();
   model.subtitle = $(template.find('input[name="subtitle"]')).val();
-  model.content = $(template.find('textarea[name="content"]')).val();
+  model.content = tinyMCE.activeEditor.getContent({format : 'raw'});
 }
 
 function isNew (aModel) {

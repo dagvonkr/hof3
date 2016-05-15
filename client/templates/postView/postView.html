@@ -1,25 +1,24 @@
 <template name="postView">
-  <h1>cakcakckack</h1>
   {{ #if isReady }}
-    <h3 class="post-title">{{ title }}</h3>
-    <p class="post-subtitle">{{ subtitle }}</p>
+    <h3 class="post-title">{{ post.title }}</h3>
+    <p class="post-subtitle">{{ post.subtitle }}</p>
     <div class="article-description">
-      <div>{{ content }}</div>
+      <div id="postContent"></div>
     </div>
 
-    {{ #if youtubeLink }}
-    <div id="postVideo" class="image-detail-view">
-      <iframe width="560" height="315" src="{{ youtubeLink }}" frameborder="0" allowfullscreen></iframe>
-    </div>
+    {{ #if post.youtubeLink }}
+      <div id="postVideo" class="image-detail-view">
+        <iframe width="560" height="315" src="{{ post.youtubeLink }}" frameborder="0" allowfullscreen></iframe>
+      </div>
     {{ /if }}
 
-    <div class="image-of-post-in-row">
+<!--     <div class="image-of-post-in-row">
       <img src="{{ mainImageUrl }}">
     </div>
-
-    <div class="images-in-post-view">
+ -->
+<!--     <div class="images-in-post-view">
       {{ > postImages postId=_id }}
-    </div>
+    </div> -->
   {{ else }}
     {{ > spinner }}
   {{ /if }}

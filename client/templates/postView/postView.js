@@ -10,10 +10,12 @@ tpl.onCreated(function () {
 
 tpl.onRendered(function () {
   let self = this;
-
 });
 
 tpl.helpers({
+  post() {
+    return Posts.findOne(FlowRouter.current().params.postId);
+  },
   isReady() {
     return Template.instance().ready.get();
   }
@@ -26,8 +28,10 @@ function initializeOn (aTemplate) {
     const handle = subs.subscribe('post', postId);
     aTemplate.ready.set(handle.ready());
     if(aTemplate.ready.get()) {
-      aTemplate.data = Posts.findOne(FlowRouter.current().params.postId);
+      const post = Posts.findOne(FlowRouter.current().params.postId);
+      aTemplate.data = post;
       Meteor.setTimeout(function () {
+        $('#postContent').html(post.content);
         Posts.updatePostStyleOn(aTemplate, postId);
       }, Meteor.settings.public.postInRowOnReadyDelay);
     }
@@ -36,6 +40,7 @@ function initializeOn (aTemplate) {
   Posts.find().observe({
     changed: function (newDoc, oldDoc, atIndex) {
       if(aTemplate.data._id === newDoc._id) {
+        $('#postContent').html(newDoc.content);
         Posts.updatePostStyleOn(aTemplate, postId);
       }
     }
