@@ -3,6 +3,7 @@
     "perPage": 3,
     "imageFormat": "jpg",
     "editorInitializeDelay": 200,
+    "postInRowOnReadyDelay": 10,
     "analyticsSettings": {
       "Google Analytics" : {"trackingId": "UA-74818861-2"}
     }

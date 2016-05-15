@@ -1,6 +1,11 @@
 <template name="postInRow">
   {{ #if isReady }}
-    <h3 class="post-title">{{ title }}</h3>
+
+    <a href="/posts/{{ _id }}">
+      <div class="post-header" name="title">{{ title }}</div>
+    </a>
+
+    <p>{{ getPostStyle }}</p>
 
     <div class="image-of-post-in-row">
       <img src="{{ mainImageUrl }}">
