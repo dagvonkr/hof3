@@ -1,0 +1,21 @@
+.cms {
+    float: right;
+    margin: 10px 10px 10px 10px;
+}
+
+.modal-open {
+  overflow: scroll;
+}
+
+.modal-backdrop {
+    display: none;
+
+}
+
+.modal-content {
+    background-color: #fff;
+    width: 100%;
+    height: 160px;
+    padding: 0px 20px 0px 20px;
+
+}
