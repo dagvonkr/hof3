@@ -118,7 +118,13 @@ function hasContentEditor () {
 function initializeTinymce () {
   tinymce.init({
     selector: 'textarea',
-    skin_url: '/packages/teamon_tinymce/skins/lightgray'
+    content_css: 'https://dl.dropboxusercontent.com/s/f46ixwp67t45vju/teststyle.css',
+    skin_url: '/packages/teamon_tinymce/skins/lightgray',
+    menu: {},
+    plugins: "link",
+    toolbar: "bold italic | link",
+    height: 500,
+    statusbar: false
   });
 }
 
