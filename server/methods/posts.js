@@ -1,5 +1,5 @@
 Meteor.methods({
-  savePost: function (doc) {
+  savePos (doc) {
     // Make sure the user is logged in before saving
     if (! this.userId) {
       throw new Meteor.Error('not-authorized');
@@ -19,7 +19,7 @@ Meteor.methods({
     // console.log(`toSave: ${JSON.stringify(toSave)}`);
     return Posts.update({_id: doc._id },{ $set: toSave });
   },
-  saveNewPost: function (doc) {
+  saveNewPost (doc) {
     // Make sure the user is logged in before inserting
     if (! this.userId) {
       throw new Meteor.Error('not-authorized');
@@ -37,5 +37,20 @@ Meteor.methods({
     }
     // console.log(`newPost: ${JSON.stringify(newPost)}`);
     return Posts.insert(newPost);
+  },
+  updateHeaderColor (postId, color) {
+    // Make sure the user is logged in before persisting
+    if (! this.userId) {
+      throw new Meteor.Error('not-authorized');
+    }
+
+    check(postId, String);
+    check(color, String);
+
+    const toSave = {
+      'style.header.color': color
+    }
+    // console.log(`toSave: ${JSON.stringify(toSave)}`);
+    return Posts.update({_id: postId },{ $set: toSave });
   }
 })
