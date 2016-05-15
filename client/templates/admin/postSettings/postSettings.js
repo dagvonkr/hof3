@@ -9,11 +9,19 @@ tpl.helpers({
 });
 
 tpl.events({
+  'change #postHeaderFontSize': function (event, template) {
+    const whichPost = this._id;
+    Meteor.call('updateHeaderStyle',
+      whichPost,
+      'fontSize',
+      $(template.find('#postHeaderTextAlign')).val());
+  },
+
   'change #postHeaderTextAlign': function (event, template) {
     const whichPost = this._id;
     Meteor.call('updateHeaderStyle',
       whichPost,
-      'style.header.textAlign',
+      'textAlign',
       $(template.find('#postHeaderTextAlign')).val());
   },
 
@@ -21,7 +29,7 @@ tpl.events({
     const whichPost = this._id;
     Meteor.call('updateHeaderStyle',
       whichPost,
-      'style.header.textShadow',
+      'textShadow',
       $(template.find('#postHeaderTextShadow')).val());
   },
 
@@ -29,7 +37,7 @@ tpl.events({
     const whichPost = this._id;
     Meteor.call('updateHeaderStyle',
       whichPost,
-      'style.header.color',
+      'color',
       $(template.find('#postHeaderColor')).val());
     // console.log(`postHeaderColor ${$(template.find('select')).val()}`);
   }

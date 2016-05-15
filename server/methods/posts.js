@@ -51,7 +51,7 @@ Meteor.methods({
     check(value, String);
 
     const toSave = {};
-    toSave[attribute] = value;
+    toSave[`style.header.${attribute}`] = value;
 
     // console.log(`toSave: ${JSON.stringify(toSave)}`);
     return Posts.update({_id: postId },{ $set: toSave });
