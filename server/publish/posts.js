@@ -33,7 +33,7 @@ Meteor.publish('allPostsInfinite', function (limit, query) {
   });
 });
 
-Meteor.publish('posts', function (options, aSearchString) {
+Meteor.publish('publishedPosts', function (options, aSearchString) {
   // Publishes only the posts that are set as public and uses the sent options or searchString if any.
   var searchString = aSearchString || '';
   const someOptions = options || { sort: {createdOn: -1}};

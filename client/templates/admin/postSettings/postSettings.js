@@ -24,7 +24,7 @@ tpl.onRendered(function () {
   $(self.find('#postHeaderTextAlign')).val( self.headerTextAlign.get() );
   $(self.find('#postHeaderTextShadow')).val( self.headerTextShadow.get() );
   $(self.find('#postHeaderColor')).val( self.headerColor.get() );
-
+  $(self.find('#postIsPublished')).focus();
 });
 
 tpl.helpers({

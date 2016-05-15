@@ -1,10 +1,11 @@
-let tpl = Template.post;
+let tpl = Template.postInRow;
 
 tpl.onCreated(function() {
   var self = this;
-  self.data.postId = new ReactiveVar(FlowRouter.current().params.postId);
+
   self.ready = new ReactiveVar();
   self.autorun(function () {
+    debugger
     var postId = FlowRouter.getQueryParam('postId');
     var handle = subs.subscribe('post', postId);
     self.ready.set(handle.ready());
