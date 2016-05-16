@@ -3,18 +3,19 @@
   {{ > postEditor shouldRenewModelOnUserSave=true }}
 
   {{ #if isReady }}
-    <ul class="list-group">
-      {{ #each posts }}
-        <li class="list-group-item">
-          <a class="btn btn-default pull-right postSettings">Settings</a>
-          <a class="editPost"><h3>{{ title }}</h3></a>
-          <div class="image-of-post-in-row">
-            <img src="{{ getMainImageUrlFor(this) }}">
+    <div class="post-wrapper">
+        {{ #each posts }}
+          <div class="post-frontpage">
+            <button><strong>SLETT</strong></button>
+            <button class="settings-button postSettings">Settings</button>
+            <a class="editPost"><div class="post-header">{{ title }}</div></a>
+            <div class="main-image image-of-post-in-row">
+              <img src="{{ getMainImageUrlFor(this) }}">
+            </div>
+            <p class="description">{{ subtitle }}</p>
           </div>
-          <p>{{ subtitle }}</p>
-        </li>
-      {{ /each }}
-    </ul>
+        {{ /each }}
+    </div>
   {{ else }}
     {{ > spinner }}
   {{ /if }}

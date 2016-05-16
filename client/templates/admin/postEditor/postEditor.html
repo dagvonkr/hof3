@@ -1,14 +1,12 @@
 <template name="postEditor">
-  <div class="panel panel-default">
+
     {{ #if isReady }}
 
       <div class="panel-heading">
         {{ #if isEditing }}
-          <h2 class="pull-left">Edit post</h2>
-          <button class="btn btn-primary pull-right savePost">Save post</button>
+          <button class="update-post-button savePost">Oppdater</button>
         {{ else }}
-          <h2 class="pull-left">New post</h2>
-          <button class="btn btn-primary pull-right savePost">Save new post</button>
+          <button class="add-btn savePost">Lagre post</button>
         {{ /if }}
         <div class="clearfix"></div>
       </div>
@@ -17,7 +15,7 @@
 
         <div class="form-group form-group-lg">
           <input
-            class="form-control"
+            class="header-detail-view header-edit"
             type="text"
             name="title"
             placeholder="Enter post title"
@@ -28,23 +26,23 @@
 
           <div class="form-group form-group">
             <input
-              class="form-control"
+              class="article-text"
               type="text"
               name="subtitle"
-              placeholder="Enter post subtitle"
+              placeholder="Ingress"
               value="{{ model.subtitle }}">
           </div>
 
           <div class="form-group form-group">
             <textarea
               id="content-input"
-              class="form-control"
+              class="article-description"
               name="content"
               placeholder="Enter post body content">{{ model.content }}</textarea>
           </div>
 
           <div class="post-youtube-wrapper">
-            <p> Legg inn Youtube link her:</p>
+            <p> <strong>Legg inn Youtube link her: </strong></p>
             <div class="form-group form-group">
               <input
                 id="youtube-link"
@@ -82,5 +80,5 @@
     {{ /if }}
 
 
-  </div>
+
 </template>
