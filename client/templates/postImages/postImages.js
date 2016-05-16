@@ -39,7 +39,7 @@ function initializeOn (template) {
         let postHandle = template.subscribe('someImages', imageIds);
         template.ready.set(postHandle.ready());
         if(postHandle.ready()) {
-          console.log(`postImages autorun is READY ${Images.find().count()} images found`);
+          // console.log(`postImages autorun is READY ${Images.find().count()} images found`);
         }
       } else {
         template.ready.set(true);
