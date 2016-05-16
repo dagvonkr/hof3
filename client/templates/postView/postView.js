@@ -40,7 +40,8 @@ function initializeOn (aTemplate) {
 
   Posts.find().observe({
     changed: function (newDoc, oldDoc, atIndex) {
-      if(aTemplate.data._id === newDoc._id) {
+      const postId = aTemplate.data._id;
+      if(postId === newDoc._id) {
         $('#postContent').html(newDoc.content);
         Posts.updatePostStyleOn(aTemplate, postId);
       }
