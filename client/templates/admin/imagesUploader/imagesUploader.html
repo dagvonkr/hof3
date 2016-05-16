@@ -16,8 +16,8 @@
           </div>
 
           {{ #if isCropping }}
-          <div class="btn btn-default" id="addImage">Add image</div>
-          <a class="btn" id="discardImage">Discard</a>
+          <div class="btn btn-default" id="addImage">Legg til bilde</div>
+          <a class="btn" id="discardImage">Slett dette bilde</a>
           {{ /if }}
         </div>
       </div>
@@ -25,22 +25,20 @@
 
     {{ #unless isCropping }}
       <!-- Dropzones -->
-
-      <div class="grid">
-        <div class="row">
-          <div class="col-xs-4 col-md-4">
-            <div id="portrait" class="portrait-dropzone drop-box"></div>
-          </div>
-
-          <div class="col-xs-4 col-md-4">
-            <div id="landscape" class="landscape-dropzone drop-box"></div>
-          </div>
-
-          <div class="col-xs-4 col-md-4">
-            <div id="square" class="square-dropzone drop-box"></div>
-          </div>
-        </div>
+    <div class="dropzone-wrapper">
+      <div class="col-xs-4 col-md-4">
+        <div id="portrait" class="portrait-dropzone drop-box"></div>
       </div>
+
+      <div class="col-xs-4 col-md-4">
+        <div id="landscape" class="landscape-dropzone drop-box"></div>
+      </div>
+
+      <div class="col-xs-4 col-md-4">
+        <div id="square" class="square-dropzone drop-box"></div>
+      </div>
+    </div>
+
     {{ /unless }}
   </div>
 </template>
