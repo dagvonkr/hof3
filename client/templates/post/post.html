@@ -1,3 +1,16 @@
 <template name="post">
-  <h1>POST</h1>
+  {{ #if isReady }}
+    <h3 class="post-title">{{ title }}</h3>
+    <p class="post-subtitle">{{ subtitle }}</p>
+
+    <div class="post-content">{{ content }}</div>
+
+  {{ else }}
+    {{ > spinner }}
+  {{ /if }}
+
+  <div class="images-in-post-view">
+    {{ > postImages postId=postId }}
+  </div>
+
 </template>

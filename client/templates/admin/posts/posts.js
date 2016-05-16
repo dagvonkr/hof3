@@ -17,6 +17,9 @@ function initializeOn (aTemplate) {
 }
 
 tpl.helpers({
+  getMainImageUrlFor(aPost) {
+    return getMainImageUrlFor(aPost);
+  },
   isReady() {
     return Template.instance().ready.get();
   },
@@ -35,6 +38,20 @@ tpl.events({
 
   }
 });
+
+function hasImageOn (aPost) {
+  // Answers true if there are images in aPost.
+  return !!aPost.images && !!aPost.images[0];
+}
+
+function getMainImageUrlFor (aPost) {
+  // Answers the url of the main image of aPost.
+  try {
+      return  `${Meteor.absoluteUrl()}images/${aPost.images[0]}.${Meteor.settings.public.imageFormat}`;
+    } catch (error) {
+      return null;
+    }
+}
 
 function showModalOn (anId) {
   let post = Posts.findOne(anId);

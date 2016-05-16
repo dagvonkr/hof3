@@ -1,0 +1,20 @@
+<template name="postInRow">
+  {{ #if isReady }}
+
+    <a href="/posts/{{ _id }}">
+      <div class="post-header" name="title">{{ title }}</div>
+    </a>
+
+    <p>{{ getPostStyle }}</p>
+
+    <div class="image-of-post-in-row">
+      <img src="{{ mainImageUrl }}">
+    </div>
+
+    <p class="post-subtitle">{{ subtitle }}</p>
+
+  {{ else }}
+    {{ > spinner }}
+  {{ /if }}
+
+</template>
