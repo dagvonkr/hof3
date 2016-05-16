@@ -1,7 +1,7 @@
 Meteor.publish('post', function (postId) {
   // Publishes only the party corresponding to partyId if any. Null otherwise.
   const answer = Posts.find({_id: postId, isPublished: true});
-  console.log(`post publishing ${answer.count()} post for postId ${postId}`);
+  // console.log(`post publishing ${answer.count()} post for postId ${postId}`);
   return answer;
 });
 
@@ -10,7 +10,7 @@ Meteor.publish('allPosts', function (options, aSearchString) {
   var searchString = aSearchString || '';
   const query = { createdBy: this.userId };
   const answer = Posts.find(query, {sort: { createdOn: -1 }});
-  console.log(`allPosts publishing ${answer.count()} posts for owner ${this.userId}`);
+  // console.log(`allPosts publishing ${answer.count()} posts for owner ${this.userId}`);
   return answer;
 });
 
@@ -32,7 +32,7 @@ Meteor.publish('allPostsInfinite', function (limit, query) {
     }
   });
 
-  console.log(`allPostsInfinite publishing ${answer.count()} posts for owner ${this.userId}`);
+  // console.log(`allPostsInfinite publishing ${answer.count()} posts for owner ${this.userId}`);
   return answer;
 });
 
@@ -60,6 +60,6 @@ Meteor.publish('publishedPosts', function (options, aSearchString) {
   // console.log('About to publish parties with query:', query, options);
 
   const answer = Posts.find(query, someOptions);
-  console.log(`publishedPosts publishing ${answer.count()} posts using query ${JSON.stringify(query)}`);
+  // console.log(`publishedPosts publishing ${answer.count()} posts using query ${JSON.stringify(query)}`);
   return answer;
 });
