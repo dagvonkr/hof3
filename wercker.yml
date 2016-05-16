@@ -74,5 +74,5 @@ deploy:
   # after-steps:
   #   - slack-notifier:
   #       url: $SLACK_WEBHOOK_URL
-  #       channel: hof2
+  #       channel: hof3
   #       username: wrecker
