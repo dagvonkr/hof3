@@ -1,5 +1,5 @@
 #!/bin/bash
-cd hof2
+cd hof3
 rm -fr ./bundle
 tar -xzf source.tar.gz
 #cd bundle/server
