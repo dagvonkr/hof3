@@ -12,13 +12,9 @@
       </div>
     {{ /if }}
 
-<!--     <div class="image-of-post-in-row">
-      <img src="{{ mainImageUrl }}">
+    <div class="images-in-post-view">
+      {{ > postImages postId=postId }}
     </div>
- -->
-<!--     <div class="images-in-post-view">
-      {{ > postImages postId=_id }}
-    </div> -->
   {{ else }}
     {{ > spinner }}
   {{ /if }}

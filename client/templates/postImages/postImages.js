@@ -4,8 +4,14 @@ let tpl = Template.postImages;
 
 tpl.onCreated(function () {
   let self = this;
+  self.ready = new ReactiveVar(false);
+});
+
+tpl.onRendered(function () {
+  let self = this;
   initializeOn(self);
 });
+
 
 tpl.helpers({
   isReady() {
@@ -25,7 +31,6 @@ tpl.helpers({
 });
 
 function initializeOn (template) {
-  template.ready = new ReactiveVar(false);
   template.autorun(function () {
     if(template.data.postId) {
       const post = Posts.findOne(template.data.postId.get());

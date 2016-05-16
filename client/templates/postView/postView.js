@@ -5,6 +5,7 @@ let tpl = Template.postView;
 tpl.onCreated(function () {
   let self = this;
   self.ready = new ReactiveVar;
+  self.data.postId = new ReactiveVar;
   initializeOn(self);
 });
 
@@ -29,7 +30,7 @@ function initializeOn (aTemplate) {
     aTemplate.ready.set(handle.ready());
     if(aTemplate.ready.get()) {
       const post = Posts.findOne(FlowRouter.current().params.postId);
-      aTemplate.data = post;
+      aTemplate.data.postId.set(post._id);
       Meteor.setTimeout(function () {
         $('#postContent').html(post.content);
         Posts.updatePostStyleOn(aTemplate, postId);
