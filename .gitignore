@@ -2,6 +2,7 @@
 
 .env
 run.sh
+productionRun.sh
 
 # Logs
 logs
