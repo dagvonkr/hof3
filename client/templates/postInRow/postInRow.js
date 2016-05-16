@@ -40,7 +40,8 @@ function initializeOn (aTemplate) {
 
   Posts.find().observe({
     changed: function (newDoc, oldDoc, atIndex) {
-      if(aTemplate.data._id === newDoc._id) {
+      const postId = aTemplate.data._id;
+      if(postId === newDoc._id) {
         Posts.updatePostStyleOn(aTemplate, postId);
       }
     }
