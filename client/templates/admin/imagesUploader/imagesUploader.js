@@ -1,4 +1,5 @@
-import '/node_modules/cropperjs/dist/cropper.css';
+// import '/node_modules/cropperjs/dist/cropper.css';
+import 'cropperjs/dist/cropper.css';
 import Cropper from 'cropperjs';
 
 let tpl = Template.imagesUploader;
