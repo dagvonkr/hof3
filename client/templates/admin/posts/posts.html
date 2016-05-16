@@ -4,18 +4,17 @@
 
   {{ #if isReady }}
     <div class="post-wrapper">
-      <ul class="list-group">
         {{ #each posts }}
           <div class="post-frontpage">
-            <a class="btn btn-default pull-right postSettings">Settings</a>
-            <a class="editPost"><h3>{{ title }}</h3></a>
-            <div class="image-of-post-in-row">
+            <button><strong>SLETT</strong></button>
+            <button class="settings-button postSettings">Settings</button>
+            <a class="editPost"><div class="post-header">{{ title }}</div></a>
+            <div class="main-image image-of-post-in-row">
               <img src="{{ getMainImageUrlFor(this) }}">
             </div>
-            <p>{{ subtitle }}</p>
+            <p class="description">{{ subtitle }}</p>
           </div>
         {{ /each }}
-      </ul>
     </div>
   {{ else }}
     {{ > spinner }}
