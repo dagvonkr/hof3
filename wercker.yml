@@ -33,7 +33,7 @@ build:
     - script :
         name : meteor build
         code : |
-            meteor build .
+            meteor build . --architecture os.linux.x86_64
     - script:
         name: echo informations
         code: |
