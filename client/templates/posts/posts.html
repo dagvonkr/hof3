@@ -2,10 +2,10 @@
 
   {{ #if isReady }}
     <div class="blog-posts">
-      {{ #each posts }}
+
+      {{ #each publishedPosts }}
         {{ title }}
         {{ > postInRow }}
-
 
       {{ /each }}
     </div>
