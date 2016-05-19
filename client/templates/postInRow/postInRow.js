@@ -7,7 +7,7 @@ tpl.onCreated(function() {
   let self = this;
 
   self.ready = new ReactiveVar();
-  initializeOn(self);
+  // initializeOn(self);
 });
 
 tpl.onRendered(function () {

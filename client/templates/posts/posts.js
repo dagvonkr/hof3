@@ -20,7 +20,7 @@ tpl.helpers({
   isReady () {
     return Template.instance().ready.get();
   },
-  posts() {
+  publishedPosts() {
     return Posts.find({},{sort: {createdOn: -1}});
   }
 })

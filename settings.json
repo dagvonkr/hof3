@@ -1,5 +1,8 @@
 {
   "public": {
+    "ga": {
+      "account" : "UA-74818861-2"
+    },
     "perPage": 3,
     "imageFormat": "jpg",
     "editorInitializeDelay": 200,
