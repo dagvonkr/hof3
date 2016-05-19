@@ -4,6 +4,8 @@
 run.sh
 productionRun.sh
 
+*.tar.gz
+
 # Logs
 logs
 *.log
