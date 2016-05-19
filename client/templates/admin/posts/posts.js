@@ -30,7 +30,6 @@ tpl.helpers({
 
 tpl.events({
   'click .postSettings': function (event, template) {
-    console.log(`postSettings would use ${this._id}`);
     showModalOn(this._id);
   },
   'click .editPost': function (event, template) {
