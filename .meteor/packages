@@ -40,3 +40,4 @@ sacha:spin
 teamon:tinymce
 peppelg:bootstrap-3-modal
 service-configuration
+dburles:mongo-collection-instances
