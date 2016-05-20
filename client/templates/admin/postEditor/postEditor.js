@@ -138,8 +138,10 @@ function refreshModelOn (template) {
 function basicSaveModelOn (template, isSaveFromUser) {
   let selector;
   if(isNew(template.model)) {
+      template.model.notAdded = !isSaveFromUser;
       selector = 'saveNewPost';
     } else {
+      template.model.notAdded = !isSaveFromUser;
       selector = 'savePost';
     }
 
@@ -188,6 +190,7 @@ function onImageAdded (template, data) {
 
 function setNewModelOn (template) {
   template.model = newPost();
+  template.data.postId.set(null);
 }
 
 function updateModelOn (template) {

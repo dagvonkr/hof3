@@ -7,6 +7,13 @@ tpl.onCreated(function() {
   initializeOn(self);
 });
 
+tpl.onRendered(function () {
+
+  if(this.data._id) {
+    Posts.updatePostStyleOn(this, this.data._id);
+  }
+});
+
 tpl.helpers({
   mainImageUrl() {
     return Posts.getMainImageUrlFor(this);

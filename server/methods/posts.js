@@ -18,6 +18,7 @@ Meteor.methods({
     check(doc._id, String);
 
     const toSave = {
+      notAdded: doc.notAdded,
       title: doc.title,
       subtitle: doc.subtitle,
       content: doc.content,
@@ -26,7 +27,10 @@ Meteor.methods({
       images: doc.images
     }
     // console.log(`toSave: ${JSON.stringify(toSave)}`);
-    return Posts.update({_id: doc._id },{ $set: toSave });
+    Posts.update({_id: doc._id },{ $set: toSave });
+    if(!doc.notAdded) {
+      Posts.update({_id: doc._id },{ $unset: {notAdded: ''} });
+    }
   },
 
   saveNewPost (doc) {
@@ -38,6 +42,7 @@ Meteor.methods({
     check(doc, Object);
 
     const newPost = {
+      notAdded: doc.notAdded,
       createdOn: new Date,
       createdBy: this.userId,
       title: doc.title,
