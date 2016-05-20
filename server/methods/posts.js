@@ -1,4 +1,13 @@
 Meteor.methods({
+  removePost (postId) {
+    if (! this.userId) {
+      throw new Meteor.Error('not-authorized');
+    }
+    check(postId, String);
+
+    return Posts.remove(postId);
+  },
+
   savePost (doc) {
     // Make sure the user is logged in before saving
     if (! this.userId) {
