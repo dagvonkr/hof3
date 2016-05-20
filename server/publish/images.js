@@ -7,7 +7,7 @@ Meteor.publish('someImages', function (someIds) {
         $in: someIds
       }});
     // console.log(`someImages is publishing ${answer.count()} images `);
-    return answer
+    return answer;
   }
 });
 
@@ -32,9 +32,9 @@ Meteor.publish('images', function (postId) {
 Meteor.publish('mainImages', function () {
   var mainImagesIds = _(Posts.find().fetch()).map(function (each) {
     if(!_(each.images).isEmpty()) {
-      return each.images[0]._id
+      return each.images[0]._id;
     } else {
-      return null
+      return null;
     }
   });
 
