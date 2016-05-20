@@ -5,9 +5,8 @@ Meteor.publish('someImages', function (someIds) {
     const answer = Images.find({
       _id: {
         $in: someIds
-      }}
-      , { sort: { uploadedAt: -1 } });
-    console.log(`someImages is publishing ${answer.count()} images `);
+      }});
+    // console.log(`someImages is publishing ${answer.count()} images `);
     return answer
   }
 });

@@ -5,6 +5,7 @@ let tpl = Template.postImages;
 tpl.onCreated(function () {
   let self = this;
   self.ready = new ReactiveVar(false);
+  self.postImages = new ReactiveVar([]);
 });
 
 tpl.onRendered(function () {
@@ -26,7 +27,7 @@ tpl.helpers({
     }
   },
   postImages() {
-    return Images.find();
+    return Template.instance().postImages.get();
   }
 });
 
@@ -40,6 +41,10 @@ function initializeOn (template) {
         template.ready.set(postHandle.ready());
         if(postHandle.ready()) {
           // console.log(`postImages autorun is READY ${Images.find().count()} images found`);
+          const images = _(post.images).map(function (imageId) {
+            return Images.findOne(imageId);
+          });
+          template.postImages.set(images);
         }
       } else {
         template.ready.set(true);
