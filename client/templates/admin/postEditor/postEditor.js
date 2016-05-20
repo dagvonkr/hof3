@@ -190,6 +190,7 @@ function onImageAdded (template, data) {
 
 function setNewModelOn (template) {
   template.model = newPost();
+  template.data.postId.set(null);
 }
 
 function updateModelOn (template) {

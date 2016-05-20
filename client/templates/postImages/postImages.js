@@ -13,7 +13,6 @@ tpl.onRendered(function () {
   initializeOn(self);
 });
 
-
 tpl.helpers({
   isReady() {
     return Template.instance().ready.get();
@@ -48,6 +47,9 @@ function initializeOn (template) {
         }
       } else {
         template.ready.set(true);
+        if(!template.data.postId.get()){
+          return template.postImages.set([]);
+        }
       }
     }
   });
