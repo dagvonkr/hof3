@@ -29,6 +29,9 @@ tpl.helpers({
 });
 
 tpl.events({
+  'click .removePost': function (event, template) {
+    Meteor.call('removePost', this._id);
+  },
   'click .postSettings': function (event, template) {
     showModalOn(this._id);
   },
