@@ -1,6 +1,8 @@
 # This references the default ubuntu container
 # http://devcenter.wercker.com/docs/containers/index.html
-box: nodesource/vivid:4.2.1
+#box: nodesource/vivid:4.2.1
+
+box: nodesource/wheezy:0.10.40
 services:
   - id: mongo
 # This is the build pipeline. Pipelines are the core of wercker
@@ -58,9 +60,9 @@ deploy:
         overwrite: true
         hide-from-log: true
 
-    - script:
-        name: stop application
-        code: ssh -i $PRIVATEKEY_PATH -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@162.243.218.173 stop $UNIX_USER-hof3 || true
+    # - script:
+    #     name: stop application
+    #     code: ssh -i $PRIVATEKEY_PATH -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@162.243.218.173 stop $UNIX_USER-hof3 || true
     - script:
         name: transfer application
         code: |
