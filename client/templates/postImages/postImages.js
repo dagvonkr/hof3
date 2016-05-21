@@ -1,5 +1,3 @@
-// import subs from '../../../modules/subscriptionsManager';
-
 let tpl = Template.postImages;
 
 tpl.onCreated(function () {

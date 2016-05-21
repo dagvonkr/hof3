@@ -8,11 +8,8 @@
           <div class="post-frontpage">
             <button class="removePost"><strong>SLETT</strong></button>
             <button class="settings-button postSettings">Settings</button>
-            <a class="editPost"><div class="post-header">{{ title }}</div></a>
-            <div class="main-image image-of-post-in-row">
-              <img src="{{ getMainImageUrlFor(this) }}">
-            </div>
-            <p class="description">{{ subtitle }}</p>
+
+            {{ > postInRow model=this hasToEdit=true }}
           </div>
         {{ /each }}
     </div>
