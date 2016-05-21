@@ -4,9 +4,7 @@
     <div class="blog-posts">
 
       {{ #each publishedPosts }}
-        {{ title }}
         {{ > postInRow }}
-
       {{ /each }}
     </div>
   {{ else }}
