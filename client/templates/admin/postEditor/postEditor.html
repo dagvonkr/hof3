@@ -2,16 +2,13 @@
 
     {{ #if isReady }}
 
-      <div class="panel-heading">
-        {{ #if isEditing }}
-          <button class="update-post-button savePost">Oppdater</button>
-        {{ else }}
-          <button class="add-btn savePost">Lagre post</button>
-        {{ /if }}
-        <div class="clearfix"></div>
-      </div>
-
       <div class="panel-body">
+        <div class="panel-heading">
+          {{ #if isEditing }}
+            <button class="add-btn savePost">Lagre post</button>
+          {{ /if }}
+          <div class="clearfix"></div>
+        </div>
 
         <div class="form-group form-group-lg">
           <input
@@ -33,7 +30,7 @@
               value="{{ model.subtitle }}">
           </div>
 
-          <div class="form-group form-group">
+          <div class="form-group form-group article-description">
             <textarea
               id="content-input"
               class="article-description"
@@ -73,6 +70,13 @@
 
         <div>
           {{ > postImages postId=postId }}
+        </div>
+
+        <div class="panel-heading">
+          {{ #if isEditing }}
+            <button class="add-btn savePost">Lagre post</button>
+          {{ /if }}
+          <div class="clearfix"></div>
         </div>
 
       </div>

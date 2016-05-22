@@ -3,6 +3,9 @@
   {{ > postEditor shouldRenewModelOnUserSave=true }}
 
   {{ #if isReady }}
+
+    {{ > blogMenu }}
+
     <div class="post-wrapper">
         {{ #each posts }}
           <div class="post-frontpage">
