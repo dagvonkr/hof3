@@ -4,31 +4,7 @@
 
   {{ #if isReady }}
 
-    <!-- I hsd to add the menu here for now to make it place above the posts and underneath the editor -->
-    <div class="menu">
-      <div class="houseoffam-logo-mobile">
-          HOUSE OF FAM
-      </div>
-      <div class="houseoffam-menu">
-          <div class="menu-nav nettbutikk">
-              <a href="http://fam-irvoll.myshopify.com/collections/frontpage" class="menu-nav-hover"> NETTBUTIKK </a>
-          </div>
-          <div class="menu-nav kontakt">
-              <a href="/kontakt" class="menu-nav-hover">
-            KONTAKT
-          </a>
-          </div>
-          <div class="menu-nav om">
-              <a href="/om" class="menu-nav-hover">
-            OM
-          </a>
-          </div>
-      </div>
-      <div class="houseoffam-line"> </div>
-      <div class="houseoffam-logo">
-          <a href="/">HOUSE OF FAM</a>
-      </div>
-    </div>
+    {{ > blogMenu }}
 
     <div class="post-wrapper">
         {{ #each posts }}
