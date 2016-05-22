@@ -1,0 +1,31 @@
+<template name="innerAdminLayout">
+  <div class="container">
+    <heading>
+      <div class="menu-sub-view">
+        <div class="houseoffam-logo-mobile">
+          <a href="/admin" class="menu-nav-hover"> HOUSE OF FAM</a>
+        </div>
+        <div class="menu-nav-sub-wrapper">
+          <div class="menu-nav-sub nettbutikk-sub">
+            <a href="http://fam-irvoll.myshopify.com/collections/frontpage" class="menu-nav-hover"> NETTBUTIKK </a>
+          </div>
+          <div class="menu-nav-sub kontakt-sub">
+            <a href="/kontakt">
+              KONTAKT
+            </a>
+          </div>
+          <div class="menu-nav-sub om-sub">
+            OM
+          </div>
+        </div>
+
+        <div class="houseoffam-logo-sub">
+          <a href="/admin">
+            HOUSE OF FAM
+          </a>
+        </div>
+      </div>
+    </heading>
+    {{ > Template.dynamic template=content }}
+  </div>
+</template>

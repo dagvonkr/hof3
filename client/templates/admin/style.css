@@ -42,6 +42,15 @@ img {
   max-width: 100%; /* This rule is very important, please do not ignore this! */
 }
 
+.container {
+    width: 100% !important; /*bootstrap overwrite*/
+}
+
+.cropping-image-wrapper{
+    max-width: 325px !important; /*makes the preview have a max-width*/
+    min-width: 325px !important;
+}
+
 /* Progress bar for uploading images*/
 .progressInner {
 
@@ -54,9 +63,9 @@ img {
 }
 
 
-/*.btn-primary {
+.btn-primary {
     display: none !important;
-}*/
+}
 
 .btn-info {
     display: none !important;
@@ -71,7 +80,7 @@ img {
 
 .btn-default {
     border: none !important;
-    background-color: #FBFDFD;
+    background-color: #EDEDED;
 }
 
 /*-----*/
@@ -148,7 +157,7 @@ textarea {
 }
 
 .add-btn {
-    margin-left: 22.5%;
+    margin-left: 40%;
     margin-top: 50px;
     width: 135px;
     height: 35px;
@@ -289,6 +298,7 @@ textarea {
 .post-header {
     z-index: 500;
     position: relative;
+    cursor: pointer;
     font-size: 50px;
     width: 400px;
     top: 50px;
