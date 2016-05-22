@@ -8,15 +8,14 @@ tpl.onCreated(function() {
 });
 
 tpl.onRendered(function () {
-
-  if(this.data._id) {
-    Posts.updatePostStyleOn(this, this.data._id);
+  if(this.data.model._id) {
+    Posts.updatePostStyleOn(this, this.data.model._id);
   }
 });
 
 tpl.helpers({
   mainImageUrl() {
-    return Posts.getMainImageUrlFor(this);
+    return Posts.getMainImageUrlFor(this.model);
   },
 
   isReady() {
@@ -24,11 +23,21 @@ tpl.helpers({
   }
 });
 
+tpl.events({
+  'click .postTitle': function (event, template) {
+    if(this.hasToEdit) {
+      FlowRouter.go(`/admin/posts/edit/${this.model._id}`);
+    } else {
+      FlowRouter.go(`/posts/${this.model._id}`);
+    }
+  }
+})
+
 function initializeOn (aTemplate) {
 
   Posts.find().observe({
     changed: function (newDoc, oldDoc, atIndex) {
-      const postId = aTemplate.data._id;
+      const postId = aTemplate.data.model._id;
       if(postId === newDoc._id) {
         Posts.updatePostStyleOn(aTemplate, postId);
       }

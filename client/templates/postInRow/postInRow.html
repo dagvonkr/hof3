@@ -1,15 +1,13 @@
 <template name="postInRow">
 
-    <a href="/posts/{{ _id }}">
-      <div class="post-header" name="title">{{ title }}</div>
+    <a class="postTitle">
+      <div class="post-header" name="title">{{ model.title }}</div>
     </a>
-
-    <p>{{ getPostStyle }}</p>
 
     <div class="image-of-post-in-row">
       <img src="{{ mainImageUrl }}">
     </div>
 
-    <p class="post-subtitle">{{ subtitle }}</p>
+    <p class="post-subtitle">{{ model.subtitle }}</p>
 
 </template>
