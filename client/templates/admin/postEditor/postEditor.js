@@ -22,6 +22,9 @@ tpl.onRendered(function () {
 });
 
 tpl.helpers({
+  allowImageUpload() {
+    return Template.instance().data.allowImageUpload;
+  },
   hasContentEditor() {
     return hasContentEditor();
   },
