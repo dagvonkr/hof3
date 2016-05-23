@@ -64,9 +64,11 @@
 
       </div>
       <div class="panel-footer">
-        <div>
-          {{ > imagesUploader post=model }}
-        </div>
+        {{ #if allowImageUpload }}
+          <div>
+            {{ > imagesUploader post=model }}
+          </div>
+        {{ /if }}
 
         <div>
           {{ > postImages postId=postId }}
