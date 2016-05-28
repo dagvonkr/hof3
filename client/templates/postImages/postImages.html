@@ -1,9 +1,9 @@
 <template name="postImages">
   {{ #if isReady }}
-    <div>
+    <div class="image-detail-view">
       {{ #each postImages }}
-        <div class="postImage">
-          <img src="{{ getUrlFor(this._id) }}">
+        <div class="postImage image-detail-view-2">
+          <img class="image-detail" src="{{ getUrlFor(this._id) }}">
         </div>
       {{ /each }}
     </div>

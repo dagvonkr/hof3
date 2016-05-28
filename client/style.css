@@ -99,7 +99,7 @@ textarea {
 
 }
 
-.post-wrapper {
+.posts-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -120,7 +120,8 @@ textarea {
 .post-frontpage{
     margin-top: 25px;
     margin-bottom: 50px;
-    max-width: 665px;
+    /* max-width: 665px; */
+
     margin-left: 25px;
     margin-right: 25px;
 
@@ -166,8 +167,9 @@ textarea {
     background-color: #ededed;
 }
 
-.main-image{
-    max-width: 100%;
+.main-image img{
+
+    max-width: 665px;
     max-height: 508px;
 
 }
@@ -363,10 +365,11 @@ textarea {
 
 .image-detail-view{
     margin-top: 20px;
+
 }
 
 .image-detail-view-2{
-
+   margin-bottom: 20px;
     text-align: center;
     margin-left: 5%;
     margin-right: 5%;
