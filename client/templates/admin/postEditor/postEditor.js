@@ -34,7 +34,10 @@ tpl.helpers({
   hasVideo() {
     return Template.instance().enteredYoutubeLink.get();
   },
-  isEditing() {
+  isAddingImages() {
+    return Template.instance().data.isAddingImages;
+  },
+  isNotNew() {
     return !isNew(Template.instance().model);
   },
   isReady() {

@@ -3,7 +3,7 @@
     <div class="image-detail-view">
       {{ #each postImages }}
         <div class="postImage image-detail-view-2">
-          <img class="image-detail" src="{{ getUrlFor(this._id) }}">
+          <img class="{{ #if isPreview }}image-preview{{ else }}image-detail{{ /if }}" src="{{ getUrlFor(this._id) }}">
         </div>
       {{ /each }}
     </div>
