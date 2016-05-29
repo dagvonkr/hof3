@@ -110,6 +110,7 @@ function resetOn (template) {
   try {
     template.cropper.destroy();
     $(template.find('#imageToCrop')).attr('src', null);
+    // $(template.find('input')).val(null);   TO-DO reset the uploader input
   } catch (e) {
     console.warn('No cropper to destroy', e);
   };

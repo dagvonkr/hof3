@@ -12,6 +12,9 @@ tpl.onRendered(function () {
 });
 
 tpl.helpers({
+  isPreview() {
+    return Template.instance().data.isPreview;
+  },
   isReady() {
     return Template.instance().ready.get();
   },
