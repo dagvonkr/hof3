@@ -67,6 +67,9 @@ Meteor.methods({
       isPublished: isPublished
     };
 
+    // Just in case we need to prevent an inconsistent state:
+    Posts.update({_id: postId },{ $unset: {notAdded: ''} });
+
     // console.log(`toSave: ${JSON.stringify(toSave)}`);
     return Posts.update({_id: postId },{ $set: toSave });
   },
