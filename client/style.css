@@ -183,7 +183,7 @@ textarea {
     width: 50px;
     height: 50px;
     display: block;
-    background: url("/red.png");
+    background: url("red.png");
     margin-left: -55px;
     margin-top: 10px;
     cursor: pointer;
@@ -191,7 +191,7 @@ textarea {
 
 .is-public input:checked + span {
     position: absolute;
-    background: url("/green.png");
+    background: url("green.png");
     margin-left: -55px;
     margin-top: 10px;
     cursor: pointer;
@@ -265,7 +265,7 @@ textarea {
 
 .menu-nav-hover:hover:after {
     text-decoration: none;
-    content: url(/arrow.png);
+    content: url("arrow.png");
     transform: scale(.1);
     display: block;
     position: absolute;
