@@ -123,7 +123,7 @@ function hasContentEditor () {
 
 function initializeTinymce () {
   tinymce.init({
-    selector: 'textarea',
+    selector: '#content-input',
     content_css: 'https://dl.dropboxusercontent.com/s/f46ixwp67t45vju/teststyle.css',
     skin_url: '/packages/teamon_tinymce/skins/lightgray',
     menu: {},

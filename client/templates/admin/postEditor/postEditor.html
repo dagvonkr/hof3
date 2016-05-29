@@ -12,12 +12,19 @@
         </div>
 
         <div class="form-group form-group-lg">
-          <input
-            class="header-detail-view header-edit"
-            type="text"
-            name="title"
-            placeholder="Overskrift"
-            value="{{ model.title }}">
+          {{ #if allowImageUpload }}
+            <input
+              class="header-detail-view header-edit"
+              type="text"
+              name="title"
+              placeholder="Overskrift"
+              value="{{ model.title }}">
+          {{ else }}
+            <textarea
+              class="header-detail-view header-edit"
+              name="title"
+              placeholder="Overskrift">{{ model.title }}</textarea>
+          {{ /if }}
         </div>
 
         {{ #if hasContentEditor }}
