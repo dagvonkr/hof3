@@ -21,6 +21,6 @@ tpl.helpers({
     return Template.instance().ready.get();
   },
   publishedPosts() {
-    return Posts.find({},{sort: {createdOn: -1}});
+    return Posts.find({ isPublished: true },{sort: {createdOn: -1}});
   }
 })
