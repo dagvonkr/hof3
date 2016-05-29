@@ -124,11 +124,12 @@ function hasContentEditor () {
 function initializeTinymce () {
   tinymce.init({
     selector: '#content-input',
-    content_css: 'https://dl.dropboxusercontent.com/s/f46ixwp67t45vju/teststyle.css',
+    // content_css: 'https://dl.dropboxusercontent.com/s/f46ixwp67t45vju/teststyle.css',
+    body_class: 'input-content-body',
     skin_url: '/packages/teamon_tinymce/skins/lightgray',
     menu: {},
-    plugins: "link",
-    toolbar: "bold italic | link",
+    plugins: 'link',
+    toolbar: 'bold italic | link',
     height: 500,
     statusbar: false
   });
