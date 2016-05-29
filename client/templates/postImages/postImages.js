@@ -1,3 +1,5 @@
+import subs from '../../modules/subscriptionsManager';
+
 let tpl = Template.postImages;
 
 tpl.onCreated(function () {
@@ -37,7 +39,7 @@ function initializeOn (template) {
       const post = Posts.findOne(template.data.postId.get());
       if(post) {
         const imageIds = post.images;
-        let postHandle = template.subscribe('someImages', imageIds);
+        let postHandle = subs.subscribe('someImages', imageIds);
         template.ready.set(postHandle.ready());
         if(postHandle.ready()) {
           // console.log(`postImages autorun is READY ${Images.find().count()} images found`);
