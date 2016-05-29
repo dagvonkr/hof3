@@ -5,6 +5,7 @@
       <div class="panel-body">
         <div class="panel-heading">
           {{ #if isEditing }}
+            <div class="update-post-button"> Oppdater her etter du <br> har gjort endringer:</div>
             <button class="add-btn savePost">Lagre post</button>
           {{ /if }}
           <div class="clearfix"></div>
@@ -52,8 +53,8 @@
                 <button id="removeYoutubeLink">Fern youtube link</button>
               </div>
               <p><strong>Youtube film som er lagt til: </strong> {{model.youtubeLink}}</p>
-              <div id="postVideo" class="image-detail-view">
-                <iframe width="560" height="315" src="{{ youtubeLinkValue }}" frameborder="0" allowfullscreen></iframe>
+              <div id="postVideo" class="youtube-video-player">
+                <iframe width="650" height="350" src="{{ youtubeLinkValue }}" frameborder="0" allowfullscreen></iframe>
               </div>
             {{ /if }}
 
@@ -83,7 +84,5 @@
 
       </div>
     {{ /if }}
-
-
 
 </template>

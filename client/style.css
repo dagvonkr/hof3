@@ -415,11 +415,13 @@ textarea {
 }
 .update-post-button{
     text-align: center;
+    margin-bottom: -35px;
 }
 
 .post-youtube-wrapper {
     margin: 0 auto;
     text-align: center;
+    width: 100%;
     max-width: 650px;
     margin-bottom: 50px;
 }
@@ -427,6 +429,10 @@ textarea {
     margin-top: 5px;
     width: 650px;
     margin-bottom: 20px;
+}
+
+.youtube-video-player iframe, .youtube-video-player object, .youtube-video-player embed{
+    width: 100%;
 }
 
 

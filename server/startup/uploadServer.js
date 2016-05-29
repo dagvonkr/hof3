@@ -68,10 +68,14 @@ Meteor.startup(function () {
 
   function processImage (aFilename) {
     // Processes and saves filenameWithPath image file into a web friendly format/quality.
+    let fs =  Npm.require('fs');
     console.log('About to process: ', aFilename);
     const sourcePath = getUploadedDir();
     const processedPath = getPublishedDir();
-    gm(sourcePath+'/'+aFilename)
+    const sourceFilename = sourcePath+'/'+aFilename;
+    const exists = fs.existsSync(sourceFilename);
+    console.log(`Checking existance of ${sourceFilename}`, exists);
+    gm(sourceFilename)
       .interlace('Line')
       .quality(100)
       .setFormat(`${Meteor.settings.public.imageFormat}`)
