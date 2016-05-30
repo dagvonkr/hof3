@@ -124,7 +124,7 @@ function hasContentEditor () {
 function initializeTinymce () {
   tinymce.init({
     selector: 'textarea',
-    content_css: 'https://dl.dropboxusercontent.com/s/f46ixwp67t45vju/teststyle.css',
+    content_css: '/tinymce-content.css',
     skin_url: '/packages/teamon_tinymce/skins/lightgray',
     menu: {},
     plugins: "link",
