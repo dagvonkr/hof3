@@ -124,6 +124,9 @@ function hasContentEditor () {
 function initializeTinymce () {
   tinymce.init({
     selector: 'textarea',
+    setup: function (ed) {
+      $('#content-input-wrapper').removeClass('hidden');
+    },
     content_css: '/tinymce-content.css',
     skin_url: '/packages/teamon_tinymce/skins/lightgray',
     menu: {},
