@@ -1,0 +1,10 @@
+body {
+    position: relative;
+    text-align: left;
+    display: block;
+    font-family: 'gotham-light';
+    font-size: 16px;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
