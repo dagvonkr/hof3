@@ -7,7 +7,12 @@ tpl.onCreated(function () {
 });
 
 tpl.onDestroyed(function () {
-  tinymce.remove();
+  try {
+    tinymce.remove();
+  } catch (error) {
+    console.warn('postEditor onDestroyed:', error);
+  }
+
 });
 
 tpl.onRendered(function () {
