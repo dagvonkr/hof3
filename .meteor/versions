@@ -70,6 +70,7 @@ observe-sequence@1.0.11
 okgrow:analytics@1.0.5
 ordered-dict@1.0.7
 peppelg:bootstrap-3-modal@1.0.4
+praxie:canvas-to-blob@1.1.1
 promise@0.6.7
 random@1.0.9
 rate-limit@1.0.4
