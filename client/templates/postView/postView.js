@@ -29,6 +29,7 @@ function initializeOn (aTemplate) {
     const handle = subs.subscribe('post', postId);
     aTemplate.ready.set(handle.ready());
     if(aTemplate.ready.get()) {
+      renderMetaOn(Posts.findOne(postId));
       const post = Posts.findOne(FlowRouter.current().params.postId);
       aTemplate.data.postId.set(post._id);
       Meteor.setTimeout(function () {
@@ -47,4 +48,24 @@ function initializeOn (aTemplate) {
       }
     }
   });
+}
+
+function extractTextFromHTML (aHTMLString) {
+  var span = document.createElement('span');
+  span.innerHTML = aHTMLString;
+  return span.textContent || span.innerText;
+};
+
+function getImageUrlOf (aPost) {
+  return Posts.getMainImageUrlFor(aPost);
+}
+
+function getExcerptOf (aPost) {
+  return extractTextFromHTML(aPost.content);
+}
+
+function renderMetaOn (aPost) {
+  $('head').append(`<meta property="og:title" content="${aPost.title}" />`);
+  $('head').append(`<meta property="og:description" content="${getExcerptOf(aPost)}" />`);
+  $('head').append(`<meta property="og:image" content="${getImageUrlOf(aPost)}" />`);
 }
