@@ -13,6 +13,10 @@ tpl.onRendered(function () {
   let self = this;
 });
 
+tpl.onDestroyed(function () {
+  removeMeta();
+});
+
 tpl.helpers({
   post() {
     return Posts.findOne(FlowRouter.current().params.postId);
@@ -29,8 +33,11 @@ function initializeOn (aTemplate) {
     const handle = subs.subscribe('post', postId);
     aTemplate.ready.set(handle.ready());
     if(aTemplate.ready.get()) {
-      renderMetaOn(Posts.findOne(postId));
-      const post = Posts.findOne(FlowRouter.current().params.postId);
+      const post = Posts.findOne(postId);
+      if(!aTemplate.data.hasMeta) {
+        aTemplate.data.hasMeta = true;
+        renderMetaOn(post);
+      }
       aTemplate.data.postId.set(post._id);
       Meteor.setTimeout(function () {
         $('#postContent').html(post.content);
@@ -62,6 +69,12 @@ function getImageUrlOf (aPost) {
 
 function getExcerptOf (aPost) {
   return extractTextFromHTML(aPost.content);
+}
+
+function removeMeta () {
+  $('[property="og:title"]').remove();
+  $('[property="og:description"]').remove();
+  $('[property="og:image"]').remove();
 }
 
 function renderMetaOn (aPost) {
