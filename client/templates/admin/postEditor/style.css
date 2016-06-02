@@ -7,3 +7,10 @@
 .mce-menubar {
   border: none !important;
 }
+
+.save-animation {
+  color: green;
+  text-align: center;
+  margin-top: 10px;
+  opacity: 0;
+}
