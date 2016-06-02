@@ -69,7 +69,7 @@ tpl.events({
       $(template.find('#postIsPublished')).prop('checked'));
   },
 
-  'change #postHeaderTop': function (event, template) {
+  'keyup #postHeaderTop': function (event, template) {
     const whichPost = this._id;
     Meteor.call('updateHeaderStyle',
       whichPost,
@@ -77,7 +77,7 @@ tpl.events({
       $(template.find('#postHeaderTop')).val());
   },
 
-  'change #postHeaderLeft': function (event, template) {
+  'keyup #postHeaderLeft': function (event, template) {
     const whichPost = this._id;
     Meteor.call('updateHeaderStyle',
       whichPost,
@@ -85,7 +85,7 @@ tpl.events({
       $(template.find('#postHeaderLeft')).val());
   },
 
-  'change #postHeaderWidth': function (event, template) {
+  'keyup #postHeaderWidth': function (event, template) {
     const whichPost = this._id;
     Meteor.call('updateHeaderStyle',
       whichPost,
@@ -93,7 +93,7 @@ tpl.events({
       $(template.find('#postHeaderWidth')).val());
   },
 
-  'change #postHeaderFontSize': function (event, template) {
+  'keyup #postHeaderFontSize': function (event, template) {
     const whichPost = this._id;
     Meteor.call('updateHeaderStyle',
       whichPost,
