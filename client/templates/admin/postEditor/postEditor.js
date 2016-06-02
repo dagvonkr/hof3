@@ -23,7 +23,6 @@ tpl.onRendered(function () {
       initializeTinymce();
     }, Meteor.settings.public.editorInitializeDelay);
   }
-
 });
 
 tpl.helpers({
@@ -99,8 +98,16 @@ tpl.events({
   },
   'imageUploaded #imagesUploader': function (event, template, data) {
     onImageAdded(template,data);
+  },
+
+    'click #savedAnimation':function (event, template) {
+    console.log('clicked')
+    template.$(".save-animation").animate({opacity: 1, top:0}, 200);
+    template.$(".save-animation").animate({opacity: 0, top:0}, 2000);
   }
+
 });
+
 
 function initializeOn (template) {
   template.ready = new ReactiveVar;
@@ -243,4 +250,6 @@ function resetInputsOn (template) {
   $(template.find('[name="subtitle"]')).val('');
   $(template.find('[name="content"]')).val('');
 }
+
+
 
