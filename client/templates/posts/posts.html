@@ -3,10 +3,11 @@
   {{ #if isReady }}
 
     <div class="blog-posts posts-wrapper">
-
-      {{ #each publishedPosts }}
-        {{ > postInRow model=this }}
-      {{ /each }}
+        <div class="post-frontpage">
+        {{ #each publishedPosts }}
+          {{ > postInRow model=this }}
+        {{ /each }}
+      </div>
     </div>
   {{ else }}
     {{ > spinner }}

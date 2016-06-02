@@ -604,9 +604,12 @@ textarea {
 }
 
 .article-description{
-    width: 90%;
-    margin-left: 10px;
-    margin-right: 10px;
+    width: 100%;
+    padding: 0 25px 0 25px;
+}
+
+.post-youtube-wrapper {
+    padding: 0 20px 0 20px;
 }
 
 }

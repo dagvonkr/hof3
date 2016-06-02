@@ -1,15 +1,11 @@
 <template name="postInRow">
-  <div class="">
-    <div class="post-frontpage"> <!-- designed to work with infinite scroll -->
-      <a class="postTitle">
-        <div class="post-header" name="title">{{ model.title }}</div>
-      </a>
+  <a class="postTitle">
+    <div class="post-header" name="title">{{ model.title }}</div>
+  </a>
 
-      <div class="main-image">
-        <img src="{{ mainImageUrl }}">
-      </div>
-
-      <p class="description">{{ model.subtitle }}</p>
-    </div>
+  <div class="main-image">
+    <img src="{{ mainImageUrl }}">
   </div>
+
+  <p class="description">{{ model.subtitle }}</p>
 </template>
