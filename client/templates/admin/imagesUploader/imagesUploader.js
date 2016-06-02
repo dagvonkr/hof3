@@ -130,6 +130,7 @@ function newCropOn (image, aspectRatio, template) {
     modal: true,
     guides: true,
     dragCrop: true,
+    viewMode: 1,
     zoomable: false,
     mouseWheelZoom: false,
     aspectRatio: aspectRatio,
