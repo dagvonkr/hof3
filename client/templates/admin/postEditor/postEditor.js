@@ -65,30 +65,31 @@ tpl.events({
   },
   'change #youtube-link': function (event, template) {
     // Saves the proper youtube link for an embed assuming it comes from a raw copy paste from the browser's URL.
-    const youtubeLinkValue = $(template.find('#youtube-link')).val();
-    template.enteredYoutubeLink.set(youtubeLinkValue);
-    if(template.enteredYoutubeLink.get().match('/embed/')) {
-      const isSaveFromUser = false;
-      return basicSaveModelOn(template, isSaveFromUser);
-    }
-
-    if(_(template.enteredYoutubeLink.get()).isEmpty()) {
-      return
-    }
-
-    if(template.enteredYoutubeLink.get().match('/watch')) {
-      try {
-        var parts = template.enteredYoutubeLink.get().split('/');
-        var watchPart = _(parts).find( function (each) {
-          return each.match('watch');
-        });
-        var videoId = _(watchPart.split('v=')).last();
-        template.model.youtubeLink = 'https://www.youtube.com/embed/'+videoId;
+    try {
+      const youtubeLinkValue = $(template.find('#youtube-link')).val();
+      template.enteredYoutubeLink.set(youtubeLinkValue);
+      if(template.enteredYoutubeLink.get().match('/embed/')) {
         const isSaveFromUser = false;
         return basicSaveModelOn(template, isSaveFromUser);
-      } catch (e) {
-        return;
       }
+
+      if(_(template.enteredYoutubeLink.get()).isEmpty()) {
+        return
+      }
+
+      if(template.enteredYoutubeLink.get().match('/watch')) {
+          var parts = template.enteredYoutubeLink.get().split('/');
+          var watchPart = _(parts).find( function (each) {
+            return each.match('watch');
+          });
+          var videoId = _(watchPart.split('v=')).last();
+          template.model.youtubeLink = 'https://www.youtube.com/embed/'+videoId;
+          const isSaveFromUser = false;
+          return basicSaveModelOn(template, isSaveFromUser);
+        }
+    } catch (e) {
+      console.warn('Problem trying to add YouTube video: ', e);
+      return;
     }
 
   },

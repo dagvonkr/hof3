@@ -4,9 +4,9 @@
 
       <div class="panel-body">
         <div class="panel-heading">
-          {{ #if isNotNew }}
+          {{ #if hasContentEditor }}
             <div class="update-post-button"> Oppdater her etter du <br> har gjort endringer:</div>
-            <button class="add-btn savePost" id="savedAnimation">Lagre post</button>
+            <button id="savedAnimation" class="add-btn savePost">Oppdater post</button>
             <div class="save-animation">Lagret!</div>
           {{ /if }}
           <div class="clearfix"></div>
@@ -52,12 +52,16 @@
             </div>
 
             {{ #if hasVideo }}
-              <div class="update-post-button">
+              <div class="update-youtube-button">
                 <button id="removeYoutubeLink">Fern youtube link</button>
               </div>
               <p><strong>Youtube film som er lagt til: </strong> {{ model.youtubeLink }}</p>
               <div id="postVideo" class="youtube-video-player">
                 <iframe width="650" height="350" src="{{ youtubeLinkValue }}" frameborder="0" allowfullscreen></iframe>
+              </div>
+            {{ else }}
+              <div class="update-youtube-button">
+                <button>Legg til youtube link</button>
               </div>
             {{ /if }}
 
@@ -84,9 +88,9 @@
 
 
         <div class="panel-heading">
-          {{ #if isNotNew }}
-            <button class="add-btn savePost">Lagre post</button>
-          {{ /if }}
+          {{ #unless hasContentEditor }}
+            <button class="add-btn savePost">Opprett post</button>
+          {{ /unless }}
 
           {{ #if isAddingImages }}
             <hr>
