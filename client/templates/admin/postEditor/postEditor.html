@@ -4,9 +4,9 @@
 
       <div class="panel-body">
         <div class="panel-heading">
-          {{ #if isNotNew }}
+          {{ #if hasContentEditor }}
             <div class="update-post-button"> Oppdater her etter du <br> har gjort endringer:</div>
-            <button class="add-btn savePost">Lagre post</button>
+            <button class="add-btn savePost">Oppdater post</button>
           {{ /if }}
           <div class="clearfix"></div>
         </div>
@@ -83,9 +83,9 @@
 
 
         <div class="panel-heading">
-          {{ #if isNotNew }}
-            <button class="add-btn savePost">Lagre post</button>
-          {{ /if }}
+          {{ #unless hasContentEditor }}
+            <button class="add-btn savePost">Opprett post</button>
+          {{ /unless }}
 
           {{ #if isAddingImages }}
             <hr>
