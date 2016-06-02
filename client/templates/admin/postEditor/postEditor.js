@@ -100,8 +100,7 @@ tpl.events({
     onImageAdded(template,data);
   },
 
-    'click #savedAnimation':function (event, template) {
-    console.log('clicked')
+  'click #savedAnimation':function (event, template) {
     template.$(".save-animation").animate({opacity: 1, top:0}, 200);
     template.$(".save-animation").animate({opacity: 0, top:0}, 2000);
   }
