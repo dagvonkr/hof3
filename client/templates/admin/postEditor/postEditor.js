@@ -142,7 +142,8 @@ function initializeTinymce () {
     content_css: '/tinymce-content.css',
     skin_url: '/packages/teamon_tinymce/skins/lightgray',
     menu: {},
-    plugins: "link",
+    plugins: "link, paste",
+    paste_retain_style_properties: "all",
     toolbar: "bold italic | link",
     height: 500,
     statusbar: false
