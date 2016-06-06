@@ -6,12 +6,12 @@ tpl.onCreated(function () {
   let self = this;
   self.ready = new ReactiveVar;
   self.data.postId = new ReactiveVar;
+  self.getUrlFor = getUrlFor;
   initializeOn(self);
 });
 
 tpl.onRendered(function () {
   let self = this;
-  self.getUrlFor = getUrlFor;
 });
 
 tpl.onDestroyed(function () {
