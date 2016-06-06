@@ -11,6 +11,7 @@ tpl.onCreated(function () {
 
 tpl.onRendered(function () {
   let self = this;
+  self.getUrlFor = getUrlFor;
 });
 
 tpl.onDestroyed(function () {
@@ -36,7 +37,7 @@ function initializeOn (aTemplate) {
       const post = Posts.findOne(postId);
       if(!aTemplate.data.hasMeta) {
         aTemplate.data.hasMeta = true;
-        renderMetaOn(post);
+        renderMetaOn(post, aTemplate);
       }
       aTemplate.data.postId.set(post._id);
       Meteor.setTimeout(function () {
@@ -71,14 +72,28 @@ function getExcerptOf (aPost) {
   return extractTextFromHTML(aPost.content);
 }
 
+function getUrlFor (aPost) {
+  return `${Meteor.absoluteUrl()}posts/${aPost._id}`;
+}
+
 function removeMeta () {
+  $('html').attr('xmlns','');
+  $('html').attr('xmlns:og','');
+
+  $('[property="og:url"]').remove();
   $('[property="og:title"]').remove();
+  $('[property="og:site_name"]').remove();
   $('[property="og:description"]').remove();
   $('[property="og:image"]').remove();
 }
 
-function renderMetaOn (aPost) {
+function renderMetaOn (aPost, aTemplate) {
+  $('html').attr('xmlns','http://www.w3.org/1999/xhtml');
+  $('html').attr('xmlns:og','http://ogp.me/ns#');
+
   $('head').append(`<meta property="og:title" content="${aPost.title}" />`);
+  $('head').append(`<meta property="og:url" content="${aTemplate.getUrlFor(aPost)}" />`);
+  $('head').append(`<meta property="og:site_name" content="House Of Fam" />`);
   $('head').append(`<meta property="og:description" content="${getExcerptOf(aPost)}" />`);
   $('head').append(`<meta property="og:image" content="${getImageUrlOf(aPost)}" />`);
 }
