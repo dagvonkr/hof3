@@ -18,8 +18,7 @@ seoPicker.route('/posts/:postId', function(params, req, res){
     var post = Posts.findOne({ _id: params.postId });
     var html = SSR.render('seoLayout',{
         template:'seoPostView',
-        data: post
-        // data: { post: post }
+        data: { post: post }
     });
     res.end(html);
 });
