@@ -14,11 +14,13 @@ var seoPicker = Picker.filter(function (req, res) {
 });
 
 // Indexing user pages
-seoPicker.route('/posts/:postId', function(params, req, res){
-    var post = Posts.findOne({ _id: params.postId });
-    var html = SSR.render('seoLayout',{
-        template:'seoPostView',
-        data: { post: post }
-    });
-    res.end(html);
+seoPicker.route('/posts/:postId', function (params, req, res) {
+  console.log('seoPicker /posts/:postId', params);
+  var post = Posts.findOne({ _id: params.postId });
+  console.log('seoPicker post', post);
+  var html = SSR.render('seoLayout',{
+      template:'seoPostView',
+      data: { post: post }
+  });
+  res.end(html);
 });
