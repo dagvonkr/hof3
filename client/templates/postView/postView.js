@@ -35,6 +35,9 @@ function initializeOn (aTemplate) {
     aTemplate.ready.set(handle.ready());
     if(aTemplate.ready.get()) {
       const post = Posts.findOne(postId);
+      if(!post) {
+        return FlowRouter.go('/posts');
+      }
       if(!aTemplate.data.hasMeta) {
         aTemplate.data.hasMeta = true;
         // renderMetaOn(post, aTemplate);
