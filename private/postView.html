@@ -3,15 +3,13 @@
 <!-- Open Graph Meta Tags -->
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="{{ post.title }}"/>
-<meta property="og:description" content="{{ post.subtitle }}"/>
+<meta property="og:description" content="{{ getExcerptFor post }}"/>
 <meta property="og:site_name" content="House of Fam"/>
 <meta property="og:url" content="{{ getUrlFor post }}"/>
 <meta property="og:image" content="{{ getImageUrlFor post }}"/>
-<!-- just testing this getting in here -->
-<!-- Twitter Card Meta Tags -->
-<!-- <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="{{user.profile.firstname}} {{user.profile.lastname}}"/>
-<meta name="twitter:description" content="{{userDescription user.profile.briefInfo}}"/>
-<meta name="twitter:image" content="{{user.profile.profilePictureURL}}"/>
-<meta name="twitter:site" content="@yourhandle"/>
-<meta name="twitter:creator" content="@{{userTwitter user.profile.twitterHandle}}"/> -->
+
+<meta name="twitter:card" content="su{{ getExcerptFor post }}"/>
+<meta name="twitter:title" content="{{ post.title }}"/>
+<meta name="twitter:description" content="{{ getExcerptFor post }}"/>
+<meta name="twitter:image" content="{{ getImageUrlFor post }}"/>
+<meta name="twitter:site" content="@famirvoll"/>

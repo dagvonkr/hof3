@@ -11,8 +11,11 @@
         "*.sublime-*"
         ],
       "folder_exclude_patterns": [
-        ".meteor/local",
+        ".meteor/local/build",
+        ".meteor/local/bundler-cache",
+        ".meteor/local/plugin-cache",
         "node_modules",
+
       ],
     }
   ]

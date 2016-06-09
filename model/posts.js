@@ -12,6 +12,15 @@ Posts.allow({
   }
 });
 
+Posts.getMainImageUrlFor = function (aPost) {
+  // Answers the url of the main image of aPost.
+  try {
+      return  `${Meteor.absoluteUrl()}images/${aPost.images[0]}.${Meteor.settings.public.imageFormat}`;
+    } catch (error) {
+      return null;
+    }
+};
+
 if(Meteor.isClient) { // client side common methods
 
   Posts.updatePostStyleOn = function (aTemplate, postId) {
@@ -25,15 +34,6 @@ if(Meteor.isClient) { // client side common methods
   Posts.hasImageOn = function (aPost) {
     // Answers true if there are images in aPost.
     return !!aPost && !!aPost.images && !!aPost.images[0];
-  };
-
-  Posts.getMainImageUrlFor = function (aPost) {
-    // Answers the url of the main image of aPost.
-    try {
-        return  `${Meteor.absoluteUrl()}images/${aPost.images[0]}.${Meteor.settings.public.imageFormat}`;
-      } catch (error) {
-        return null;
-      }
   };
 
   function getPostStyle (aPost) {
