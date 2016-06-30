@@ -2,14 +2,18 @@
 <title>House of Fam</title>
 <!-- Open Graph Meta Tags -->
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="{{ post.title }}"/>
+<meta property="og:title" content="{{ getTitleFor post }}"/>
 <meta property="og:description" content="{{ getExcerptFor post }}"/>
 <meta property="og:site_name" content="House of Fam"/>
 <meta property="og:url" content="{{ getUrlFor post }}"/>
 <meta property="og:image" content="{{ getImageUrlFor post }}"/>
 
-<meta name="twitter:card" content="su{{ getExcerptFor post }}"/>
-<meta name="twitter:title" content="{{ post.title }}"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="{{ getTitleFor post }}"/>
 <meta name="twitter:description" content="{{ getExcerptFor post }}"/>
 <meta name="twitter:image" content="{{ getImageUrlFor post }}"/>
 <meta name="twitter:site" content="@famirvoll"/>
+
+<body>
+    <h1>oh hai!</h1>
+</body>

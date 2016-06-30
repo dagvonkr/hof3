@@ -28,7 +28,7 @@ Meteor.startup(function () {
       });
     } else {
       var html = SSR.render('seoLayout', {
-          template:'notFound',
+          template:'not found',
           data: null
       });
     }

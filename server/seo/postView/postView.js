@@ -1,6 +1,9 @@
 SSR.compileTemplate('seoPostView', Assets.getText('postView.html'));
 
 Template.seoPostView.helpers({
+  getTitleFor (aPost) {
+    return aPost.title.toUpperCase();
+  },
   getUrlFor (aPost) {
     return `${Meteor.absoluteUrl()}posts/${aPost._id}`;
   },
