@@ -1,8 +1,8 @@
 **/*.sw[op]
 
+actions/
+
 .env
-run.sh
-productionRun.sh
 
 *.tar.gz
 
